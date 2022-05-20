@@ -15,6 +15,7 @@ CREATE TABLE `elidek`.`project` (
   PRIMARY KEY (`title`),
   FOREIGN KEY(`name`) REFERENCES `program`(`name`),
   FOREIGN KEY(`evaluated_from`) REFERENCES `researcher`(`id`)
+  CHECK(duration>=1 AND duration<=4)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `elidek`.`executive` (
@@ -40,7 +41,6 @@ CREATE TABLE `elidek`.`organization` (
   
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
--- baseis.researcher definition
 
 CREATE TABLE `elidek`.`researcher` (
   `id` int(11) NOT NULL,
