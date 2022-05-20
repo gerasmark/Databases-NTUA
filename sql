@@ -20,6 +20,7 @@ CREATE TABLE `elidek`.`project` (
 CREATE TABLE `elidek`.`executive` (
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`name`));
+
   CREATE TABLE `elidek`.`scientific field` (
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`name`));
@@ -57,14 +58,17 @@ CREATE TABLE `elidek`.`worksfor` (
   `title` VARCHAR(45) NOT NULL,
   `id` INT NULL,
   PRIMARY KEY (`title`),
-  FOREIGN KEY (`title`) REFERENCES project(`title`),
-  FOREIGN KEY (`id`) REFERENCES researcher(`id`)
+  FOREIGN KEY (`title`) REFERENCES `project`(`title`),
+  FOREIGN KEY (`id`) REFERENCES `researcher`(`id`)
   );
   
   CREATE TABLE `elidek`.`manage` (
   `title` VARCHAR(45) NOT NULL,
   `name` VARCHAR(45) NULL,
-  PRIMARY KEY (`title`));
+  PRIMARY KEY (`title`),
+  FOREIGN KEY(`name`) REFERENCES `executive`(`name`),
+  FOREIGN KEY(`title`) REFERENCES `project`(`title`)
+  );
 
 CREATE TABLE `elidek`.`deliverable` (
   `title` VARCHAR(45) NOT NULL,
