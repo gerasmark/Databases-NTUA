@@ -105,4 +105,3 @@ CREATE TABLE `elidek`.`company` (
   PRIMARY KEY (`name`),
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-ody
