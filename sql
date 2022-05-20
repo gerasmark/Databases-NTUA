@@ -25,7 +25,7 @@ CREATE TABLE `elidek`.`organization` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 -- baseis.researcher definition
 
-CREATE TABLE `researcher` (
+CREATE TABLE `elidek`.`researcher` (
   `id` int(11) NOT NULL,
   `first_name` varchar(45) NOT NULL,
   `last_name` varchar(45) NOT NULL,
@@ -35,4 +35,26 @@ CREATE TABLE `researcher` (
   `works_since` date NOT NULL,
   PRIMARY KEY (`id`)
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- baseis.university definition
+
+CREATE TABLE `elidek`.`university` (
+  `name` varchar(45) NOT NULL,
+  `budget_from_edu` int(11) NOT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- baseis.research_center definition
+
+CREATE TABLE `elidek`.`research_center` (
+  `name` varchar(45) NOT NULL,
+  `budget_from_edu` int(11) NOT NULL,
+  `budget_from_priv` int(11) NOT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- baseis.company definition
+
+CREATE TABLE `elidek`.`company` (
+  `name` varchar(45) NOT NULL,
+  `equity` int(11) NOT NULL,
+  PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
