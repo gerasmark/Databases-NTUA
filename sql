@@ -1,6 +1,20 @@
 -- baseis.organization definition
 CREATE SCHEMA `elidek` ;
 
+CREATE TABLE `elidek`.`project` (
+  `title` varchar(20) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `summary` varchar(45) NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `duration` year(4) NOT NULL,
+  `name` varchar(45) NOT NULL DEFAULT 'fk from program',
+  `evaluated_from` varchar(45) NOT NULL DEFAULT 'fk from researcher',
+  `grade` int(11) NOT NULL,
+  `date_of_eval` date NOT NULL,
+  PRIMARY KEY (`title`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 CREATE TABLE `elidek`.`executive` (
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`name`));
@@ -40,7 +54,10 @@ CREATE TABLE `elidek`.`researcher` (
 CREATE TABLE `elidek`.`worksfor` (
   `title` VARCHAR(45) NOT NULL,
   `id` INT NULL,
-  PRIMARY KEY (`title`));
+  PRIMARY KEY (`title`),
+  FOREIGN KEY (`title`) REFERENCES project(`title`),
+  FOREIGN KEY (`id`) REFERENCES researcher(`id`)
+  );
   
   CREATE TABLE `elidek`.`manage` (
   `title` VARCHAR(45) NOT NULL,
