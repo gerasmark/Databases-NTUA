@@ -9,10 +9,12 @@ CREATE TABLE `elidek`.`project` (
   `end_date` date NOT NULL,
   `duration` year(4) NOT NULL,
   `name` varchar(45) NOT NULL DEFAULT 'fk from program',
-  `evaluated_from` varchar(45) NOT NULL DEFAULT 'fk from researcher',
+  `evaluated_from` int(11) NOT NULL DEFAULT 'fk from researcher',
   `grade` int(11) NOT NULL,
   `date_of_eval` date NOT NULL,
   PRIMARY KEY (`title`)
+  FOREIGN KEY(`name`) REFERENCES `program`(`name`)
+  FOREIGN KEY(`evaluated_from`) REFERENCES `researcher`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `elidek`.`executive` (
