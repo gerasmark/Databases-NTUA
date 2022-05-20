@@ -34,4 +34,5 @@ CREATE TABLE `researcher` (
   `name` varchar(45) NOT NULL DEFAULT 'fk from org',
   `works_since` date NOT NULL,
   PRIMARY KEY (`id`)
+  FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
