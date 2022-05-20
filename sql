@@ -76,8 +76,8 @@ CREATE TABLE `elidek`.`deliverable` (
 CREATE TABLE `elidek`.`fieldthatdescribes` (
   `name` VARCHAR(45) NOT NULL,
   `title` VARCHAR(45) NULL,
-  FOREIGN KEY(`name`) REFERENCES `scientific field`(`name`)
-
+  FOREIGN KEY(`name`) REFERENCES `scientific field`(`name`),
+  FOREIGN KEY(`title`) REFERENCES `project`(`title`),
   PRIMARY KEY (`name`));
   
   CREATE TABLE `elidek`.`research_center` (
