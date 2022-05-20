@@ -58,5 +58,26 @@ CREATE TABLE `elidek`.`fieldthatdescribes` (
   `name` VARCHAR(45) NOT NULL,
   `title` VARCHAR(45) NULL,
   PRIMARY KEY (`name`));
+  
+  CREATE TABLE `elidek`.`research_center` (
+  `name` varchar(45) NOT NULL,
+  `budget_from_edu` int(11) NOT NULL,
+  `budget_from_priv` int(11) NOT NULL,
+  PRIMARY KEY (`name`),
+  FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE `elidek`.`university` (
+  `name` varchar(45) NOT NULL,
+  `budget_from_edu` int(11) NOT NULL,
+  PRIMARY KEY (`name`),  
+  FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `elidek`.`company` (
+  `name` varchar(45) NOT NULL,
+  `equity` int(11) NOT NULL,
+  PRIMARY KEY (`name`),
+  FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
