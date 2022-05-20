@@ -12,8 +12,8 @@ CREATE TABLE `elidek`.`project` (
   `evaluated_from` int(11) NOT NULL DEFAULT 'fk from researcher',
   `grade` int(11) NOT NULL,
   `date_of_eval` date NOT NULL,
-  PRIMARY KEY (`title`)
-  FOREIGN KEY(`name`) REFERENCES `program`(`name`)
+  PRIMARY KEY (`title`),
+  FOREIGN KEY(`name`) REFERENCES `program`(`name`),
   FOREIGN KEY(`evaluated_from`) REFERENCES `researcher`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -76,6 +76,7 @@ CREATE TABLE `elidek`.`deliverable` (
 CREATE TABLE `elidek`.`fieldthatdescribes` (
   `name` VARCHAR(45) NOT NULL,
   `title` VARCHAR(45) NULL,
+  FOREIGN KEY(`name`) REFERENCES `scientific field`(`name`)
   PRIMARY KEY (`name`));
   
   CREATE TABLE `elidek`.`research_center` (
