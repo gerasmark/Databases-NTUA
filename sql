@@ -36,25 +36,27 @@ CREATE TABLE `elidek`.`researcher` (
   PRIMARY KEY (`id`)
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
--- baseis.university definition
 
-CREATE TABLE `elidek`.`university` (
-  `name` varchar(45) NOT NULL,
-  `budget_from_edu` int(11) NOT NULL,
-  PRIMARY KEY (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
--- baseis.research_center definition
+CREATE TABLE `elidek`.`worksfor` (
+  `title` VARCHAR(45) NOT NULL,
+  `id` INT NULL,
+  PRIMARY KEY (`title`));
+  
+  CREATE TABLE `elidek`.`manage` (
+  `title` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NULL,
+  PRIMARY KEY (`title`));
 
-CREATE TABLE `elidek`.`research_center` (
-  `name` varchar(45) NOT NULL,
-  `budget_from_edu` int(11) NOT NULL,
-  `budget_from_priv` int(11) NOT NULL,
-  PRIMARY KEY (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
--- baseis.company definition
+CREATE TABLE `elidek`.`deliverable` (
+  `title` VARCHAR(45) NOT NULL,
+  `summary` VARCHAR(45) NULL,
+  `title` VARCHAR(45) NULL,
+  `due_date` DATE NULL,
+  PRIMARY KEY (`title`));
 
-CREATE TABLE `elidek`.`company` (
-  `name` varchar(45) NOT NULL,
-  `equity` int(11) NOT NULL,
-  PRIMARY KEY (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `elidek`.`fieldthatdescribes` (
+  `name` VARCHAR(45) NOT NULL,
+  `title` VARCHAR(45) NULL,
+  PRIMARY KEY (`name`));
+
+
