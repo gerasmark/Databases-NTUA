@@ -7,8 +7,8 @@ CREATE TABLE `elidek`.`project` (
   `summary` varchar(45) NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
-  `duration` year(4) NOT NULL,
-  `name` varchar(45) NOT NULL ,
+  `duration` int(11) NOT NULL,
+  `name` varchar(45) NOT NULL,
   `evaluated_from` int(11) NOT NULL ,
   `grade` int(11) NOT NULL,
   `date_of_eval` date NOT NULL,
@@ -104,5 +104,4 @@ CREATE TABLE `elidek`.`company` (
   `equity` int(11) NOT NULL,
   PRIMARY KEY (`name`),
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
-) ;
-ody
+)
