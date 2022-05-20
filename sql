@@ -37,8 +37,6 @@ CREATE TABLE `elidek`.`organization` (
   `postal_code` int(11) NOT NULL,
   `street` varchar(45) NOT NULL,
   `city` varchar(45) NOT NULL,
-  `phone` int(11) NOT NULL,
-  
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -105,3 +103,9 @@ CREATE TABLE `elidek`.`company` (
   PRIMARY KEY (`name`),
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
 )
+CREATE TABLE `elidek`.`phone` (
+  `name` VARCHAR(45) NOT NULL,
+  `phone` INT NOT NULL,
+  PRIMARY KEY (`name`, `phone`),
+  FOREIGN KEY(`name`) REFERENCES `organization`(`name`)
+  );
