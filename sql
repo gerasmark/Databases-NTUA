@@ -8,8 +8,8 @@ CREATE TABLE `elidek`.`project` (
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
   `duration` year(4) NOT NULL,
-  `name` varchar(45) NOT NULL DEFAULT 'fk from program',
-  `evaluated_from` int(11) NOT NULL DEFAULT 'fk from researcher',
+  `name` varchar(45) NOT NULL ,
+  `evaluated_from` int(11) NOT NULL ,
   `grade` int(11) NOT NULL,
   `date_of_eval` date NOT NULL,
   PRIMARY KEY (`title`),
@@ -37,7 +37,7 @@ CREATE TABLE `elidek`.`organization` (
   `street` varchar(45) NOT NULL,
   `city` varchar(45) NOT NULL,
   `phone` int(11) NOT NULL,
-  `organizationcol` varchar(45) DEFAULT NULL,
+  
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 -- baseis.researcher definition
@@ -48,7 +48,7 @@ CREATE TABLE `elidek`.`researcher` (
   `last_name` varchar(45) NOT NULL,
   `sex` varchar(45) NOT NULL,
   `birthdate` date NOT NULL,
-  `name` varchar(45) NOT NULL DEFAULT 'fk from org',
+  `name` varchar(45) NOT NULL,
   `works_since` date NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
@@ -104,5 +104,5 @@ CREATE TABLE `elidek`.`company` (
   `equity` int(11) NOT NULL,
   PRIMARY KEY (`name`),
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 ody
