@@ -23,3 +23,15 @@ CREATE TABLE `elidek`.`organization` (
   `organizationcol` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- baseis.researcher definition
+
+CREATE TABLE `researcher` (
+  `id` int(11) NOT NULL,
+  `first_name` varchar(45) NOT NULL,
+  `last_name` varchar(45) NOT NULL,
+  `sex` varchar(45) NOT NULL,
+  `birthdate` date NOT NULL,
+  `name` varchar(45) NOT NULL DEFAULT 'fk from org',
+  `works_since` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
