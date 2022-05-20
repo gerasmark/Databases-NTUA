@@ -7,7 +7,7 @@ CREATE TABLE `elidek`.`project` (
   `summary` varchar(45) NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
-  `duration` year(4) NOT NULL,
+  `duration` int(11) NOT NULL,
   `name` varchar(45) NOT NULL DEFAULT 'fk from program',
   `evaluated_from` int(11) NOT NULL DEFAULT 'fk from researcher',
   `grade` int(11) NOT NULL,
