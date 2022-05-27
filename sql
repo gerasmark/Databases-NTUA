@@ -103,7 +103,7 @@ CREATE TABLE `elidek`.`company` (
   `equity` int(11) NOT NULL,
   PRIMARY KEY (`name`),
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
-)
+);
 CREATE TABLE `elidek`.`phone` (
   `name` VARCHAR(45) NOT NULL,
   `phone` INT NOT NULL,
