@@ -48,7 +48,7 @@ CREATE TABLE `elidek`.`researcher` (
   `birthdate` date NOT NULL,
   `name` varchar(45) NOT NULL,
   `works_since` date NOT NULL,
-  `age` smallint as (TIMESTAMPDIFF(YEAR, birthdate, CURDATE)),
+  `age` smallint as (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())),
   PRIMARY KEY (`id`),
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
