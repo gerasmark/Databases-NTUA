@@ -7,7 +7,7 @@ CREATE TABLE `elidek`.`project` (
   `summary` varchar(45) NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
-  `duration` as (SELECT DATEDIFF(year, startdate, end_date)),
+  `duration` smallint as (SELECT DATEDIFF(year, startdate, end_date)),
   `name` varchar(45) NOT NULL,
   `evaluated_from` int(11) NOT NULL ,
   `grade` int(11) NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE `elidek`.`researcher` (
   `birthdate` date NOT NULL,
   `name` varchar(45) NOT NULL,
   `works_since` date NOT NULL,
-  `age` (SELECT DATEDIFF(year, birthdate, GETdate()),
+  `age` smallint (SELECT DATEDIFF(year, birthdate, GETdate()),
   PRIMARY KEY (`id`),
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
