@@ -74,6 +74,7 @@ CREATE TABLE `elidek`.`deliverable` (
   `summary` VARCHAR(45) NULL,
   `title` VARCHAR(45) NULL,
   `due_date` DATE NULL,
+  FOREIGN KEY(`title`) REFERENCES `project`(`title`),
   PRIMARY KEY (`title`));
 
 CREATE TABLE `elidek`.`fieldthatdescribes` (
