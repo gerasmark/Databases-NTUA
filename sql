@@ -1,12 +1,16 @@
 -- baseis.organization definition
 CREATE SCHEMA `josephine` ;
 
+DROP TABLE IF EXISTS `program`;
+
 CREATE TABLE `josephine`.`program` (
   `name` VARCHAR(45) NOT NULL,
   `adress` VARCHAR(45) NULL,
   PRIMARY KEY (`name`)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
+DROP TABLE IF EXISTS `organization`;
+
 CREATE TABLE `josephine`.`organization` (
   `name` varchar(45) NOT NULL,
   `initials` varchar(45) NOT NULL,
@@ -15,6 +19,8 @@ CREATE TABLE `josephine`.`organization` (
   `city` varchar(45) NOT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `researcher`;
 
 CREATE TABLE `josephine`.`researcher` (
   `id` int(11) NOT NULL,
@@ -29,6 +35,7 @@ CREATE TABLE `josephine`.`researcher` (
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+DROP TABLE IF EXISTS `project`;
 
 CREATE TABLE `josephine`.`project` (
   `title` varchar(20) NOT NULL,
@@ -50,11 +57,14 @@ CREATE TABLE `josephine`.`project` (
   CHECK(duration>=1 AND duration<=4)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-  CREATE TABLE `josephine`.`scientific field` (
+DROP TABLE IF EXISTS `scientific_field`;
+
+  CREATE TABLE `josephine`.`scientific_field` (
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`name`)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-  ;
+  
+  DROP TABLE IF EXISTS `worksfor`;
   
 CREATE TABLE `josephine`.`worksfor` (
   `title` VARCHAR(45) NOT NULL,
@@ -64,7 +74,7 @@ CREATE TABLE `josephine`.`worksfor` (
   FOREIGN KEY (`id`) REFERENCES `researcher`(`id`)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
- 
+ DROP TABLE IF EXISTS `deliverable`;
 
 CREATE TABLE `josephine`.`deliverable` (
   `title` VARCHAR(45) NOT NULL,
@@ -75,6 +85,8 @@ CREATE TABLE `josephine`.`deliverable` (
   PRIMARY KEY (`title`)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+DROP TABLE IF EXISTS `fieldthatdescribes`;
+
 CREATE TABLE `josephine`.`fieldthatdescribes` (
   `name` VARCHAR(45) NOT NULL,
   `title` VARCHAR(45) NULL,
@@ -83,6 +95,8 @@ CREATE TABLE `josephine`.`fieldthatdescribes` (
   PRIMARY KEY (`name`)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
+DROP TABLE IF EXISTS `research_center`;
+
   CREATE TABLE `josephine`.`research_center` (
   `name` varchar(45) NOT NULL,
   `budget_from_edu` int(11) NOT NULL,
@@ -91,6 +105,8 @@ CREATE TABLE `josephine`.`fieldthatdescribes` (
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+DROP TABLE IF EXISTS `university`;
+
 CREATE TABLE `josephine`.`university` (
   `name` varchar(45) NOT NULL,
   `budget_from_edu` int(11) NOT NULL,
@@ -98,12 +114,16 @@ CREATE TABLE `josephine`.`university` (
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+DROP TABLE IF EXISTS `company`;
+
 CREATE TABLE `josephine`.`company` (
   `name` varchar(45) NOT NULL,
   `equity` int(11) NOT NULL,
   PRIMARY KEY (`name`),
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `phone`;
 
 CREATE TABLE `josephine`.`phone` (
   `name` VARCHAR(45) NOT NULL,
