@@ -90,7 +90,7 @@ DROP TABLE IF EXISTS `elide`.`fieldthatdescribes`;
 CREATE TABLE `elide`.`fieldthatdescribes` (
   `name` VARCHAR(45) NOT NULL,
   `title` VARCHAR(45) NULL,
-  FOREIGN KEY(`name`) REFERENCES `scientific field`(`name`),
+  FOREIGN KEY(`name`) REFERENCES `scientific_field`(`name`),
   FOREIGN KEY(`title`) REFERENCES `project`(`title`),
   PRIMARY KEY (`name`)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
