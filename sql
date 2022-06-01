@@ -72,9 +72,9 @@ CREATE TABLE `elidek`.`worksfor` (
 CREATE TABLE `elidek`.`deliverable` (
   `title` VARCHAR(45) NOT NULL,
   `summary` VARCHAR(45) NULL,
-  `title` VARCHAR(45) NULL,
+  `title_project` VARCHAR(45) NULL,
   `due_date` DATE NULL,
-  FOREIGN KEY(`title`) REFERENCES `project`(`title`),
+  FOREIGN KEY(`title_project`) REFERENCES `project`(`title`),
   PRIMARY KEY (`title`));
 
 CREATE TABLE `elidek`.`fieldthatdescribes` (
