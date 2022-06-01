@@ -21,7 +21,7 @@ CREATE TABLE `elidek`.`project` (
   CHECK(duration>=1 AND duration<=4)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-  CREATE TABLE `elidek`.`scientific field` (
+  CREATE TABLE `elidek`.`scientific_field` (
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`name`)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -77,7 +77,7 @@ CREATE TABLE `elidek`.`deliverable` (
 CREATE TABLE `elidek`.`fieldthatdescribes` (
   `name` VARCHAR(45) NOT NULL,
   `title` VARCHAR(45) NULL,
-  FOREIGN KEY(`name`) REFERENCES `scientific field`(`name`),
+  FOREIGN KEY(`name`) REFERENCES `scientific_field`(`name`),
   FOREIGN KEY(`title`) REFERENCES `project`(`title`),
   PRIMARY KEY (`name`));
   
