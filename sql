@@ -1,17 +1,17 @@
 -- baseis.organization definition
-CREATE SCHEMA `josephine` ;
+CREATE SCHEMA `elide` ;
 
-DROP TABLE IF EXISTS `program`;
+DROP TABLE IF EXISTS `elide`.`program`;
 
-CREATE TABLE `josephine`.`program` (
+CREATE TABLE `elide`.`program` (
   `name` VARCHAR(45) NOT NULL,
   `adress` VARCHAR(45) NULL,
   PRIMARY KEY (`name`)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
-DROP TABLE IF EXISTS `organization`;
+DROP TABLE IF EXISTS `elide`.`organization`;
 
-CREATE TABLE `josephine`.`organization` (
+CREATE TABLE `elide`.`organization` (
   `name` varchar(45) NOT NULL,
   `initials` varchar(45) NOT NULL,
   `postal_code` int(11) NOT NULL,
@@ -20,9 +20,9 @@ CREATE TABLE `josephine`.`organization` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-DROP TABLE IF EXISTS `researcher`;
+DROP TABLE IF EXISTS `elide`.`researcher`;
 
-CREATE TABLE `josephine`.`researcher` (
+CREATE TABLE `elide`.`researcher` (
   `id` int(11) NOT NULL,
   `first_name` varchar(45) NOT NULL,
   `last_name` varchar(45) NOT NULL,
@@ -35,9 +35,9 @@ CREATE TABLE `josephine`.`researcher` (
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-DROP TABLE IF EXISTS `project`;
+DROP TABLE IF EXISTS `elide`.`project`;
 
-CREATE TABLE `josephine`.`project` (
+CREATE TABLE `elide`.`project` (
   `title` varchar(20) NOT NULL,
   `amount` int(11) NOT NULL,
   `summary` varchar(45) NOT NULL,
@@ -57,16 +57,16 @@ CREATE TABLE `josephine`.`project` (
   CHECK(duration>=1 AND duration<=4)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-DROP TABLE IF EXISTS `scientific_field`;
+DROP TABLE IF EXISTS `elide`.`scientific_field`;
 
-  CREATE TABLE `josephine`.`scientific_field` (
+  CREATE TABLE `elide`.`scientific_field` (
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`name`)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
-  DROP TABLE IF EXISTS `worksfor`;
+  DROP TABLE IF EXISTS `elide`.`worksfor`;
   
-CREATE TABLE `josephine`.`worksfor` (
+CREATE TABLE `elide`.`worksfor` (
   `title` VARCHAR(45) NOT NULL,
   `id` INT NULL,
   PRIMARY KEY (`title`),
@@ -74,9 +74,9 @@ CREATE TABLE `josephine`.`worksfor` (
   FOREIGN KEY (`id`) REFERENCES `researcher`(`id`)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
- DROP TABLE IF EXISTS `deliverable`;
+ DROP TABLE IF EXISTS `elide`.`deliverable`;
 
-CREATE TABLE `josephine`.`deliverable` (
+CREATE TABLE `elide`.`deliverable` (
   `title` VARCHAR(45) NOT NULL,
   `summary` VARCHAR(45) NULL,
   `title_project` VARCHAR(45) NULL,
@@ -85,9 +85,9 @@ CREATE TABLE `josephine`.`deliverable` (
   PRIMARY KEY (`title`)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-DROP TABLE IF EXISTS `fieldthatdescribes`;
+DROP TABLE IF EXISTS `elide`.`fieldthatdescribes`;
 
-CREATE TABLE `josephine`.`fieldthatdescribes` (
+CREATE TABLE `elide`.`fieldthatdescribes` (
   `name` VARCHAR(45) NOT NULL,
   `title` VARCHAR(45) NULL,
   FOREIGN KEY(`name`) REFERENCES `scientific field`(`name`),
@@ -95,9 +95,9 @@ CREATE TABLE `josephine`.`fieldthatdescribes` (
   PRIMARY KEY (`name`)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
-DROP TABLE IF EXISTS `research_center`;
+DROP TABLE IF EXISTS `elide`.`research_center`;
 
-  CREATE TABLE `josephine`.`research_center` (
+  CREATE TABLE `elide`.`research_center` (
   `name` varchar(45) NOT NULL,
   `budget_from_edu` int(11) NOT NULL,
   `budget_from_priv` int(11) NOT NULL,
@@ -105,27 +105,27 @@ DROP TABLE IF EXISTS `research_center`;
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-DROP TABLE IF EXISTS `university`;
+DROP TABLE IF EXISTS `elide`.`university`;
 
-CREATE TABLE `josephine`.`university` (
+CREATE TABLE `elide`.`university` (
   `name` varchar(45) NOT NULL,
   `budget_from_edu` int(11) NOT NULL,
   PRIMARY KEY (`name`),  
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-DROP TABLE IF EXISTS `company`;
+DROP TABLE IF EXISTS `elide`.`company`;
 
-CREATE TABLE `josephine`.`company` (
+CREATE TABLE `elide`.`company` (
   `name` varchar(45) NOT NULL,
   `equity` int(11) NOT NULL,
   PRIMARY KEY (`name`),
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-DROP TABLE IF EXISTS `phone`;
+DROP TABLE IF EXISTS `elide`.`phone`;
 
-CREATE TABLE `josephine`.`phone` (
+CREATE TABLE `elide`.`phone` (
   `name` VARCHAR(45) NOT NULL,
   `phone` INT NOT NULL,
   PRIMARY KEY (`name`, `phone`),
