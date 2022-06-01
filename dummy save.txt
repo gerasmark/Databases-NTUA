@@ -352,14 +352,14 @@ INSERT INTO fieldthatdescribes (name,title) VALUES ("Electrical engineering","Ad
 INSERT INTO fieldthatdescribes (name,title) VALUES ("Physical science","Intuitive 24hour emulation");
 
 
-INSERT INTO scientific field (n,a,m,e) VALUES ("Mathematics");
-INSERT INTO scientific field (n,a,m,e) VALUES ("Chemical sciences");
-INSERT INTO scientific field (n,a,m,e) VALUES ("Earth and related Environmental sciences");
-INSERT INTO scientific field (n,a,m,e) VALUES ("Physical science");
-INSERT INTO scientific field (n,a,m,e) VALUES ("Biological science,");
-INSERT INTO scientific field (n,a,m,e) VALUES ("Medical engineering");
-INSERT INTO scientific field (n,a,m,e) VALUES ("Nano-technology");
-INSERT INTO scientific field (n,a,m,e) VALUES ("Electrical engineering");
+INSERT INTO scientific field (name) VALUES ("Mathematics");
+INSERT INTO scientific field (name) VALUES ("Chemical sciences");
+INSERT INTO scientific field (name) VALUES ("Earth and related Environmental sciences");
+INSERT INTO scientific field (name) VALUES ("Physical science");
+INSERT INTO scientific field (name) VALUES ("Biological science,");
+INSERT INTO scientific field (name) VALUES ("Medical engineering");
+INSERT INTO scientific field (name) VALUES ("Nano-technology");
+INSERT INTO scientific field (name) VALUES ("Electrical engineering");
 
 
 
@@ -436,16 +436,16 @@ INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ("Cum
 INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ("Wallace Ltd","9403807","6480473");
 INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ("Rowland-Wilson","5360806","5884764");
 
-INSERT INTO university (name,budget_from_edu,budget_from_priv) VALUES ("Howell-Lee","3438247");
-INSERT INTO university (name,budget_from_edu,budget_from_priv) VALUES ("Rodgers, Harper and Clark","7642297");
-INSERT INTO university (name,budget_from_edu,budget_from_priv) VALUES ("Gibbs, Shepard and Taylor","8576417");
-INSERT INTO university (name,budget_from_edu,budget_from_priv) VALUES ("Mcdonald-Green","3141318");
-INSERT INTO university (name,budget_from_edu,budget_from_priv) VALUES ("Barrett-Kelly","425529");
-INSERT INTO university (name,budget_from_edu,budget_from_priv) VALUES ("Clark and Sons","7512366");
-INSERT INTO university (name,budget_from_edu,budget_from_priv) VALUES ("Olson-Nelson","6706154");
-INSERT INTO university (name,budget_from_edu,budget_from_priv) VALUES ("Copeland-Johnston","5319046");
-INSERT INTO university (name,budget_from_edu,budget_from_priv) VALUES ("Medina, Alvarez and Roy","3351341");
-INSERT INTO university (name,budget_from_edu,budget_from_priv) VALUES ("Hatfield, Thomas and Perez","3324672");
+INSERT INTO university (name,budget_from_edu) VALUES ("Howell-Lee","3438247");
+INSERT INTO university (name,budget_from_edu) VALUES ("Rodgers, Harper and Clark","7642297");
+INSERT INTO university (name,budget_from_edu) VALUES ("Gibbs, Shepard and Taylor","8576417");
+INSERT INTO university (name,budget_from_edu) VALUES ("Mcdonald-Green","3141318");
+INSERT INTO university (name,budget_from_edu) VALUES ("Barrett-Kelly","425529");
+INSERT INTO university (name,budget_from_edu) VALUES ("Clark and Sons","7512366");
+INSERT INTO university (name,budget_from_edu) VALUES ("Olson-Nelson","6706154");
+INSERT INTO university (name,budget_from_edu) VALUES ("Copeland-Johnston","5319046");
+INSERT INTO university (name,budget_from_edu) VALUES ("Medina, Alvarez and Roy","3351341");
+INSERT INTO university (name,budget_from_edu) VALUES ("Hatfield, Thomas and Perez","3324672");
 
 INSERT INTO company (name,equity) VALUES ("Brown, Hardy and Bates","7433606");
 INSERT INTO company (name,equity) VALUES ("Freeman-Parks","5297636");
