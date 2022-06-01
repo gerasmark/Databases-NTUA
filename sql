@@ -10,26 +10,28 @@ CREATE TABLE `elidek`.`project` (
   `duration` smallint as (TIMESTAMPDIFF(YEAR, start_date, end_date)),
   `name` varchar(45) NOT NULL,
   `evaluated_from` int(11) NOT NULL ,
+  `from_org` varchar(45) NOT NULL,
   `grade` int(11) NOT NULL,
   `date_of_eval` date NOT NULL,
+  `exec` varchar(45) NOT NULL
   PRIMARY KEY (`title`),
   FOREIGN KEY(`name`) REFERENCES `program`(`name`),
+  FOREIGN KEY(`from_org`) REFERENCES `organization`(`name`),
   FOREIGN KEY(`evaluated_from`) REFERENCES `researcher`(`id`),
   CHECK(duration>=1 AND duration<=4)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `elidek`.`executive` (
-  `name` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`name`));
-
   CREATE TABLE `elidek`.`scientific field` (
   `name` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`name`));
+  PRIMARY KEY (`name`)
+  )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  ;
   
 CREATE TABLE `elidek`.`program` (
   `name` VARCHAR(45) NOT NULL,
   `adress` VARCHAR(45) NULL,
-  PRIMARY KEY (`name`));
+  PRIMARY KEY (`name`)
+  )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
 CREATE TABLE `elidek`.`organization` (
   `name` varchar(45) NOT NULL,
@@ -59,23 +61,18 @@ CREATE TABLE `elidek`.`worksfor` (
   PRIMARY KEY (`title`),
   FOREIGN KEY (`title`) REFERENCES `project`(`title`),
   FOREIGN KEY (`id`) REFERENCES `researcher`(`id`)
-  );
+  )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
-  CREATE TABLE `elidek`.`manage` (
-  `title` VARCHAR(45) NOT NULL,
-  `name` VARCHAR(45) NULL,
-  PRIMARY KEY (`title`),
-  FOREIGN KEY(`name`) REFERENCES `executive`(`name`),
-  FOREIGN KEY(`title`) REFERENCES `project`(`title`)
-  );
+ 
 
 CREATE TABLE `elidek`.`deliverable` (
   `title` VARCHAR(45) NOT NULL,
   `summary` VARCHAR(45) NULL,
-  `title` VARCHAR(45) NULL,
+  `title_project` VARCHAR(45) NULL,
   `due_date` DATE NULL,
-  FOREIGN KEY(`title`) REFERENCES `project`(`title`),
-  PRIMARY KEY (`title`));
+  FOREIGN KEY(`title_project`) REFERENCES `project`(`title`),
+  PRIMARY KEY (`title`)
+  )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `elidek`.`fieldthatdescribes` (
   `name` VARCHAR(45) NOT NULL,
@@ -104,10 +101,11 @@ CREATE TABLE `elidek`.`company` (
   `equity` int(11) NOT NULL,
   PRIMARY KEY (`name`),
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) 
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 CREATE TABLE `elidek`.`phone` (
   `name` VARCHAR(45) NOT NULL,
   `phone` INT NOT NULL,
   PRIMARY KEY (`name`, `phone`),
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`)
-  );
+  )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
