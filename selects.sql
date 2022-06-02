@@ -20,15 +20,13 @@ AND COUNT(p2.from_org) >= 20
 
 --3.5
 
+
+
 --3.7
 SELECT p.exec, c.name, SUM(p.amount)
 FROM project p 
 INNER JOIN organization o ON p.from_org = o.name
 INNER JOIN company c ON o.name = c.name
-
-
-
-
 
 
 --3.8
