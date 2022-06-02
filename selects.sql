@@ -21,8 +21,13 @@ AND COUNT(p2.from_org) >= 20;
 --3.5
 
 --3.6
-
-
+SELECT r.first_name, r.last_name, COUNT(w.id)
+FROM researcher r
+INNER JOIN worksfor w ON r.id = w.id
+INNER JOIN project p ON w.title = p.title
+WHERE r.age < 40 
+AND p.end_date > '2022-06-06'
+ORDER BY COUNT(w.id) DESC
 
 --3.7
 SELECT p.exec, c.name, SUM(p.amount)
