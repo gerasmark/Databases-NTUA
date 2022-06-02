@@ -2,7 +2,7 @@
 SELECT f.name, f.title, r.first_name, r.last_name  FROM fieldthatdescribes f
 INNER JOIN project p ON p.title = f.title
 INNER JOIN researcher r ON p.evaluated_from = r.id
-WHERE r.works_since > '2021-06-06'
+WHERE r.works_since >= '2021-06-06'
 AND p.end_date > '2022-06-06'
 GROUP BY f.name;
 
@@ -18,3 +18,11 @@ AND p1.start_date > (p2.start_date - '2-01-01')
 AND COUNT(p1.from_org) >= 20
 AND COUNT(p2.from_org) >= 20
 
+--3.5
+
+--3.8
+SELECT r.first_name, r.last_name, COUNT() FROM researcher r
+INNER JOIN worksfor w ON r.id = w.id
+INNER JOIN project p ON w.title = p.title
+WHERE COUNT(w.id) >= 5
+AND p.title <> (SELECT d.title FROM deliverable d)
