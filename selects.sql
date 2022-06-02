@@ -16,7 +16,7 @@ INNER JOIN organization o2 ON p2.from_org = o2.name
 WHERE p1.start_date < (p2.start_date + '2-01-01')
 AND p1.start_date > (p2.start_date - '2-01-01')
 AND COUNT(p1.from_org) >= 20
-AND COUNT(p2.from_org) >= 20
+AND COUNT(p2.from_org) >= 20;
 
 --3.5
 
@@ -29,11 +29,13 @@ SELECT p.exec, c.name, SUM(p.amount)
 FROM project p 
 INNER JOIN organization o ON p.from_org = o.name
 INNER JOIN company c ON o.name = c.name
-
+GROUP BY p.exec
+ORDER BY SUM(p.amount) DESC
+LIMIT 5;
 
 --3.8
 SELECT r.first_name, r.last_name, COUNT(w.id) FROM researcher r
 INNER JOIN worksfor w ON r.id = w.id
 INNER JOIN project p ON w.title = p.title
 WHERE COUNT(w.id) >= 5
-AND p.title <> (SELECT d.title FROM deliverable d)
+AND p.title <> (SELECT d.title FROM deliverable d);
