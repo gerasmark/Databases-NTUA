@@ -19,6 +19,10 @@ AND COUNT(p1.from_org) >= 20
 AND COUNT(p2.from_org) >= 20;
 
 --3.5
+SELECT s1.name, s2.name 
+FROM scientific_field s1 
+INNER JOIN fieldthatdescribes 
+
 
 --3.6
 SELECT r.first_name, r.last_name, COUNT(w.id)
