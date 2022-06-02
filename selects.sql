@@ -19,9 +19,14 @@ AND COUNT(p1.from_org) >= 20
 AND COUNT(p2.from_org) >= 20;
 
 --3.5
-SELECT s1.name, s2.name 
+SELECT s1.name, s2.name
 FROM scientific_field s1 
-INNER JOIN fieldthatdescribes 
+INNER JOIN fieldthatdescribes f1 ON s1.name = f1.name
+INNER JOIN fieldthatdescribes f2 ON f1.title = f2.title
+INNER JOIN scientific_field s2 ON f2.name = s2.name
+GROUP BY s1.name, s2.name
+SORT BY s1.name, s2.name
+LIMIT 3;
 
 
 --3.6
