@@ -352,14 +352,14 @@ INSERT INTO fieldthatdescribes (name,title) VALUES ("Electrical engineering","Ad
 INSERT INTO fieldthatdescribes (name,title) VALUES ("Physical science","Intuitive 24hour emulation");
 
 
-INSERT INTO scientific field (name) VALUES ("Mathematics");
-INSERT INTO scientific field (name) VALUES ("Chemical sciences");
-INSERT INTO scientific field (name) VALUES ("Earth and related Environmental sciences");
-INSERT INTO scientific field (name) VALUES ("Physical science");
-INSERT INTO scientific field (name) VALUES ("Biological science,");
-INSERT INTO scientific field (name) VALUES ("Medical engineering");
-INSERT INTO scientific field (name) VALUES ("Nano-technology");
-INSERT INTO scientific field (name) VALUES ("Electrical engineering");
+INSERT INTO scientific_field (name) VALUES ("Mathematics");
+INSERT INTO scientific_field (name) VALUES ("Chemical sciences");
+INSERT INTO scientific_field (name) VALUES ("Earth and related Environmental sciences");
+INSERT INTO scientific_field (name) VALUES ("Physical science");
+INSERT INTO scientific_field (name) VALUES ("Biological science,");
+INSERT INTO scientific_field (name) VALUES ("Medical engineering");
+INSERT INTO scientific_field (name) VALUES ("Nano-technology");
+INSERT INTO scientific_field (name) VALUES ("Electrical engineering");
 
 
 
