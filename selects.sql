@@ -20,8 +20,11 @@ AND COUNT(p2.from_org) >= 20
 
 --3.5
 
+--3.7
+
+
 --3.8
-SELECT r.first_name, r.last_name, COUNT() FROM researcher r
+SELECT r.first_name, r.last_name, COUNT(w.id) FROM researcher r
 INNER JOIN worksfor w ON r.id = w.id
 INNER JOIN project p ON w.title = p.title
 WHERE COUNT(w.id) >= 5
