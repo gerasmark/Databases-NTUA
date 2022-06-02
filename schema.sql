@@ -48,7 +48,7 @@ CREATE TABLE `elide`.`project` (
   `evaluated_from` int(11) NOT NULL ,
   `from_org` varchar(45) NOT NULL,
   `grade` int(11) NOT NULL,
-  `date_of_eval` date NOT NULL,
+  `date_of_eval` date NOT NULL, 
   `exec` varchar(45) NOT NULL,
   PRIMARY KEY (`title`),
   FOREIGN KEY(`name`) REFERENCES `program`(`name`) ON DELETE RESTRICT ON UPDATE CASCADE,
