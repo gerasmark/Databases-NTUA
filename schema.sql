@@ -40,7 +40,7 @@ DROP TABLE IF EXISTS `elide`.`project`;
 CREATE TABLE `elide`.`project` (
   `title` varchar(60) NOT NULL,
   `amount` int(11) NOT NULL,
-  `summary` varchar(45) NOT NULL,
+  `summary` varchar(60) NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
   `duration` smallint as (TIMESTAMPDIFF(YEAR, start_date, end_date)),
