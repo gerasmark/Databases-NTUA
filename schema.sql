@@ -78,7 +78,7 @@ CREATE TABLE `elide`.`worksfor` (
 
 CREATE TABLE `elide`.`deliverable` (
   `title` VARCHAR(60) NOT NULL,
-  `summary` VARCHAR(100) NULL,
+  `summary` VARCHAR(110) NULL,
   `title_project` VARCHAR(45) NULL,
   `due_date` DATE NULL,
   FOREIGN KEY(`title_project`) REFERENCES `project`(`title`) ON DELETE RESTRICT ON UPDATE CASCADE,
