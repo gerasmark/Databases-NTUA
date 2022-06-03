@@ -71,7 +71,7 @@ CREATE TABLE `elide`.`worksfor` (
   `id` INT NOT NULL,
   PRIMARY KEY (`title`,`id`),
   FOREIGN KEY (`title`) REFERENCES `project`(`title`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  FOREIGN KEY (`id`,`title`) REFERENCES `researcher`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE
+  FOREIGN KEY (`id`) REFERENCES `researcher`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
  DROP TABLE IF EXISTS `elide`.`deliverable`;
