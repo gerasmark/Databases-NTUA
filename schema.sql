@@ -89,7 +89,7 @@ DROP TABLE IF EXISTS `elide`.`fieldthatdescribes`;
 
 CREATE TABLE `elide`.`fieldthatdescribes` (
   `name` VARCHAR(45) NOT NULL,
-  `title` VARCHAR(60) NULL,
+  `title` VARCHAR(60) NOT NULL,
   FOREIGN KEY(`name`) REFERENCES `scientific_field`(`name`) ON DELETE RESTRICT ON UPDATE CASCADE,
   FOREIGN KEY(`title`) REFERENCES `project`(`title`) ON DELETE RESTRICT ON UPDATE CASCADE,
   PRIMARY KEY (`name`,`title`)
