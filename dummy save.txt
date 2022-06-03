@@ -387,7 +387,7 @@ INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Garza-
 INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Velasquez, Evans and Lindsey","VEAL","10059","Brian Creek","Margaretberg");
 INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Olson-Nelson","O","49305","Gabriel Green","South Matthew");
 INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Villa and Sons","VAS","32132","Rhonda Spurs","New Jennifer");
-INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Cummings-Casey","C","07723","Stevens Landing","Lake Ashleyville");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Cummings-Case","C","07723","Stevens Landing","Lake Ashleyville");
 INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Copeland-Johnston","C","50487","Randall Mall","East Crystalton");
 INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Bradley-Klein","B","06031","Dustin Club","Cherylchester");
 INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Wallace Ltd","WL","86295","James Mountains","Livingstonfort");

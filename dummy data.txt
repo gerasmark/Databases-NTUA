@@ -59,4 +59,34 @@ Peterberg, MA 36780");
 INSERT INTO program (name,address) VALUES ("Marissa Hahn","97219 Hernandez Rest Apt. 785
 North Charlotte, RI 37475");
 
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Cummings-Casey","C","17233","Young Coves","Lake Amyport");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Howell-Lee","H","50398","Smith Lakes","Burkefort");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Brown, Hardy and Bates","BHAB","16644","Hunt Station","Curtistown");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Baker Inc","BI","76016","James Ramp","North Benjaminshire");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Rodgers, Harper and Clark","RHAC","42715","Stacy Crescent","New Crystalhaven");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Freeman-Parks","F","09397","Li Stravenue","New Greg");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Vincent-Carr","V","94261","Taylor Forest","Freemanfort");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Gibbs, Shepard and Taylor","GSAT","44761","Shaffer Junction","West Robertfurt");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Davis Group","DG","84665","Tiffany Keys","Danielleport");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Ellis, Day and Elliott","EDAE","54690","Donald Burgs","North Chelsey");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Mcdonald-Green","M","41991","Patrick Dale","Laneport");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Rosales Ltd","RL","92583","Natalie Pines","West Russellhaven");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Williams-Evans","W","13412","Robin Views","Port Paul");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Barrett-Kelly","B","61870","Hampton Haven","South Michael");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Morris Group","MG","64934","Berry Station","Melissashire");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Arellano LLC","AL","61444","Melissa Estate","South Victor");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Clark and Sons","CAS","77597","Sarah Underpass","Sherrifort");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Garza-Brown","G","78203","Hart Parks","Marksbury");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Velasquez, Evans and Lindsey","VEAL","10059","Brian Creek","Margaretberg");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Olson-Nelson","O","49305","Gabriel Green","South Matthew");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Villa and Sons","VAS","32132","Rhonda Spurs","New Jennifer");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Cummings-Case","C","07723","Stevens Landing","Lake Ashleyville");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Copeland-Johnston","C","50487","Randall Mall","East Crystalton");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Bradley-Klein","B","06031","Dustin Club","Cherylchester");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Wallace Ltd","WL","86295","James Mountains","Livingstonfort");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Medina, Alvarez and Roy","MAAR","58920","Alexander Road","Lake Jamesville");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Beasley, Obrien and Zamora","BOAZ","06797","Karen Ports","East Jameshaven");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Rowland-Wilson","R","74370","Rhonda Island","Dominguezchester");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Hatfield, Thomas and Perez","HTAP","91761","Jon Tunnel","Lake Jennifer");
+INSERT INTO organization (name,initials,postal_code,street,city) VALUES ("Washington, Curry and Mayer","WCAM","42818","Reeves Mountains","South Rebecca");
 
