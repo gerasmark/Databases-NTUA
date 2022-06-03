@@ -89,7 +89,7 @@ LIMIT 5;
 
 --3.8 check den bgazei kati
 select * from (
-select concat(last_name, " ", first_name) as name_of_researcher, count(*) as projects_working_on  from (
+select concat(last_name, " ", first_name) as Full_name, count(*) as projects  from (
 (select r.last_name, r.first_name
 from researcher r 
 inner join worksfor w on r.id = w.id
@@ -97,5 +97,5 @@ inner join project p on w.title = p.title
 inner join deliverable d on p.title = d.title_project
 where d.title_project is null )) A
 group by A.last_name, A.first_name ) B
-where projects_working_on >= 5
-order by projects_working_on desc;
+where projects >= 5
+order by projects desc;
