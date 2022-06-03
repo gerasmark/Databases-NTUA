@@ -35,11 +35,11 @@ select * from projects_per_organization;
 drop view projects_per_researcher;
 drop view projects_per_organization;
 
---3.3 check alla den bgazi kanena field
-SELECT f.name, f.title, r.first_name, r.last_name  FROM fieldthatdescribes f
+--3.3 check alla den bgazei tpt isos na allaksoyme ta dummy data
+SELECT p.title, r.first_name, r.last_name  FROM fieldthatdescribes f
 INNER JOIN project p ON f.title = p.title
 INNER JOIN researcher r ON p.evaluated_from = r.id
-WHERE r.works_since >= current_date()
+WHERE r.works_since >= current_date() AND f.name = "Mathematics"
 AND p.end_date > current_date() AND p.start_date < current_date()
 ORDER BY f.name;
 
@@ -56,7 +56,8 @@ AND COUNT(p1.from_org) >= 20
 AND COUNT(p2.from_org) >= 20;
 
 --3.5 check
-SELECT s1.name, s2.name
+CREATE VIEW organizations_with_same_project_numbers as
+SELECT s1.name as project_1, s2.name as project_2
 FROM scientific_field s1 
 INNER JOIN fieldthatdescribes f1 ON s1.name = f1.name
 INNER JOIN fieldthatdescribes f2 ON f1.title = f2.title
@@ -65,7 +66,7 @@ WHERE s1.name <> s2.name
 GROUP BY s1.name, s2.name
 LIMIT 3;
 
-
+DROP VIEW organizations_with_same_project_numbers;
 --3.6
 SELECT r.first_name, r.last_name, COUNT(w.id)
 FROM researcher r
