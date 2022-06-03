@@ -78,18 +78,24 @@ AND p.end_date > curdate() AND p.start_date < curdate()
 GROUP BY r.last_name, r.first_name
 ORDER BY number_of_projects DESC
 
---3.7
-SELECT p.exec, c.name, SUM(p.amount)
+--3.7 check
+SELECT p.exec as project_executive, c.name as company_name, SUM(p.amount) as total_amount
 FROM project p 
 INNER JOIN organization o ON p.from_org = o.name
 INNER JOIN company c ON o.name = c.name
-GROUP BY p.exec
+GROUP BY p.exec, o.name
 ORDER BY SUM(p.amount) DESC
 LIMIT 5;
 
---3.8
-SELECT r.first_name, r.last_name, COUNT(w.id) FROM researcher r
-INNER JOIN worksfor w ON r.id = w.id
-INNER JOIN project p ON w.title = p.title
-WHERE COUNT(w.id) >= 5
-AND p.title <> (SELECT d.title FROM deliverable d);
+--3.8 check den bgazei kati
+select * from (
+select concat(last_name, " ", first_name) as name_of_researcher, count(*) as projects_working_on  from (
+(select r.last_name, r.first_name
+from researcher r 
+inner join worksfor w on r.id = w.id
+inner join project p on w.title = p.title
+inner join deliverable d on p.title = d.title_project
+where d.title_project is null )) A
+group by A.last_name, A.first_name ) B
+where projects_working_on >= 5
+order by projects_working_on desc;
