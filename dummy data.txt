@@ -315,3 +315,4 @@ INSERT INTO scientific_field (name) VALUES ("Biological science,");
 INSERT INTO scientific_field (name) VALUES ("Medical engineering");
 INSERT INTO scientific_field (name) VALUES ("Nano-technology");
 INSERT INTO scientific_field (name) VALUES ("Electrical engineering");
+
