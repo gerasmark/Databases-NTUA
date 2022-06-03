@@ -307,3 +307,11 @@ INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_fro
 INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_from,from_org,grade,date_of_eval,exec) VALUES ("Advanced 5thgeneration approach","727","Watch business couple whatever debate.","2020-03-18","2023-06-08","Marissa Hahn","233","Washington, Curry and Mayer","30","2022-04-25","Joshua");
 INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_from,from_org,grade,date_of_eval,exec) VALUES ("Intuitive 24hour emulation","631","Entire raise firm also occur.","2020-02-03","2023-08-01","Marissa Hahn","50","Howell-Lee","16","2022-04-01","Cindy");
 
+INSERT INTO scientific_field (name) VALUES ("Mathematics");
+INSERT INTO scientific_field (name) VALUES ("Chemical sciences");
+INSERT INTO scientific_field (name) VALUES ("Earth and related Environmental sciences");
+INSERT INTO scientific_field (name) VALUES ("Physical science");
+INSERT INTO scientific_field (name) VALUES ("Biological science,");
+INSERT INTO scientific_field (name) VALUES ("Medical engineering");
+INSERT INTO scientific_field (name) VALUES ("Nano-technology");
+INSERT INTO scientific_field (name) VALUES ("Electrical engineering");
