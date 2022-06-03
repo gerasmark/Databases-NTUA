@@ -192,3 +192,65 @@ INSERT INTO researcher (id,first_name,last_name,sex,birthdate,name,works_since) 
 INSERT INTO researcher (id,first_name,last_name,sex,birthdate,name,works_since) VALUES ("771","Nicholas", "Wolfe", "M","1969-11-06","Cummings-Casey" ,"2001-07-31" );
 
 
+INSERT INTO phone (name,phone) VALUES ("Cummings-Casey","9794240201");
+INSERT INTO phone (name,phone) VALUES ("Howell-Lee","3909024376");
+INSERT INTO phone (name,phone) VALUES ("Brown, Hardy and Bates","6340179733");
+INSERT INTO phone (name,phone) VALUES ("Baker Inc","9024818738");
+INSERT INTO phone (name,phone) VALUES ("Rodgers, Harper and Clark","4980198790");
+INSERT INTO phone (name,phone) VALUES ("Freeman-Parks","4008877844");
+INSERT INTO phone (name,phone) VALUES ("Vincent-Carr","3543615497");
+INSERT INTO phone (name,phone) VALUES ("Gibbs, Shepard and Taylor","7945656892");
+INSERT INTO phone (name,phone) VALUES ("Davis Group","6509128729");
+INSERT INTO phone (name,phone) VALUES ("Ellis, Day and Elliott","1976332327");
+INSERT INTO phone (name,phone) VALUES ("Mcdonald-Green","5192822610");
+INSERT INTO phone (name,phone) VALUES ("Rosales Ltd","9619896972");
+INSERT INTO phone (name,phone) VALUES ("Williams-Evans","3548904504");
+INSERT INTO phone (name,phone) VALUES ("Barrett-Kelly","7509070409");
+INSERT INTO phone (name,phone) VALUES ("Morris Group","6306985302");
+INSERT INTO phone (name,phone) VALUES ("Arellano LLC","27050528");
+INSERT INTO phone (name,phone) VALUES ("Clark and Sons","7533754283");
+INSERT INTO phone (name,phone) VALUES ("Garza-Brown","1676109078");
+INSERT INTO phone (name,phone) VALUES ("Velasquez, Evans and Lindsey","9514084637");
+INSERT INTO phone (name,phone) VALUES ("Olson-Nelson","6836316144");
+INSERT INTO phone (name,phone) VALUES ("Villa and Sons","8134997404");
+INSERT INTO phone (name,phone) VALUES ("Cummings-Casey","1223394843");
+INSERT INTO phone (name,phone) VALUES ("Copeland-Johnston","2256852210");
+INSERT INTO phone (name,phone) VALUES ("Bradley-Klein","9860280675");
+INSERT INTO phone (name,phone) VALUES ("Wallace Ltd","1510032004");
+INSERT INTO phone (name,phone) VALUES ("Medina, Alvarez and Roy","8150456736");
+INSERT INTO phone (name,phone) VALUES ("Beasley, Obrien and Zamora","3649638150");
+INSERT INTO phone (name,phone) VALUES ("Rowland-Wilson","7752484835");
+INSERT INTO phone (name,phone) VALUES ("Hatfield, Thomas and Perez","8570965024");
+INSERT INTO phone (name,phone) VALUES ("Washington, Curry and Mayer","8356934032");
+
+INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ("Cummings-Casey","9836803","9143519");
+INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ("Baker Inc","3729771","6033837");
+INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ("Vincent-Carr","1873366","2146666");
+INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ("Ellis, Day and Elliott","6079104","8384769");
+INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ("Williams-Evans","9826120","618290");
+INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ("Arellano LLC","6250409","8981736");
+INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ("Velasquez, Evans and Lindsey","8808249","9938301");
+INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ("Wallace Ltd","9403807","6480473");
+INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ("Rowland-Wilson","5360806","5884764");
+
+INSERT INTO university (name,budget_from_edu) VALUES ("Howell-Lee","3438247");
+INSERT INTO university (name,budget_from_edu) VALUES ("Rodgers, Harper and Clark","7642297");
+INSERT INTO university (name,budget_from_edu) VALUES ("Gibbs, Shepard and Taylor","8576417");
+INSERT INTO university (name,budget_from_edu) VALUES ("Mcdonald-Green","3141318");
+INSERT INTO university (name,budget_from_edu) VALUES ("Barrett-Kelly","425529");
+INSERT INTO university (name,budget_from_edu) VALUES ("Clark and Sons","7512366");
+INSERT INTO university (name,budget_from_edu) VALUES ("Olson-Nelson","6706154");
+INSERT INTO university (name,budget_from_edu) VALUES ("Copeland-Johnston","5319046");
+INSERT INTO university (name,budget_from_edu) VALUES ("Medina, Alvarez and Roy","3351341");
+INSERT INTO university (name,budget_from_edu) VALUES ("Hatfield, Thomas and Perez","3324672");
+
+INSERT INTO company (name,equity) VALUES ("Brown, Hardy and Bates","7433606");
+INSERT INTO company (name,equity) VALUES ("Freeman-Parks","5297636");
+INSERT INTO company (name,equity) VALUES ("Davis Group","2825195");
+INSERT INTO company (name,equity) VALUES ("Rosales Ltd","6743832");
+INSERT INTO company (name,equity) VALUES ("Morris Group","120460");
+INSERT INTO company (name,equity) VALUES ("Garza-Brown","2561829");
+INSERT INTO company (name,equity) VALUES ("Villa and Sons","6327702");
+INSERT INTO company (name,equity) VALUES ("Bradley-Klein","6044287");
+INSERT INTO company (name,equity) VALUES ("Beasley, Obrien and Zamora","8723685");
+INSERT INTO company (name,equity) VALUES ("Washington, Curry and Mayer","4613347");
