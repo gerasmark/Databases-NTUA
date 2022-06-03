@@ -67,17 +67,17 @@ GROUP BY s1.name, s2.name
 LIMIT 3;
 
 DROP VIEW organizations_with_same_project_numbers;
---3.6
+
+--3.6 check
 SELECT r.first_name, r.last_name, COUNT(*) as number_of_projects
 FROM researcher r
 INNER JOIN worksfor w ON r.id = w.id
 INNER JOIN project p ON w.title = p.title
 WHERE r.age < 40 
 AND p.end_date > curdate() AND p.start_date < curdate()
-GROUP BY r.last_name
+GROUP BY r.last_name, r.first_name
 ORDER BY number_of_projects DESC
 
-drop view active_projects;
 --3.7
 SELECT p.exec, c.name, SUM(p.amount)
 FROM project p 
