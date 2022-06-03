@@ -441,7 +441,6 @@ INSERT INTO fieldthatdescribes (name,title) VALUES ("Electrical engineering","Ad
 INSERT INTO fieldthatdescribes (name,title) VALUES ("Physical science","Intuitive 24hour emulation");
 
 INSERT INTO worksfor (title,id) VALUES ("Inverse 5thgeneration customer loyalty","284" );
-INSERT INTO worksfor (title,id) VALUES ("Inverse 5thgeneration customer loyalty","55" );
 INSERT INTO worksfor (title,id) VALUES ("Versatile grid-enabled middleware","448" );
 INSERT INTO worksfor (title,id) VALUES ("Persevering zero tolerance frame","381" );
 INSERT INTO worksfor (title,id) VALUES ("Fully-configurable system-worthy forecast","419" );
