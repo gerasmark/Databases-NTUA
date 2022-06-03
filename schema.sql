@@ -92,7 +92,7 @@ CREATE TABLE `elide`.`fieldthatdescribes` (
   `title` VARCHAR(60) NULL,
   FOREIGN KEY(`name`) REFERENCES `scientific_field`(`name`) ON DELETE RESTRICT ON UPDATE CASCADE,
   FOREIGN KEY(`title`) REFERENCES `project`(`title`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  PRIMARY KEY (`name`)
+  PRIMARY KEY (`name`,`title`)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
 DROP TABLE IF EXISTS `elide`.`research_center`;

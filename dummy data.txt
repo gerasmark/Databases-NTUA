@@ -368,4 +368,3 @@ INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("enhance 
 INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("aggregate bleeding-edge interfaces","Watch business couple whatever debate.","Advanced 5thgeneration approach","2022-06-10");
 INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("extend intuitive vortals","Entire raise firm also occur.","Intuitive 24hour emulation","2022-06-06");
 
-
