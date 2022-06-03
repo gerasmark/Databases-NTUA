@@ -4,7 +4,7 @@
 
 
 
---3.3
+--3.3 check
 SELECT f.name, f.title, r.first_name, r.last_name  FROM fieldthatdescribes f
 INNER JOIN project p ON f.title = p.title
 INNER JOIN researcher r ON p.evaluated_from = r.id
@@ -24,7 +24,7 @@ AND p1.start_date > (p2.start_date - '2-01-01')
 AND COUNT(p1.from_org) >= 20
 AND COUNT(p2.from_org) >= 20;
 
---3.5
+--3.5 check
 SELECT s1.name, s2.name
 FROM scientific_field s1 
 INNER JOIN fieldthatdescribes f1 ON s1.name = f1.name
@@ -32,7 +32,6 @@ INNER JOIN fieldthatdescribes f2 ON f1.title = f2.title
 INNER JOIN scientific_field s2 ON f2.name = s2.name
 WHERE s1.name <> s2.name
 GROUP BY s1.name, s2.name
-SORT BY s1.name, s2.name
 LIMIT 3;
 
 
