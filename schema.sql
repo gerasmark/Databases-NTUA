@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS `elide`.`program`;
 
 CREATE TABLE `elide`.`program` (
   `name` VARCHAR(45) NOT NULL,
-  `adress` VARCHAR(45) NULL,
+  `address` VARCHAR(45) NULL,
   PRIMARY KEY (`name`)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
