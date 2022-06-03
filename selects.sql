@@ -35,12 +35,12 @@ select * from projects_per_organization;
 drop view projects_per_researcher;
 drop view projects_per_organization;
 
---3.3 check
+--3.3 check alla den bgazi kanena field
 SELECT f.name, f.title, r.first_name, r.last_name  FROM fieldthatdescribes f
 INNER JOIN project p ON f.title = p.title
 INNER JOIN researcher r ON p.evaluated_from = r.id
-WHERE r.works_since >= '2021-06-06'
-AND p.end_date > '2022-06-06'
+WHERE r.works_since >= current_date()
+AND p.end_date > current_date() AND p.start_date < current_date()
 ORDER BY f.name;
 
 --3.4
