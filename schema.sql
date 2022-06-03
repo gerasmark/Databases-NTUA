@@ -127,7 +127,7 @@ DROP TABLE IF EXISTS `elide`.`phone`;
 
 CREATE TABLE `elide`.`phone` (
   `name` VARCHAR(45) NOT NULL,
-  `phone` INT NOT NULL,
+  `phone` VARCHAR (10) NOT NULL,
   PRIMARY KEY (`name`, `phone`),
   FOREIGN KEY(`name`) REFERENCES `organization`(`name`) ON DELETE RESTRICT ON UPDATE CASCADE
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
