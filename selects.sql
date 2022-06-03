@@ -10,7 +10,7 @@ INNER JOIN project p ON f.title = p.title
 INNER JOIN researcher r ON p.evaluated_from = r.id
 WHERE r.works_since >= '2021-06-06'
 AND p.end_date > '2022-06-06'
-GROUP BY f.name;
+ORDER BY f.name;
 
 --3.4
 SELECT o1.name as organization_1,
@@ -30,6 +30,7 @@ FROM scientific_field s1
 INNER JOIN fieldthatdescribes f1 ON s1.name = f1.name
 INNER JOIN fieldthatdescribes f2 ON f1.title = f2.title
 INNER JOIN scientific_field s2 ON f2.name = s2.name
+WHERE s1.name <> s2.name
 GROUP BY s1.name, s2.name
 SORT BY s1.name, s2.name
 LIMIT 3;
