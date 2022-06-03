@@ -15,6 +15,31 @@ where A.title = '%';
 
 --3.2
 
+create view projects_per_researcher as
+(select r.first_name + ' ' + r.last_name as Full_name, p.title as title_of_project 
+from researcher r 
+inner join worksfor w on r.id = w.id 
+inner join project p on w.title = p.title)
+order by Full_name ;
+
+select * from projects_per_researcher;
+
+create view projects_per_organisation as 
+select o.name as organisation_name, p.title as title_of_project
+from organisation o 
+inner join project p on o.name = p.from_org
+order by organisation_name ;
+
+select * from projects_per_organisation;
+
+drop view projects_per_researcher;
+drop view projects_per_organisation;
+
+
+
+
+
+
 
 --3.3 check
 SELECT f.name, f.title, r.first_name, r.last_name  FROM fieldthatdescribes f
