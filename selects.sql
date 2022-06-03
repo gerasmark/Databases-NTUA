@@ -1,7 +1,19 @@
+--3.1 trexoun kai ta tria to trito den bgazei tpt omos
+SELECT name FROM program;
 
+SELECT p.title as Project_title
+from project p
+where p.exec like '%' and p.duration > 0 and ((p.start_date < current_date())  and (p.end_date > current_date()));
 
+select Full_name from 
+(select  p.title , r.first_name + ' ' + r.last_name as Full_name
+from researcher r 
+inner join worksfor w on r.id = w.id
+inner join project p on w.title = p.title
+order by Full_name) A
+where A.title = '%';
 
-
+--3.2
 
 
 --3.3 check
