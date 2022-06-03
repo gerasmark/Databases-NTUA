@@ -38,7 +38,7 @@ CREATE TABLE `elide`.`researcher` (
 DROP TABLE IF EXISTS `elide`.`project`;
 
 CREATE TABLE `elide`.`project` (
-  `title` varchar(20) NOT NULL,
+  `title` varchar(60) NOT NULL,
   `amount` int(11) NOT NULL,
   `summary` varchar(45) NOT NULL,
   `start_date` date NOT NULL,
@@ -67,7 +67,7 @@ DROP TABLE IF EXISTS `elide`.`scientific_field`;
   DROP TABLE IF EXISTS `elide`.`worksfor`;
   
 CREATE TABLE `elide`.`worksfor` (
-  `title` VARCHAR(45) NOT NULL,
+  `title` VARCHAR(60) NOT NULL,
   `id` INT NULL,
   PRIMARY KEY (`title`),
   FOREIGN KEY (`title`) REFERENCES `project`(`title`) ON DELETE RESTRICT ON UPDATE CASCADE,
@@ -77,7 +77,7 @@ CREATE TABLE `elide`.`worksfor` (
  DROP TABLE IF EXISTS `elide`.`deliverable`;
 
 CREATE TABLE `elide`.`deliverable` (
-  `title` VARCHAR(45) NOT NULL,
+  `title` VARCHAR(60) NOT NULL,
   `summary` VARCHAR(45) NULL,
   `title_project` VARCHAR(45) NULL,
   `due_date` DATE NULL,
@@ -89,7 +89,7 @@ DROP TABLE IF EXISTS `elide`.`fieldthatdescribes`;
 
 CREATE TABLE `elide`.`fieldthatdescribes` (
   `name` VARCHAR(45) NOT NULL,
-  `title` VARCHAR(45) NULL,
+  `title` VARCHAR(60) NULL,
   FOREIGN KEY(`name`) REFERENCES `scientific_field`(`name`) ON DELETE RESTRICT ON UPDATE CASCADE,
   FOREIGN KEY(`title`) REFERENCES `project`(`title`) ON DELETE RESTRICT ON UPDATE CASCADE,
   PRIMARY KEY (`name`)
