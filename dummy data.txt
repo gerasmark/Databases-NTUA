@@ -439,3 +439,4 @@ INSERT INTO fieldthatdescribes (name,title) VALUES ("Physical science","Object-b
 INSERT INTO fieldthatdescribes (name,title) VALUES ("Earth and related Environmental sciences","Advanced 5thgeneration approach");
 INSERT INTO fieldthatdescribes (name,title) VALUES ("Electrical engineering","Advanced 5thgeneration approach");
 INSERT INTO fieldthatdescribes (name,title) VALUES ("Physical science","Intuitive 24hour emulation");
+
