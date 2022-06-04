@@ -35,6 +35,8 @@ select name from scientific_field
 select title from project
 INSERT INTO fieldthatdescribes (name,title) VALUES ('{}','{}')
 
+select title from project
+select id from researcher
 INSERT INTO worksfor (title,id) VALUES ('{}','{}')
 
 
