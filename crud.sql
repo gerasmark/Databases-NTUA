@@ -36,7 +36,13 @@ UPDATE researcher SET first_name = '{}', last_name = '{}', sex = '{}', birthdate
 
 UPDATE phone SET phone = '{}' WHERE name = '{}'
 
+UPDATE research_center SET budget_from_edu = '{}', budget_from_priv = '{}' WHERE name = '{}'
 
+UPDATE university SET budget_from_edu = '{}' where name = '{}'
+
+update company set equity = '{}' where name = '{}' 
+
+update project set amount = '{}', summary = '{}', start_date = '{}', end_date = '{}', 
 
 
 --delete

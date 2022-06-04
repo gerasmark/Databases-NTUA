@@ -65,6 +65,18 @@ inner join organizations o2 on o1.name = o2.name
 where ( o1.year <> o2.year and o1.year < o2.year)
 and o2.year - o1.year = 1 and o1.projects = o2.projects and o1.projects >= 10;
 
+select o1.name, o1.year, o2.year,o1.projects
+from (select o.name, extract( year from p.start_date) as year, count(*) as projects 
+from organization o 
+inner join project p on o.name = p.from_org
+group by year, name) o1 
+inner join (select o.name, extract( year from p.start_date) as year, count(*) as projects 
+from organization o 
+inner join project p on o.name = p.from_org
+group by year, name) o2 on o1.name = o2.name
+where ( o1.year <> o2.year and o1.year < o2.year)
+and o2.year - o1.year = 1 and o1.projects = o2.projects and o1.projects >= 10;
+
 --3.5 check
 CREATE VIEW organizations_with_same_project_numbers as
 SELECT s1.name as project_1, s2.name as project_2
