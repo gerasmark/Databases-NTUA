@@ -328,9 +328,7 @@ INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_fro
 INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_from,from_org,grade,date_of_eval,exec) VALUES ("dfjry","727","Watch business couple whatever debate.","2020-03-18","2023-06-08","Marissa Hahn","233","Washington, Curry and Mayer","30","2022-04-25","Joshua");
 INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_from,from_org,grade,date_of_eval,exec) VALUES ("jrtdf","727","Watch business couple whatever debate.","2020-03-18","2023-06-08","Marissa Hahn","233","Washington, Curry and Mayer","30","2022-04-25","Joshua");
 INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_from,from_org,grade,date_of_eval,exec) VALUES ("jdrtjd","727","Watch business couple whatever debate.","2020-03-18","2023-06-08","Marissa Hahn","233","Washington, Curry and Mayer","30","2022-04-25","Joshua");
-INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_from,from_org,grade,date_of_eval,exec) VALUES ("uktd","727","Watch business couple whatever debate.","2020-03-18","2023-06-08","Marissa Hahn","233","Washington, Curry and Mayer","30","2022-04-25","Joshua");
-INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_from,from_org,grade,date_of_eval,exec) VALUES ("fghywje","727","Watch business couple whatever debate.","2020-03-18","2023-06-08","Marissa Hahn","233","Washington, Curry and Mayer","30","2022-04-25","Joshua");
-INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_from,from_org,grade,date_of_eval,exec) VALUES ("jrtueruwr","727","Watch business couple whatever debate.","2020-03-18","2023-06-08","Marissa Hahn","233","Washington, Curry and Mayer","30","2022-04-25","Joshua");
+
 
 INSERT INTO scientific_field (name) VALUES ("Mathematics");
 INSERT INTO scientific_field (name) VALUES ("Chemical sciences");
