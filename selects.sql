@@ -2,6 +2,7 @@
 SELECT name FROM program;
 
 select distinct duration from project
+order by duration
 
 SELECT p.title as Project_title
 from project p
