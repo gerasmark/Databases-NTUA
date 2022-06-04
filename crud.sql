@@ -28,7 +28,11 @@ INSERT INTO worksfor (title,id) VALUES ('{}','{}')
 
 
 --update
+UPDATE program SET address = '{}' WHERE name = '{}'
 
+UPDATE organization SET initials = '{}', postal_code = '{}', street = '{}', city = '{}' WHERE name = '{}'
+
+UPDATE researcher SET first_name = 
 
 
 --delete
