@@ -34,6 +34,8 @@ UPDATE organization SET initials = '{}', postal_code = '{}', street = '{}', city
 
 UPDATE researcher SET first_name = '{}', last_name = '{}', sex = '{}', birthdate = '{}' , works_since = '{}' WHERE id = '{}'
 
+UPDATE phone SET phone = '{}' WHERE name = '{}'
+
 
 
 
