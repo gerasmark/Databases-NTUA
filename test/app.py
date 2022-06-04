@@ -22,7 +22,7 @@ def index():
 def projects_and_programs():
     return render_template('projects_and_programs.html')
 
-#3.2
+#3.2 ----- thelei ftiaksimo den douleuei to radio button
 @app.route("/views", methods={'GET', 'POST'})
 def views():
     if request.method == 'POST':
@@ -68,7 +68,7 @@ def most_popular_field():
 def same_number_of_projects():
     return render_template('same_number_of_projects.html')
 
-#3.5
+#3.5  --- komple
 @app.route("/top_pairs")
 def top_pairs():
     cur = db.connection.cursor()
@@ -87,7 +87,7 @@ def top_pairs():
     cur.close()
     return render_template('top_pairs.html', pairnames=pairnames)
 
-#3.6
+#3.6  --- komple
 @app.route("/youngest_active_researchers")
 def youngest_active_researchers():
     cur = db.connection.cursor()
