@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+        <Title> Top 5 ELIDEK executives and amount of subsidies </Title>
+    </head>
+    <h1> Παρακάτω φαίνονται τα top-5 στελέχη που δουλεύουν για το ΕΛΙΔΕΚ και έχουν δώσει το μεγαλύτερο ποσό χρηματοδοτήσεων σε μια εταιρεία. Εμφανίζονται τα ονόματα των στελεχών, οι εταιρείες και το ποσό χρηματοδότησης. </h1>
+    <body bgcolor="#b3d9ff" >
+    <table border=1>
+        {% for name in executives %}
+        <tr>
+            <td>{{name[0]}} </td>
+            <td>{{name[1]}} </td>
+            <td>{{name[2]}} </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Return</a>
+</body>

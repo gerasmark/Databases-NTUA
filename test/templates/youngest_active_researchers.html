@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/mainpage.css') }}">
+  <Title> Youngest currently active researchers </Title>
+</head>
+<h1> Παρακάτω φαίνονται οι νέοι ερευνητές (ηλικία < 40 ετών) που εργάζονται στα περισσότερα ενεργά έργα, καθώς και ο αριθμός των έργων αυτών. </h1>
+
+<body bgcolor="#b3d9ff">
+  <table border=1>
+        {% for name in youngest %}
+        <tr>
+            <td>{{name[0]}} </td>
+            <td>{{name[1]}} </td>
+        </tr>
+        {% endfor %}
+    </table>
+  <a href="/">Return</a>
+</body>
