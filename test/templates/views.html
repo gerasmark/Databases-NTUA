@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/mainpage.css') }}">
+  <Title> Two different views </Title>
+</head>
+
+<body bgcolor="#b3d9ff">
+  <form method="post" onsubmit="">
+    <p>
+      <input type="radio" id="Έργα ανά ερευνητή" name="viewvalues" value="first">
+      <label for="Έργα ανά ερευνητή">Έργα ανά ερευνητή</label><br>
+      <input type="radio" id="Έργα ανά οργανισμό" name="viewvalues" value="second">
+      <label for="Έργα ανά οργανισμό">Έργα ανά οργανισμό</label><br>
+      <input type=submit name="viewvalues" value=Submit>
+    </p>
+  </form>
+  <br>
+  <p> Chosen field: {{chosen}} </p>
+  <br>
+  <table border=1>
+    {% for name in viewvalues %}
+    <tr>
+      <td>{{name[0]}} </td>
+      <td>{{name[1]}} </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <br>
+  <a href="/">Return</a>
+</body>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+        <Title> All available projects and programs</Title>
+    </head>
+    <h1> Εμφανίζονται όλα τα διαθέσιμα προγράμματα, καθώς και μερικά κριτήρια επιλογής για την εμφάνιση των καταχωρισμένων έργων. Μετά την εμφάνιση των έργων, μπορείτε να επιλέξετε ένα και να εμφανιστούν οι ερευνητές που εργάζονται σε αυτό. </h1>
+    <body bgcolor="#b3d9ff" >
+    <h3>Όλα τα προγράμματα</h3>
+    <table border=1>
+        {% for name in programs %}
+        <tr>
+            <td>{{name[0]}} </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+<form method="post" onsubmit="">
+    <p>
+    <label for="start">Start date:</label>
+    <input type="date" id="start" name="start"
+           value="">
+    </p>
+    <p>
+    <label for="end">End date:</label>
+    <input type="date" id="end" name="end"
+           value="">
+    </p>
+    <p>
+      <label for="duration">Choose a duration:</label>
+
+      <select name="duration" id="duration">
+        <option value="Submit">--Choose a duration:--</option>
+        {%for option in duration%}
+        <option value="{{option[0]}}">{{option[0]}}</option>
+        {%endfor%}
+      </select>
+    </p>
+    <p>
+      <label for="exec">Choose an executive:</label>
+
+      <select name="exec" id="exec">
+        <option value="Submit">--Choose an executive--</option>
+        {%for option in exec%}
+        <option value="{{option[0]}}">{{option[0]}}</option>
+        {%endfor%}
+      </select>
+      <br>
+      <input type=submit name="field" value=Submit>
+    </p>
+
+
+
+
+    <a href="/">Return</a>
+</body>
