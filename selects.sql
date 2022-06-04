@@ -53,9 +53,9 @@ inner join project p on o.name = p.from_org
 group by year, name;
 select * from organizations;
 
-select o1.name, o2.name, o1.projects
+select o1.name, o1.year, o2.year,o1.projects
 from organizations o1
-inner join organizations o2 on o1.projects = o2.projects
+inner join organizations o2 on o1.name = o2.name
 where ( o1.year <> o2.year and o1.year < o2.year)
 and o2.year - o1.year = 1 and o1.projects = o2.projects and o1.projects >= 10;
 
