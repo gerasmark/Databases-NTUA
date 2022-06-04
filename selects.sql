@@ -9,7 +9,7 @@ order by exec
 
 SELECT p.title as Project_title
 from project p
-where p.exec like '%' and p.duration > 0 and ((p.start_date < current_date())  and (p.end_date > current_date()));
+where p.exec = '{}' and p.duration = '{}' and ((p.start_date > '{}')  and (p.end_date < '{}'));
 
 select Full_name from 
 (select  p.title , concat(r.last_name," ", r.first_name) as Full_name
