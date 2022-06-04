@@ -49,7 +49,7 @@ SELECT p.title, p.exec as Full_name  FROM fieldthatdescribes f
 INNER JOIN project p ON f.title = p.title
 WHERE f.name = "Mathematics"
 AND p.end_date > current_date() AND p.start_date < current_date() 
-ORDER BY Full_name;
+ORDER BY title;
 
 --3.4 
 create view organizations as
