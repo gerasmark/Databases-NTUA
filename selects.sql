@@ -96,7 +96,7 @@ select concat(last_name, " ", first_name) as Full_name, count(*) as projects  fr
 from researcher r 
 inner join worksfor w on r.id = w.id
 inner join project p on w.title = p.title
-inner join deliverable d on p.title = d.title_project
+left join deliverable d on p.title = d.title_project
 where d.title_project is null )) A
 group by A.last_name, A.first_name ) B
 where projects >= 5
