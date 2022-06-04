@@ -1,4 +1,4 @@
---3.1 trexoun kai ta tria to trito den bgazei tpt omos
+--3.1 check
 SELECT name FROM program;
 
 select distinct duration from project
