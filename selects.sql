@@ -4,6 +4,9 @@ SELECT name FROM program;
 select distinct duration from project
 order by duration
 
+select distinct exec from project
+order by exec
+
 SELECT p.title as Project_title
 from project p
 where p.exec like '%' and p.duration > 0 and ((p.start_date < current_date())  and (p.end_date > current_date()));
