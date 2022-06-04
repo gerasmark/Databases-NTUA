@@ -19,6 +19,13 @@ inner join project p on w.title = p.title
 order by Full_name) A
 where A.title = '%';
 
+select concat(r.last_name," ", r.first_name) as Full_name
+from researcher r 
+inner join worksfor w on r.id = w.id
+inner join project p on w.title = p.title
+order by Full_name
+
+
 --3.2 check 
 
 create view projects_per_researcher as
