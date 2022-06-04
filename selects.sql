@@ -1,6 +1,8 @@
 --3.1 trexoun kai ta tria to trito den bgazei tpt omos
 SELECT name FROM program;
 
+select distinct duration from project
+
 SELECT p.title as Project_title
 from project p
 where p.exec like '%' and p.duration > 0 and ((p.start_date < current_date())  and (p.end_date > current_date()));

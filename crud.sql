@@ -66,9 +66,18 @@ update deliverable set summary = '{}', due_date = '{}', title = '{}' where title
 update deliverable set summary = '{}', due_date = '{}' where title = '{}'
 
 --delete
-delete from program  address = '{}' WHERE name = '{}'
+delete from program WHERE address = '{}'  
+delete from program WHERE name = '{}'
 
-delete from organization  initials = '{}', postal_code = '{}', street = '{}', city = '{}' WHERE name = '{}'
+delete from organization WHERE initials = '{}' ,   
+delete from organization WHERE postal_code = '{}'
+delete from organization WHERE street = '{}'
+delete from organization WHERE name = '{}'
+delete from organization WHERE city = '{}'
+
+
+
+
 
 delete from researcher  first_name = '{}', last_name = '{}', sex = '{}', birthdate = '{}' , works_since = '{}' WHERE id = '{}'
 
