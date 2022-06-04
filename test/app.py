@@ -20,7 +20,29 @@ def index():
 #3.1
 @app.route("/projects_and_programs")
 def projects_and_programs():
-    return render_template('projects_and_programs.html')
+    cur1 = db.connection.cursor()
+    queryString1 = """
+    show tables;
+    """
+    cur1.execute(queryString1)
+    field = cur1.fetchall()
+    cur1.close()
+    chosen = ''
+    values = ''
+    if request.method == 'POST':
+        chosen = request.form['field']
+        if chosen == "Submit":
+            chosen = ''
+
+        cur2 = db.connection.cursor()
+        queryString2 = """
+        select * from
+        """
+        wholeQuery = queryString2 + '"' + str(chosen) 
+        cur2.execute(wholeQuery)
+        values = cur2.fetchall()
+        cur2.close()
+    return render_template('projects_and_programs.html',field=field, chosen=chosen, values=values)
 
 #3.2
 @app.route("/views", methods={'GET', 'POST'})
