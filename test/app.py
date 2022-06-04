@@ -18,31 +18,26 @@ def index():
     return render_template('ui.html')
 
 #3.1
-@app.route("/projects_and_programs")
+@app.route("/projects_and_programs", methods={'GET', 'POST'})
 def projects_and_programs():
     cur1 = db.connection.cursor()
     queryString1 = """
-    show tables;
+    SELECT name FROM program;
     """
     cur1.execute(queryString1)
-    field = cur1.fetchall()
+    programs = cur1.fetchall()
     cur1.close()
-    chosen = ''
-    values = ''
-    if request.method == 'POST':
-        chosen = request.form['field']
-        if chosen == "Submit":
-            chosen = ''
 
-        cur2 = db.connection.cursor()
-        queryString2 = """
-        select * from
-        """
-        wholeQuery = queryString2 + '"' + str(chosen) 
-        cur2.execute(wholeQuery)
-        values = cur2.fetchall()
-        cur2.close()
-    return render_template('projects_and_programs.html',field=field, chosen=chosen, values=values)
+    # if request.method == 'POST':
+    #     if request.form['viewvalues'] == "first":
+    #         viewvalues = viewvalues1
+    #         chosen = "Έργα ανά ερευνητή"
+    #     elif request.form['viewvalues'] == "second":
+    #         viewvalues = viewvalues2
+    #         chosen = "Έργα ανά οργανισμό"
+    #     else:
+    #         viewvalues = ''
+    return render_template('projects_and_programs.html', programs=programs)
 
 #3.2
 @app.route("/views", methods={'GET', 'POST'})
@@ -227,13 +222,35 @@ def work_in_five_or_more():
 
 # CRUD
 
+@app.route("/read_entry", methods={'GET', 'POST'})
+def read_entry():
+    cur1 = db.connection.cursor()
+    queryString1 = """
+    show tables;
+    """
+    cur1.execute(queryString1)
+    field = cur1.fetchall()
+    cur1.close()
+    chosen = ''
+    values = ''
+    if request.method == 'POST':
+        chosen = request.form['field']
+        if chosen == "Submit":
+            chosen = ''
+
+        cur2 = db.connection.cursor()
+        queryString2 = """
+        select * from
+        """
+        wholeQuery = queryString2 + str(chosen)
+        cur2.execute(wholeQuery)
+        values = cur2.fetchall()
+        cur2.close()
+    return render_template('read_entry.html',field=field, chosen=chosen, values=values)
+
 @app.route("/create_entry")
 def create_entry():
     return render_template('create_entry.html')
-
-@app.route("/read_entry")
-def read_entry():
-    return render_template('read_entry.html')
 
 @app.route("/update_entry")
 def update_entry():
