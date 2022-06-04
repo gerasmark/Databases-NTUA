@@ -42,7 +42,16 @@ UPDATE university SET budget_from_edu = '{}' where name = '{}'
 
 update company set equity = '{}' where name = '{}' 
 
-update project set amount = '{}', summary = '{}', start_date = '{}', end_date = '{}', 
+update project set amount = '{}', summary = '{}', start_date = '{}', end_date = '{}', grade = '{}', date_of_eval = '{}', exec = '{}' where title = '{}'
+
+update scientific_field set name = '{}'
+
+update deliverable set summary = '{}', due_date = '{}', title = '{}' where title_project = '{}'
+
+update deliverable set summary = '{}', due_date = '{}' where title = '{}'
+
+
+
 
 
 --delete
