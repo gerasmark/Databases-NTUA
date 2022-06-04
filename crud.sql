@@ -66,3 +66,24 @@ update deliverable set summary = '{}', due_date = '{}', title = '{}' where title
 update deliverable set summary = '{}', due_date = '{}' where title = '{}'
 
 --delete
+delete from program  address = '{}' WHERE name = '{}'
+
+delete from organization  initials = '{}', postal_code = '{}', street = '{}', city = '{}' WHERE name = '{}'
+
+delete from researcher  first_name = '{}', last_name = '{}', sex = '{}', birthdate = '{}' , works_since = '{}' WHERE id = '{}'
+
+delete from phone  phone = '{}' WHERE name = '{}'
+
+delete from research_center  budget_from_edu = '{}', budget_from_priv = '{}' WHERE name = '{}'
+
+delete from university  budget_from_edu = '{}' where name = '{}'
+
+delete from company  equity = '{}' where name = '{}' 
+
+delete from project  amount = '{}', summary = '{}', start_date = '{}', end_date = '{}', grade = '{}', date_of_eval = '{}', exec = '{}' where title = '{}'
+
+delete from scientific_field  name = '{}'
+
+delete from deliverable  summary = '{}', due_date = '{}', title = '{}' where title_project = '{}'
+
+delete from deliverable  summary = '{}', due_date = '{}' where title = '{}'
