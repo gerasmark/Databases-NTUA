@@ -6,22 +6,33 @@ INSERT INTO program (name,address) VALUES ('{}','{}')
 
 INSERT INTO organization (name,initials,postal_code,street,city) VALUES ('{}','{}','{}','{}')
 
+select name from organization
 INSERT INTO researcher (id,first_name,last_name,sex,birthdate,name,works_since) VALUES ('{}','{}','{}','{}','{}','{}','{}','{}')
 
+select name from organization
 INSERT INTO phone (name,phone) VALUES ('{}','{}')
 
+select name from organization
 INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ('{}','{}','{}')
 
+select name from organization
 INSERT INTO university (name,budget_from_edu) VALUES ('{}','{}')
 
+select name from organization
 INSERT INTO company (name,equity) VALUES ('{}','{}')
 
+select name from program
+select name from organization
+select id from researcher
 INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_from,from_org,grade,date_of_eval,exec) VALUES ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')
 
 INSERT INTO scientific_field (name) VALUES ('{}')
 
+select title from project
 INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ('{}','{}','{}','{}')
 
+select name from scientific_field
+select title from project
 INSERT INTO fieldthatdescribes (name,title) VALUES ('{}','{}')
 
 INSERT INTO worksfor (title,id) VALUES ('{}','{}')
