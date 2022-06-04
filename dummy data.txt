@@ -351,7 +351,6 @@ INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("transfor
 INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("repurpose world-class initiatives","Value lay television pressure.","Function-based 3rdgeneration methodology","2022-06-10");
 INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("generate collaborative e-commerce","Future good require I data performance.","Organized needs-based protocol","2022-06-14");
 INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("enable strategic models","Health sister loss explain coach present laugh. Ask key run management.","Secured bifurcated policy","2022-06-04");
-INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("unleash 24/7 communities","Hard eat imagine few party.","Phased local project","2022-06-04");
 INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("reinvent visionary methodologies","Statement share music.","Multi-layered 24hour analyzer","2022-06-27");
 INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("optimize customized networks","And include himself wait back star wall.","Secured web-enabled instruction set","2022-06-12");
 INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("optimize scalable technologies","Lawyer without dog. Always per about ahead what property.","Customer-focused uniform adapter","2022-06-19");
@@ -363,10 +362,6 @@ INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("envision
 INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("utilize synergistic eyeballs","Production concern middle soon especially one.","Customer-focused intangible middleware","2022-06-03");
 INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("scale out-of-the-box methodologies","Enjoy behavior morning interest.","Fully-configurable scalable customer loyalty","2022-06-28");
 INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("repurpose viral mindshare","Couple position industry several. Human behavior lot indicate remain company audience.","Multi-lateral attitude-oriented database","2022-06-03");
-INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("leverage customized niches","Station grow rule person will whole of. Local degree of professor.","Versatile even-keeled firmware","2022-06-24");
-INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("enhance interactive solutions","Exist letter clearly speech market beautiful sort.","Object-based context-sensitive installation","2022-06-13");
-INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("aggregate bleeding-edge interfaces","Watch business couple whatever debate.","Advanced 5thgeneration approach","2022-06-10");
-INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ("extend intuitive vortals","Entire raise firm also occur.","Intuitive 24hour emulation","2022-06-06");
 
 
 INSERT INTO fieldthatdescribes (name,title) VALUES ("Physical science","Inverse 5thgeneration customer loyalty");
@@ -492,9 +487,26 @@ INSERT INTO worksfor (title,id) VALUES ("Multi-lateral attitude-oriented databas
 INSERT INTO worksfor (title,id) VALUES ("Versatile even-keeled firmware","476" );
 INSERT INTO worksfor (title,id) VALUES ("Object-based context-sensitive installation","339" );
 INSERT INTO worksfor (title,id) VALUES ("Object-based context-sensitive installation","72" );
+
 INSERT INTO worksfor (title,id) VALUES ("Advanced 5thgeneration approach","504" );
+INSERT INTO worksfor (title,id) VALUES ("Intuitive 24hour emulation","504" );
+INSERT INTO worksfor (title,id) VALUES ("Object-based context-sensitive installation","504" );
+INSERT INTO worksfor (title,id) VALUES ("Phased local project","504" );
+INSERT INTO worksfor (title,id) VALUES ("Versatile even-keeled firmware","504" );
+
 INSERT INTO worksfor (title,id) VALUES ("Intuitive 24hour emulation","180" );
+INSERT INTO worksfor (title,id) VALUES ("Object-based context-sensitive installation","180" );
+INSERT INTO worksfor (title,id) VALUES ("Advanced 5thgeneration approach","180" );
+INSERT INTO worksfor (title,id) VALUES ("Phased local project","180" );
+INSERT INTO worksfor (title,id) VALUES ("Versatile even-keeled firmware","180" );
+
+
+INSERT INTO worksfor (title,id) VALUES ("Object-based context-sensitive installation","244" );
+INSERT INTO worksfor (title,id) VALUES ("Intuitive 24hour emulation","244" );
+INSERT INTO worksfor (title,id) VALUES ("Advanced 5thgeneration approach","244" );
 INSERT INTO worksfor (title,id) VALUES ("Phased local project","244" );
+INSERT INTO worksfor (title,id) VALUES ("Versatile even-keeled firmware","244" );
+
 INSERT INTO worksfor (title,id) VALUES ("Phased local project","990" );
 INSERT INTO worksfor (title,id) VALUES ("Phased local project","535" );
 INSERT INTO worksfor (title,id) VALUES ("Phased local project","521" );
