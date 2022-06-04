@@ -32,7 +32,9 @@ UPDATE program SET address = '{}' WHERE name = '{}'
 
 UPDATE organization SET initials = '{}', postal_code = '{}', street = '{}', city = '{}' WHERE name = '{}'
 
-UPDATE researcher SET first_name = 
+UPDATE researcher SET first_name = '{}', last_name = '{}', sex = '{}', birthdate = '{}' , works_since = '{}' WHERE id = '{}'
+
+
 
 
 --delete
