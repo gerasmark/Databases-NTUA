@@ -40,6 +40,14 @@ select * from scientific_field;
 
 SELECT p.title, r.first_name, r.last_name  FROM fieldthatdescribes f
 INNER JOIN project p ON f.title = p.title
+INNER JOIN worksfor w ON p.title = w.title
+INNER JOIN researcher r ON w.id = r.id
+WHERE r.works_since <= current_date() AND f.name = "Mathematics"
+AND p.end_date > current_date() AND p.start_date < current_date()
+ORDER BY f.name;
+
+SELECT p.title, r.first_name, r.last_name  FROM fieldthatdescribes f
+INNER JOIN project p ON f.title = p.title
 INNER JOIN researcher r ON p.evaluated_from = r.id
 WHERE r.works_since <= current_date() AND f.name = "Mathematics"
 AND p.end_date > current_date() AND p.start_date < current_date()
