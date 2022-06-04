@@ -46,16 +46,18 @@ AND p.end_date > current_date() AND p.start_date < current_date()
 ORDER BY f.name;
 
 --3.4 
-SELECT o1.name as organization_1,
-       o2.name as organization_2
-FROM organization o1
-INNER JOIN project p1 ON o1.from_org = p1.name 
-INNER JOIN project p2 ON COUNT(p1.from_org) = COUNT(p2.from_org)
-INNER JOIN organization o2 ON p2.from_org = o2.name 
-WHERE p1.start_date < (p2.start_date + '2-01-01')
-AND p1.start_date > (p2.start_date - '2-01-01')
-AND COUNT(p1.from_org) >= 20
-AND COUNT(p2.from_org) >= 20;
+create view organizations as
+select o.name, extract( year from p.start_date) as year, count(*) as projects 
+from organization o 
+inner join project p on o.name = p.from_org
+group by year, name;
+select * from organizations;
+
+select o1.name, o2.name, o1.projects
+from organizations o1
+inner join organizations o2 on o1.projects = o2.projects
+where ( o1.year <> o2.year and o1.year < o2.year)
+and o2.year - o1.year = 1 and o1.projects = o2.projects and o1.projects >= 10;
 
 --3.5 check
 CREATE VIEW organizations_with_same_project_numbers as
