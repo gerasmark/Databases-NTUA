@@ -22,11 +22,6 @@ INSERT INTO scientific_field (name) VALUES ('{}')
 
 INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ('{}','{}','{}','{}')
 
-INSERT INTO fieldthatdescribes (name,title) VALUES ('{}','{}')
-
-INSERT INTO worksfor (title,id) VALUES ('{}','{}')
-
-
 --update
 UPDATE program SET address = '{}' WHERE name = '{}'
 
@@ -49,9 +44,5 @@ update scientific_field set name = '{}'
 update deliverable set summary = '{}', due_date = '{}', title = '{}' where title_project = '{}'
 
 update deliverable set summary = '{}', due_date = '{}' where title = '{}'
-
-
-
-
 
 --delete
