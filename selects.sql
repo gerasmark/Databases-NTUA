@@ -36,6 +36,8 @@ drop view projects_per_researcher;
 drop view projects_per_organization;
 
 --3.3 check alla den bgazei tpt isos na allaksoyme ta dummy data
+select * from scientific_field;
+
 SELECT p.title, r.first_name, r.last_name  FROM fieldthatdescribes f
 INNER JOIN project p ON f.title = p.title
 INNER JOIN researcher r ON p.evaluated_from = r.id
@@ -43,7 +45,7 @@ WHERE r.works_since >= current_date() AND f.name = "Mathematics"
 AND p.end_date > current_date() AND p.start_date < current_date()
 ORDER BY f.name;
 
---3.4
+--3.4 
 SELECT o1.name as organization_1,
        o2.name as organization_2
 FROM organization o1
