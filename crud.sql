@@ -1,5 +1,7 @@
 --read
-select * from '{}'
+show tables
+SHOW COLUMNS FROM program
+select * from program 
 
 --create
 INSERT INTO program (name,address) VALUES ('{}','{}')
