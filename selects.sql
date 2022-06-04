@@ -35,7 +35,7 @@ select * from projects_per_organization;
 drop view projects_per_researcher;
 drop view projects_per_organization;
 
---3.3 check alla den bgazei tpt isos na allaksoyme ta dummy data
+--3.3 check 
 select * from scientific_field;
 
 SELECT p.title, r.first_name, r.last_name  FROM fieldthatdescribes f
@@ -91,7 +91,7 @@ GROUP BY p.exec, o.name
 ORDER BY SUM(p.amount) DESC
 LIMIT 5;
 
---3.8 check den bgazei kati
+--3.8 check 
 select * from (
 select concat(last_name, " ", first_name) as Full_name, count(*) as projects  from (
 (select r.last_name, r.first_name
