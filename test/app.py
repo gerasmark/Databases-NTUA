@@ -93,7 +93,7 @@ def most_popular_field():
         chosen = request.form['field']
         if chosen == "Submit":
             chosen = ''
-
+            return render_template('most_popular_field.html', field=field, chosen=chosen, values=values)
         cur2 = db.connection.cursor()
         queryString2 = """
         SELECT p.title, concat(r.last_name," ", r.first_name) as Full_name  FROM fieldthatdescribes f
@@ -237,7 +237,7 @@ def read_entry():
         chosen = request.form['field']
         if chosen == "Submit":
             chosen = ''
-
+            return render_template('read_entry.html',field=field, chosen=chosen, values=values)
         cur2 = db.connection.cursor()
         queryString2 = """
         select * from
