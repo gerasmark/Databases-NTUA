@@ -1389,7 +1389,79 @@ def delete_entry():
                 """.format(phphone )
                 cur1.execute(phqueryString)
                 db.connection.commit()
-
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select name from program
+            """
+            cur.execute(queryStringInitial)
+            prnames = cur.fetchall()
+            cur.close()
+    
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select name from organization
+            """
+            cur.execute(queryStringInitial)
+            onames = cur.fetchall()
+            cur.close()
+    
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select id from researcher
+            """
+            cur.execute(queryStringInitial)
+            rids = cur.fetchall()
+            cur.close()
+    
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select title from project
+            """
+            cur.execute(queryStringInitial)
+            ptitles = cur.fetchall()
+            cur.close()
+    
+    
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select name from organization
+            """
+            cur.execute(queryStringInitial)
+            cnames = cur.fetchall()
+            cur.close()
+    
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select title from deliverable
+            """
+            cur.execute(queryStringInitial)
+            dtitles = cur.fetchall()
+            cur.close()
+    
+    
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select phone from phone
+            """
+            cur.execute(queryStringInitial)
+            phphones = cur.fetchall()
+            cur.close()
+    
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select name from organization
+            """
+            cur.execute(queryStringInitial)
+            rcnames = cur.fetchall()
+            cur.close()
+    
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select name from organization
+            """
+            cur.execute(queryStringInitial)
+            unames = cur.fetchall()
+            cur.close()
         return render_template('delete_entry.html',cnames=cnames, dtitles=dtitles, pnames=pnames, rnames=rnames, unames=unames, rcnames=rcnames, phphones=phphones, prnames = prnames, onames = onames, rids = rids, ptitles = ptitles)
     #except:
         errorwhole = "Invalid update command"
