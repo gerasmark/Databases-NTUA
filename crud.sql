@@ -75,24 +75,50 @@ delete from organization WHERE street = '{}'
 delete from organization WHERE name = '{}'
 delete from organization WHERE city = '{}'
 
+delete from researcher WHERE id = '{}'
+delete from researcher WHERE first_name = '{}'
+delete from researcher WHERE last_name = '{}'
+delete from researcher WHERE sex = '{}'
+delete from researcher WHERE birthdate = '{}'
+delete from researcher WHERE works_since = '{}'
+delete from researcher WHERE name ='{}'
+delete from researcher WHERE works_since = '{}'
 
+delete from project WHERE title = '{}'
+delete from project WHERE amount = '{}'
+delete from project WHERE summary = '{}'
+delete from project WHERE start_date = '{}'
+delete from project WHERE end_date = '{}'
+delete from project WHERE duration = '{}'
+delete from project WHERE name ='{}'
+delete from project WHERE evaluated_from = '{}'
+delete from project WHERE from_org = '{}'
+delete from project WHERE grade = '{}'
+delete from project WHERE date_of_eval = '{}'
+delete from project WHERE exec = '{}'
 
+delete from scientific_field WHERE name = '{}'
 
+delete from worksfor WHERE title = '{}'
+delete from worksfor WHERE id = '{}'
 
-delete from researcher  first_name = '{}', last_name = '{}', sex = '{}', birthdate = '{}' , works_since = '{}' WHERE id = '{}'
+delete from deliverable WHERE title = '{}'
+delete from deliverable WHERE summary = '{}'
+delete from deliverable WHERE title_project = '{}'
+delete from deliverable WHERE due_date = '{}'
 
-delete from phone  phone = '{}' WHERE name = '{}'
+delete from fieldthatdescribes WHERE name = '{}'
+delete from fieldthatdescribes WHERE title = '{}'
 
-delete from research_center  budget_from_edu = '{}', budget_from_priv = '{}' WHERE name = '{}'
+delete from research_center WHERE name = '{}'
+delete from research_center WHERE budget_from_edu = '{}'
+delete from research_center WHERE budget_from_priv = '{}'
 
-delete from university  budget_from_edu = '{}' where name = '{}'
+delete from university WHERE name = '{}'
+delete from university WHERE budget_from_edu = '{}'
 
-delete from company  equity = '{}' where name = '{}' 
+delete from company WHERE name = '{}'
+delete from company WHERE equity = '{}'
 
-delete from project  amount = '{}', summary = '{}', start_date = '{}', end_date = '{}', grade = '{}', date_of_eval = '{}', exec = '{}' where title = '{}'
-
-delete from scientific_field  name = '{}'
-
-delete from deliverable  summary = '{}', due_date = '{}', title = '{}' where title_project = '{}'
-
-delete from deliverable  summary = '{}', due_date = '{}' where title = '{}'
+delete from phone WHERE name = '{}'
+delete from phone WHERE phome = '{}'
