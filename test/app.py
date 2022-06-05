@@ -417,7 +417,7 @@ def create_entry():
         pdate_of_eval = str(request.form.get('pdate_of_eval'))
         pexec = str(request.form.get('pexec'))
 
-        if (prname != ''):
+        if (prname != ''and praddress != ''):
              queryString = """
              INSERT INTO program (name,address) VALUES ('{}','{}');
              """.format(prname, praddress)
@@ -465,6 +465,14 @@ def create_entry():
         else:
             errorprogram="Field is required"
         
+        if (rcname != '' and rcbudget_from_edu  != '' and rcbudget_from_priv != ''):
+             rcqueryString = """
+             INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ('{}','{}','{}');
+             """.format(rcname, rcbudget_from_edu, rcbudget_from_priv)
+             cur1.execute(rcqueryString)
+             db.connection.commit()
+        else:
+            errorprogram="Field is required"
         
         
         cur1.close

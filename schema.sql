@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS `elide`.`program`;
 
 CREATE TABLE `elide`.`program` (
   `name` VARCHAR(45) NOT NULL,
-  `address` VARCHAR(60) NULL,
+  `address` VARCHAR(60) NOT NULL,
   PRIMARY KEY (`name`)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
@@ -78,8 +78,8 @@ CREATE TABLE `elide`.`worksfor` (
 
 CREATE TABLE `elide`.`deliverable` (
   `title` VARCHAR(60) NOT NULL,
-  `summary` VARCHAR(110) NULL,
-  `title_project` VARCHAR(45) NULL,
+  `summary` VARCHAR(110) NOT NULL,
+  `title_project` VARCHAR(45) NOT NULL,
   `due_date` DATE NULL,
   FOREIGN KEY(`title_project`) REFERENCES `project`(`title`) ON DELETE RESTRICT ON UPDATE CASCADE,
   PRIMARY KEY (`title`)
