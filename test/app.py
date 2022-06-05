@@ -475,46 +475,46 @@ def create_entry():
             errorprogram="Field is required"
         
         if (cname != '' and cequity != ''):
-        queryString = """
-        INSERT INTO company (name,equity) VALUES ('{}','{}');
-        """.format(cname, cequity)
-        cur1.execute(queryString)
-        db.connection.commit()
+            cqueryString = """
+            INSERT INTO company (name,equity) VALUES ('{}','{}');
+            """.format(cname, cequity)
+            cur1.execute(cqueryString)
+            db.connection.commit()
 
     if (uname != '' and ubudget_from_edu != ''):
-        queryString = """
+        uqueryString = """
         INSERT INTO university (name,budget_from_edu) VALUES ('{}','{}');
         """.format(uname, ubudget_from_edu)
-        cur1.execute(queryString)
+        cur1.execute(uqueryString)
         db.connection.commit()
 
     if (rcname != '' and rcbudget_from_edu != '' and rcbudget_from_priv != ''):
-        queryString = """
+        rcqueryString = """
         INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ('{}','{}','{}');
         """.format(rcname, rcbudget_from_edu, rcbudget_from_priv)
-        cur1.execute(queryString)
+        cur1.execute(rcqueryString)
         db.connection.commit()
         cur1.close
 
     if (dtitle != '' and dsummary != '' and dtitle_project != '' and ddue_date != ''):
-        queryString = """
+        dqueryString = """
         INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ('{}','{}','{}','{}');
         """.format(dtitle, dsummary, dtitle_project, ddue_date)
-        cur1.execute(queryString)
+        cur1.execute(dqueryString)
         db.connection.commit()
 
     if (sname != '' ):
-        queryString = """
+        squeryString = """
         INSERT INTO scientific_field (name) VALUES ('{}');
         """.format(sname)
-        cur1.execute(queryString)
+        cur1.execute(squeryString)
         db.connection.commit()
 
     if (fname != '' and ftitle != '' ):
-        queryString = """
+        fqueryString = """
         INSERT INTO fieldthatdescribes (name,title) VALUES ('{}','{}');
         """.format(fname, ftitle)
-        cur1.execute(queryString)
+        cur1.execute(fqueryString)
         db.connection.commit()
 
 
