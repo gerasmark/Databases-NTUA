@@ -1063,7 +1063,7 @@ def update_entry():
             #    """.format(fname, ftitle)
             #    cur1.execute(fqueryString)
             #    db.connection.commit()
-#
+
             #if (wtitle != '' and wid != '' ):
             #    wqueryString = """
             #    update worksfor set title = = '{}' where id = = '{}';
