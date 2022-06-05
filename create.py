@@ -138,7 +138,7 @@ def create_entry():
         queryString = """
         select name from scientific_field
         select title from project
-        INSERT INTO fieldthatdescribes (name,title) VALUES ('{}','{}')
+        INSERT INTO fieldthatdescribes (name,title) VALUES ('{}','{}');
         """.format(fname, ftitle)
         cur1.execute(queryString)
         db.connection.commit()
