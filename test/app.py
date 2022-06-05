@@ -1394,18 +1394,7 @@ def delete_entry():
                 """.format(pamount, psummary, pstart_date, pend_date, pname, pevaluated_from, pfrom_org, pgrade, pdate_of_eval, pexec,ptitle)
                 cur1.execute(pqueryString)
                 db.connection.commit()
-        #    else:
-            #    errorprogram="Field is required"
-
-            #if (phname != '' and phphone != '' ):
-             #    phqueryString = """
-             #   UPDATE phone SET phone = '{}' WHERE name = '{}';
-             #    """.format(phphone, phname)
-             #    cur1.execute(phqueryString)
-             #    db.connection.commit()
-        #    else:
-        #        errorprogram="Field is required"
-
+                
             if (rcname != '' and rcbudget_from_edu  != '' and rcbudget_from_priv != ''):
                  rcqueryString = """
                  UPDATE research_center SET budget_from_edu = '{}', budget_from_priv = '{}' WHERE name = '{}';
@@ -1443,29 +1432,6 @@ def delete_entry():
                 """.format(dtitle, dsummary, dtitle_project, ddue_date)
                 cur1.execute(dqueryString)
                 db.connection.commit()
-
-            # if (sname != '' ):
-            #     squeryString = """
-            #     update scientific_field set name = '{}' where name = '{}';
-            #     """.format(sname)
-            #     cur1.execute(squeryString)
-            #     db.connection.commit()
-
-            if (fname != '' and ftitle != '' ):
-                fqueryString = """
-                update fieldthatdescribes set name = '{}' where title = '{}';
-                """.format(fname, ftitle)
-                cur1.execute(fqueryString)
-                db.connection.commit()
-
-            if (wtitle != '' and wid != '' ):
-                wqueryString = """
-                update worksfor set title = = '{}' where id = = '{}';
-                """.format(fname, ftitle)
-                cur1.execute(wqueryString)
-                db.connection.commit()
-
-
 
             cur = db.connection.cursor()
             queryStringInitial = """
