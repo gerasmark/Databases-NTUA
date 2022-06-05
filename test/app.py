@@ -474,8 +474,48 @@ def create_entry():
         else:
             errorprogram="Field is required"
         
-        
+        if (cname != '' and cequity != ''):
+        queryString = """
+        INSERT INTO company (name,equity) VALUES ('{}','{}');
+        """.format(cname, cequity)
+        cur1.execute(queryString)
+        db.connection.commit()
+
+    if (uname != '' and ubudget_from_edu != ''):
+        queryString = """
+        INSERT INTO university (name,budget_from_edu) VALUES ('{}','{}');
+        """.format(uname, ubudget_from_edu)
+        cur1.execute(queryString)
+        db.connection.commit()
+
+    if (rcname != '' and rcbudget_from_edu != '' and rcbudget_from_priv != ''):
+        queryString = """
+        INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ('{}','{}','{}');
+        """.format(rcname, rcbudget_from_edu, rcbudget_from_priv)
+        cur1.execute(queryString)
+        db.connection.commit()
         cur1.close
+
+    if (dtitle != '' and dsummary != '' and dtitle_project != '' and ddue_date != ''):
+        queryString = """
+        INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ('{}','{}','{}','{}');
+        """.format(dtitle, dsummary, dtitle_project, ddue_date)
+        cur1.execute(queryString)
+        db.connection.commit()
+
+    if (sname != '' ):
+        queryString = """
+        INSERT INTO scientific_field (name) VALUES ('{}');
+        """.format(sname)
+        cur1.execute(queryString)
+        db.connection.commit()
+
+    if (fname != '' and ftitle != '' ):
+        queryString = """
+        INSERT INTO fieldthatdescribes (name,title) VALUES ('{}','{}');
+        """.format(fname, ftitle)
+        cur1.execute(queryString)
+        db.connection.commit()
 
 
     return render_template('create_entry.html', queryString=queryString, errorprogram=errorprogram)
