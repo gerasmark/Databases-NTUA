@@ -67,59 +67,35 @@ update deliverable set summary = '{}', due_date = '{}' where title = '{}'
 
 
 --delete
-delete from program WHERE address = '{}'
+
 delete from program WHERE name = '{}'
 
-delete from organization WHERE initials = '{}' ,
-delete from organization WHERE postal_code = '{}'
-delete from organization WHERE street = '{}'
+
 delete from organization WHERE name = '{}'
-delete from organization WHERE city = '{}'
+
 
 delete from researcher WHERE id = '{}'
-delete from researcher WHERE first_name = '{}'
-delete from researcher WHERE last_name = '{}'
-delete from researcher WHERE sex = '{}'
-delete from researcher WHERE birthdate = '{}'
-delete from researcher WHERE works_since = '{}'
-delete from researcher WHERE name ='{}'
-delete from researcher WHERE works_since = '{}'
+
 
 delete from project WHERE title = '{}'
-delete from project WHERE amount = '{}'
-delete from project WHERE summary = '{}'
-delete from project WHERE start_date = '{}'
-delete from project WHERE end_date = '{}'
-delete from project WHERE duration = '{}'
-delete from project WHERE name ='{}'
-delete from project WHERE evaluated_from = '{}'
-delete from project WHERE from_org = '{}'
-delete from project WHERE grade = '{}'
-delete from project WHERE date_of_eval = '{}'
-delete from project WHERE exec = '{}'
 
-delete from scientific_field WHERE name = '{}'
 
-delete from worksfor WHERE title = '{}'
-delete from worksfor WHERE id = '{}'
+
+
 
 delete from deliverable WHERE title = '{}'
-delete from deliverable WHERE summary = '{}'
-delete from deliverable WHERE title_project = '{}'
-delete from deliverable WHERE due_date = '{}'
 
-delete from fieldthatdescribes WHERE name = '{}'
-delete from fieldthatdescribes WHERE title = '{}'
+
+
 
 delete from research_center WHERE name = '{}'
-delete from research_center WHERE budget_from_edu = '{}'
-delete from research_center WHERE budget_from_priv = '{}'
+
 
 delete from university WHERE name = '{}'
-delete from university WHERE budget_from_edu = '{}'
+
 
 delete from company WHERE name = '{}'
-delete from company WHERE equity = '{}'
 
-delete from phone WHERE name = '{}'
+
+
 delete from phone WHERE phome = '{}'
