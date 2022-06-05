@@ -548,7 +548,7 @@ def create_entry():
 
         if (oname != '' and oinitials  != '' and opostal_code != '' and ostreet != '' and  ocity != ''):
              oqueryString = """
-             INSERT INTO organization (name,initials,postal_code,street,city) VALUES ('{}','{}','{}','{}',{});
+             INSERT INTO organization (name,initials,postal_code,street,city) VALUES ('{}','{}','{}','{}','{}');
              """.format(oname, oinitials, opostal_code, ostreet, ocity)
              cur1.execute(oqueryString)
              db.connection.commit()
