@@ -19,6 +19,17 @@ def create_entry():
         ostreet = str(request.form.get('inputostreet'))
         ocity = str(request.form.get('inputocity'))
 
+        rid = str(request.form.get('rid'))
+        rfirst_name = 
+        rlast_name =
+        rsex =
+        rbirhtdate = 
+        
+
+
+
+
+
 
         if (pname != 'None' and paddress != 'None'):
              queryString = """
