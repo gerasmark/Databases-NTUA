@@ -1,3 +1,4 @@
+from os import uname
 from flask import Flask, render_template, request, flash, redirect, url_for, abort
 from flask_mysqldb import MySQL
 import yaml
@@ -350,6 +351,7 @@ def create_entry():
     errorname = ''
     queryString = ''
     oqueryString = ''
+    phqueryString = ''
     rqueryString = ''
     rcqueryString = ''
     uqueryString = ''
@@ -361,14 +363,14 @@ def create_entry():
     wqueryString = ''
     if request.method == 'POST':
         cur1 = db.connection.cursor()
-        pname = str(request.form.get('inputname'))
-        paddress = str(request.form.get('inputaddress'))
+        pname = str(request.form.get('prname'))
+        paddress = str(request.form.get('praddress'))
 
-        oname = str(request.form.get('inputoname'))
-        oinitials = str(request.form.get('inputoinitials'))
-        opostal_code = str(request.form.get('inputopostal_code'))
-        ostreet = str(request.form.get('inputostreet'))
-        ocity = str(request.form.get('inputocity'))
+        oname = str(request.form.get('oname'))
+        oinitials = str(request.form.get('oinitials'))
+        opostal_code = str(request.form.get('opostal_code'))
+        ostreet = str(request.form.get('ostreet'))
+        ocity = str(request.form.get('ocity'))
 
         rid = str(request.form.get('rid'))
         rfirst_name = str(request.form.get('rfirst_name'))
@@ -378,6 +380,18 @@ def create_entry():
         rname = str(request.form.get('rname'))
         rworks_since = str(request.form.get('rworks_since'))
 
+        phphone = str(request.form.get('phphone'))
+        phname = str(request.form.get('phname'))
+
+        rcname = str(request.form.get('rcname'))
+        rcbudget_from_edu = str(request.form.get('rcbudget_from_edu'))
+        rcbudget_from_priv = str(request.form.get('rcbudget_from_priv'))
+
+        uname = str(request.form.get('uname'))
+        ubudget_from_edu = str(request.form.get('ubudget_from_edu'))
+        
+
+
 
         if (pname != ''):
              queryString = """
@@ -386,11 +400,11 @@ def create_entry():
              cur1.execute(queryString)
              db.connection.commit()
         else:
-            errorname="Name is required"
+            errorprogram="Name is required"
 
         cur1.close
 
-    return render_template('create_entry.html', queryString=queryString, errorname=errorname)
+    return render_template('create_entry.html', queryString=queryString, errorprogram=errorprogram)
 
 @app.route("/update_entry")
 def update_entry():
