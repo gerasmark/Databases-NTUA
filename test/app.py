@@ -752,7 +752,7 @@ def create_entry():
 
 @app.route("/update_entry")
 def update_entry():
-        errorprogram = ''
+    errorprogram = ''
     queryString = ''
     oqueryString = ''
     phqueryString = ''
