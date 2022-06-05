@@ -378,14 +378,8 @@ def create_entry():
 
             cur1.execute(queryString)
             db.connection.commit()
-            cur1.close
-
-
-
-
-
-
-
+            
+    cur1.close
 
     return render_template('create_entry.html', queryString=queryString)
 
