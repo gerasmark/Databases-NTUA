@@ -363,8 +363,8 @@ def create_entry():
     wqueryString = ''
     if request.method == 'POST':
         cur1 = db.connection.cursor()
-        pname = str(request.form.get('prname'))
-        paddress = str(request.form.get('praddress'))
+        prname = str(request.form.get('prname'))
+        praddress = str(request.form.get('praddress'))
 
         oname = str(request.form.get('oname'))
         oinitials = str(request.form.get('oinitials'))
@@ -389,9 +389,33 @@ def create_entry():
 
         uname = str(request.form.get('uname'))
         ubudget_from_edu = str(request.form.get('ubudget_from_edu'))
-        
+
+        cname = str(request.form.get('cname'))
+        cequity = str(request.form.get('cequity'))
+
+        sname = str(request.form.get('sname'))
+
+        dtitle = str(request.form.get('dtitle'))
+        dsummary = str(request.form.get('dsummary'))
+        dtitle_project = str(request.form.get('dtitle_project'))
+        ddue_date = str(request.form.get('ddue_date'))
+
+        fname = str(request.form.get('fname'))
+        ftitle = str(request.form.get('ftitle'))
+
+        wtitle = str(request.form.get('wtitle'))
+        wid = str(request.form.get('wid'))
 
 
+
+        if (prname != ''):
+             queryString = """
+             INSERT INTO program (name,address) VALUES ('{}','{}');
+             """.format(prname, praddress)
+             cur1.execute(queryString)
+             db.connection.commit()
+        else:
+            errorprogram="Name is required"
 
         if (pname != ''):
              queryString = """
