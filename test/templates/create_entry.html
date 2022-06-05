@@ -4,13 +4,22 @@
         <Title> Create new entry in database </Title>
     </head>
     <body bgcolor="#b3d9ff" >
-    <!-- <table border=1>
-        {% for name in pairnames %}
-        <tr>
-            <td>{{name[0]}} </td>
-            <td>{{name[1]}} </td>
-        </tr>
-        {% endfor %}
-    </table> -->
+    <div>
+        <form class = "form" method ='POST' action= "{{ url_for('create_entry') }}">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputname">First Name</label>
+                    <input type="text" class="form-control" name="inputname" 
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputaddress">Last Name</label>
+                    <input type="text" class="form-control" name="inputaddress"  
+                </div>
+            </div>
+            <button type="submit" class="btn btn-default btn-light my-4">Save</button>
+        </form>
+    
+        <button type="button" class="btn btn-secondary btn-light my-4" onclick="window.location.href='/customers'">Back</button>
+    </div>
     <a href="/">Return</a>
 </body>

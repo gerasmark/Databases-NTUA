@@ -248,8 +248,25 @@ def read_entry():
         cur2.close()
     return render_template('read_entry.html',field=field, chosen=chosen, values=values)
 
-@app.route("/create_entry")
+@app.route("/create_entry",methods={'GET', 'POST'})
 def create_entry():
+    cur1 = db.connection.cursor()
+    pname = str(request.form.get('inputname'))
+    paddress = str(request.form.get('inputaddress'))
+    if (pname != 'None' and paddress != 'None'):
+         queryString = """
+         INSERT INTO program (name,address) VALUES ('{}','{}')
+         """.format(pname, paddress)
+    cur1.execute(queryString)
+    cur1.close
+
+
+  
+
+
+
+
+
     return render_template('create_entry.html')
 
 @app.route("/update_entry")

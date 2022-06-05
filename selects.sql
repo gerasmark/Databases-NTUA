@@ -1,4 +1,4 @@
---3.1 trexoun kai ta tria to trito den bgazei tpt omos
+--3.1 check
 SELECT name FROM program;
 
 select distinct duration from project
@@ -18,6 +18,13 @@ inner join worksfor w on r.id = w.id
 inner join project p on w.title = p.title
 order by Full_name) A
 where A.title = '%';
+
+select concat(r.last_name," ", r.first_name) as Full_name
+from researcher r 
+inner join worksfor w on r.id = w.id
+inner join project p on w.title = p.title
+order by Full_name
+
 
 --3.2 check 
 
