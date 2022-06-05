@@ -1057,19 +1057,19 @@ def update_entry():
             #     cur1.execute(squeryString)
             #     db.connection.commit()
 
-            if (fname != '' and ftitle != '' ):
-                fqueryString = """
-                update fieldthatdescribes set name = '{}' where title = '{}';
-                """.format(fname, ftitle)
-                cur1.execute(fqueryString)
-                db.connection.commit()
-
-            if (wtitle != '' and wid != '' ):
-                wqueryString = """
-                update worksfor set title = = '{}' where id = = '{}';
-                """.format(fname, ftitle)
-                cur1.execute(wqueryString)
-                db.connection.commit()
+            #if (fname != '' and ftitle != '' ):
+            #   fqueryString = """
+            #    update fieldthatdescribes set name = '{}' where title = '{}';
+            #    """.format(fname, ftitle)
+            #    cur1.execute(fqueryString)
+            #    db.connection.commit()
+#
+            #if (wtitle != '' and wid != '' ):
+            #    wqueryString = """
+            #    update worksfor set title = = '{}' where id = = '{}';
+            #    """.format(fname, ftitle)
+            #    cur1.execute(wqueryString)
+            #    db.connection.commit()
 
             cur = db.connection.cursor()
             queryStringInitial = """
