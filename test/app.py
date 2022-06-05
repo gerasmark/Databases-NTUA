@@ -356,7 +356,8 @@ def create_entry():
     pqueryString = ''
     squeryString = ''
     dqueryString = ''
-    
+    fqueryString = ''
+    wqueryString = ''
     if request.method == 'POST':
         cur1 = db.connection.cursor()
         pname = str(request.form.get('inputname'))
@@ -369,10 +370,12 @@ def create_entry():
         ocity = str(request.form.get('inputocity'))
 
 
+
         if (pname != 'None' and paddress != 'None'):
              queryString = """
              INSERT INTO program (name,address) VALUES ('{}','{}');
              """.format(pname, paddress)
+             
         cur1.execute(queryString)
         db.connection.commit()
         cur1.close
