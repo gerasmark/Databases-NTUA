@@ -1,4 +1,3 @@
-from os import uname
 from flask import Flask, render_template, request, flash, redirect, url_for, abort
 from flask_mysqldb import MySQL
 import yaml
@@ -425,7 +424,7 @@ def create_entry():
              cur1.execute(queryString)
              db.connection.commit()
         else:
-            errorprogram="Name is required"
+            errorprogram="Field is required"
 
         if (oname != '' and oinitials  != '' and opostal_code != '' and ostreet != '' and  ocity != ''):
              oqueryString = """
@@ -433,6 +432,8 @@ def create_entry():
              """.format(oname, oinitials, opostal_code, ostreet, ocity)
              cur1.execute(oqueryString)
              db.connection.commit()
+        else:
+            errorprogram="Field is required"
 
         if (rid != '' and rfirst_name != '' and rlast_name != '' and rsex != '' and rbirhtdate != '' and rname != '' and rworks_since):
              rqueryString = """
@@ -440,6 +441,8 @@ def create_entry():
              """.format(rid, rfirst_name, rlast_name, rsex, rbirhtdate, rname, rworks_since)
              cur1.execute(rqueryString)
              db.connection.commit()
+        else:
+            errorprogram="Field is required"
 
         if (ptitle != '' and pamount != '' and psummary != '' and pstart_date != '' and pend_date != '' and pname != '' and pfrom_org != '' and pevaluated_from != '' and pexec != '' and pgrade != '' and pdate_of_eval != ''):
             pqueryString = """
@@ -450,6 +453,20 @@ def create_entry():
             """.format(ptitle, pamount, psummary, pstart_date, pend_date, pname, pevaluated_from, pfrom_org, pgrade, pdate_of_eval, pexec)
             cur1.execute(pqueryString)
             db.connection.commit()
+        else:
+            errorprogram="Field is required"
+        
+        if (phname != '' and phphone != '' ):
+             phqueryString = """
+             INSERT INTO phone (name,phone) VALUES ('{}','{}');
+             """.format(phname,phphone)
+             cur1.execute(phqueryString)
+             db.connection.commit()
+        else:
+            errorprogram="Field is required"
+        
+        
+        
         cur1.close
 
 
