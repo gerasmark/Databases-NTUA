@@ -8,7 +8,7 @@
     <div>
         <form class = "form" method ='POST' action= "{{ url_for('create_entry') }}">
             <h3>Program</h3>
-            <p 
+            <p>Select Program to Update</p>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="prname">Name</label>
@@ -23,6 +23,7 @@
 
 
             <h3>Company</h3>
+            <p>Select Company to Update</p>
             <label for="cname">Organization name</label>
             <select name="cname" id="cname">
               <option value="">--Choose an organization name:--</option>
@@ -39,6 +40,7 @@
             </div>
 
             <h3>Deliverable</h3>
+            <p>Select Deliverable to Update</p>
             <label for="dtitle_project">Project title</label>
             <select name="dtitle_project" id="dtitle_project">
               <option value="">--Choose a project title:--</option>
@@ -49,11 +51,11 @@
             <p>
                 <div class="form-group col-md-6">
                     <label for="dtitle">Deliverable Title</label>
-                    <input type="text" class="form-control" name="dtitle"
+                    <input type="text" class="form-control" name="dtitle">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="dsummary">Summary</label>
-                    <input type="text" class="form-control" name="dsummary"
+                    <input type="text" class="form-control" name="dsummary">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="ddue_date">Due date:</label>
@@ -66,6 +68,7 @@
 
 
             <h3>Field that describes</h3>
+            <p>Select Field that describes to Update</p>
             <label for="fname">Name</label>
             <select name="fname" id="fname">
               <option value="">--Choose a name:--</option>
@@ -86,34 +89,36 @@
 
 
             <h3>Organization</h3>
+            <p>Select Organization to Update</p>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="oname">Name</label>
-                    <input type="text" class="form-control" name="oname"
+                    <input type="text" class="form-control" name="oname">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="oinitials">Initials</label>
-                    <input type="text" class="form-control" name="oinitials"
+                    <input type="text" class="form-control" name="oinitials">
                 </div>
                 <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="opostal_code">Postal Code</label>
-                    <input type="text" class="form-control" name="opostal_code"
+                    <input type="text" class="form-control" name="opostal_code">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="ostreet">Street</label>
-                    <input type="text" class="form-control" name="ostreet"
+                    <input type="text" class="form-control" name="ostreet">
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="ocity">City</label>
-                        <input type="text" class="form-control" name="ocity"
+                        <input type="text" class="form-control" name="ocity">
                 </div>
                 <p>{{errororganization}}</p>
             </div>
 
 
             <h3>Phone</h3>
+            <p>Select Phone to Update</p>
             <label for="phname">Organization name</label>
             <select name="phname" id="phname">
               <option value="">--Choose an organization name:--</option>
@@ -124,7 +129,7 @@
             <p>
                 <div class="form-group col-md-6">
                     <label for="phphone">Phone</label>
-                    <input type="text" class="form-control" name="phphone"
+                    <input type="text" class="form-control" name="phphone">
                 </div>
                 <p>{{errorphone}}</p>
             </div>
@@ -132,16 +137,18 @@
 
 
             <h3>Scientific field</h3>
+            <p>Select Scientific field to Update</p>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="sname">Name</label>
-                    <input type="text" class="form-control" name="sname"
+                    <input type="text" class="form-control" name="sname">
                 </div>
                 <p>{{errorscientific}}</p>
             </div>
 
 
             <h3>Research center</h3>
+            <p>Select Research center to Update</p>
             <label for="rcname">Organization name</label>
             <select name="rcname" id="rcname">
               <option value="">--Choose an organization name:--</option>
@@ -152,16 +159,17 @@
             <p>
                 <div class="form-group col-md-6">
                     <label for="rcbudget_from_edu">Budget from EDU</label>
-                    <input type="text" class="form-control" name="rcbudget_from_edu"
+                    <input type="text" class="form-control" name="rcbudget_from_edu">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="rcbudget_from_priv">Budget from private</label>
-                    <input type="text" class="form-control" name="rcbudget_from_priv"
+                    <input type="text" class="form-control" name="rcbudget_from_priv">
                 </div>
                 <p>{{errorresearchcenter}}</p>
             </div>
 
             <h3>University</h3>
+            <p>Select University to Update</p>
             <label for="uname">Organization name</label>
             <select name="uname" id="uname">
               <option value="">--Choose an organization name:--</option>
@@ -172,12 +180,13 @@
             <p>
                 <div class="form-group col-md-6">
                     <label for="ubudget_from_edu">Budget from EDU</label>
-                    <input type="text" class="form-control" name="ubudget_from_edu"
+                    <input type="text" class="form-control" name="ubudget_from_edu">
                 </div>
                 <p>{{erroruniversity}}</p>
             </div>
 
             <h3>Works for</h3>
+            <p>Update who Works for What Project</p>
             <div class="form-row">
               <label for="wtitle">Title</label>
               <select name="wtitle" id="wtitle">
@@ -199,22 +208,23 @@
             </div>
 
             <h3>Researcher</h3>
+            <p>Select Researcher to Update</p>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="rid">ID</label>
-                    <input type="text" class="form-control" name="rid"
+                    <input type="text" class="form-control" name="rid">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="rfirst_name">First name</label>
-                    <input type="text" class="form-control" name="rfirst_name"
+                    <input type="text" class="form-control" name="rfirst_name">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="rlast_name">Last name</label>
-                    <input type="text" class="form-control" name="rlast_name"
+                    <input type="text" class="form-control" name="rlast_name">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="rsex">Sex</label>
-                    <input type="text" class="form-control" name="rsex"
+                    <input type="text" class="form-control" name="rsex">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="rbirthdate">Birthdate:</label>
@@ -246,18 +256,19 @@
             </div>
 
             <h3>Project</h3>
+            <p>Select Project to Update</p>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="ptitle">Title</label>
-                    <input type="text" class="form-control" name="ptitle"
+                    <input type="text" class="form-control" name="ptitle">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="pamount">Amount</label>
-                    <input type="text" class="form-control" name="pamount"
+                    <input type="text" class="form-control" name="pamount">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="psummary">Summary</label>
-                    <input type="text" class="form-control" name="psummary"
+                    <input type="text" class="form-control" name="psummary">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="pstart_date">Start date:</label>
@@ -304,7 +315,7 @@
                 <p>
                 <div class="form-group col-md-6">
                     <label for="pgrade">Grade</label>
-                    <input type="text" class="form-control" name="pgrade"
+                    <input type="text" class="form-control" name="pgrade">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="pdate_of_eval">Start date:</label>
@@ -316,7 +327,7 @@
 
                 <div class="form-group col-md-6">
                     <label for="pexec">Executive</label>
-                    <input type="text" class="form-control" name="pexec"
+                    <input type="text" class="form-control" name="pexec">
                 </div>
 
                 <p>{{errorproject}}</p>
