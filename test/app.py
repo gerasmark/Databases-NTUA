@@ -347,6 +347,7 @@ def read_entry():
 
 @app.route("/create_entry",methods={'GET', 'POST'})
 def create_entry():
+    errorname = ''
     queryString = ''
     oqueryString = ''
     rqueryString = ''
@@ -371,17 +372,18 @@ def create_entry():
 
 
 
-        if (pname != 'None'):
+        if (pname != ''):
              queryString = """
              INSERT INTO program (name,address) VALUES ('{}','{}');
              """.format(pname, paddress)
+             cur1.execute(queryString)
+             db.connection.commit()
+        else:
+            errorname="Name is required"
 
-            cur1.execute(queryString)
-            db.connection.commit()
-            
-    cur1.close
+        cur1.close
 
-    return render_template('create_entry.html', queryString=queryString)
+    return render_template('create_entry.html', queryString=queryString, errorname=errorname)
 
 @app.route("/update_entry")
 def update_entry():
