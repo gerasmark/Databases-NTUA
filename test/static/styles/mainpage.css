@@ -11,3 +11,7 @@
 .links{
     text-align: center;
 }
+
+#error{
+    color: #DC143C;
+}
