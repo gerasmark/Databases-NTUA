@@ -371,7 +371,7 @@ def create_entry():
 
 
 
-        if (pname != 'None' and paddress != 'None'):
+        if (pname != 'None'):
              queryString = """
              INSERT INTO program (name,address) VALUES ('{}','{}');
              """.format(pname, paddress)
