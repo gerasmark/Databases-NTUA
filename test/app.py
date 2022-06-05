@@ -255,18 +255,10 @@ def create_entry():
     paddress = str(request.form.get('inputaddress'))
     if (pname != 'None' and paddress != 'None'):
          queryString = """
-         INSERT INTO program (name,address) VALUES ('{}','{}')
+         INSERT INTO program (name,address) VALUES ('{}','{}');
          """.format(pname, paddress)
     cur1.execute(queryString)
     cur1.close
-
-
-  
-
-
-
-
-
     return render_template('create_entry.html')
 
 @app.route("/update_entry")
