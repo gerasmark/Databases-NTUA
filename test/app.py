@@ -1197,8 +1197,14 @@ def update_entry():
 def delete_entry():
     try:
         #errorprogram = ''
-        queryString = ''
-        fqueryString =''
+        oqueryString = ''
+        rqueryString = ''
+        rcqueryString = ''
+        uqueryString = ''
+        cqueryString = ''
+        pqueryString = ''
+        dqueryString = ''
+        phqueryString = ''
 
         cnames = ''
         pnames = ''
@@ -1294,8 +1300,6 @@ def delete_entry():
 
 
         if request.method == 'POST':
-
-
             cur1 = db.connection.cursor()
             prname = str(request.form.get('prname'))
             
@@ -1379,12 +1383,17 @@ def delete_entry():
                 cur1.execute(dqueryString)
                 db.connection.commit()
 
+            if (phphone != ''):
+                phqueryString = """
+                delete from phone WHERE phone = '{}';
+                """.format(phphone )
+                cur1.execute(phqueryString)
+                db.connection.commit()            
 
-
-        return render_template('delete_entry.html',fqueryString=fqueryString,cnames=cnames, dtitles=dtitles, pnames=pnames, rnames=rnames, unames=unames, rcnames=rcnames, phphones=phphones, prnames = prnames, onames = onames, rids = rids, ptitles = ptitles)
+        return render_template('delete_entry.html',cnames=cnames, dtitles=dtitles, pnames=pnames, rnames=rnames, unames=unames, rcnames=rcnames, phphones=phphones, prnames = prnames, onames = onames, rids = rids, ptitles = ptitles)
     except:
         errorwhole = "Invalid update command"
-        return render_template('delete_entry.html',queryString=queryString, cnames=cnames, dtitles=dtitles, pnames=pnames, rnames=rnames, unames=unames, rcnames=rcnames, phphones=phphones, prnames = prnames, onames = onames, rids = rids, ptitles = ptitles, errorwhole=errorwhole)
+        return render_template('delete_entry.html', cnames=cnames, dtitles=dtitles, pnames=pnames, rnames=rnames, unames=unames, rcnames=rcnames, phphones=phphones, prnames = prnames, onames = onames, rids = rids, ptitles = ptitles, errorwhole=errorwhole)
 
     
 
