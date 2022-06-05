@@ -15,3 +15,15 @@
 #error{
     color: #DC143C;
 }
+
+#box{
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  border-color: black;
+  width: 500px;
+}
+
+#bg{
+  background-image: url(tonisi.jpg);
+}
