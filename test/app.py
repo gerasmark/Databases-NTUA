@@ -750,7 +750,7 @@ def create_entry():
         errorwhole = "Entry already exists or is invalid"
         return render_template('create_entry.html', queryString=queryString, cnames=cnames, dtitle_projects=dtitle_projects, fnames=fnames, ftitles=ftitles, pfrom_orgs=pfrom_orgs, pevaluated_froms=pevaluated_froms, pnames=pnames, rnames=rnames, wids=wids, wtitles=wtitles, unames=unames, rcnames=rcnames, phnames=phnames, errorwhole=errorwhole)
 
-@app.route("/update_entry")
+@app.route("/update_entry",methods={'GET', 'POST'})
 def update_entry():
     errorprogram = ''
     queryString = ''
