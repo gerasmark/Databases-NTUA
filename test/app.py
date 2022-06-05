@@ -375,10 +375,10 @@ def create_entry():
              queryString = """
              INSERT INTO program (name,address) VALUES ('{}','{}');
              """.format(pname, paddress)
-             
-        cur1.execute(queryString)
-        db.connection.commit()
-        cur1.close
+
+            cur1.execute(queryString)
+            db.connection.commit()
+            cur1.close
 
 
 
