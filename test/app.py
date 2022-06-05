@@ -361,14 +361,14 @@ def create_entry():
     wqueryString = ''
     if request.method == 'POST':
         cur1 = db.connection.cursor()
-        pname = str(request.form.get('inputname'))
-        paddress = str(request.form.get('inputaddress'))
+        pname = str(request.form.get('prname'))
+        paddress = str(request.form.get('praddress'))
 
-        oname = str(request.form.get('inputoname'))
-        oinitials = str(request.form.get('inputoinitials'))
-        opostal_code = str(request.form.get('inputopostal_code'))
-        ostreet = str(request.form.get('inputostreet'))
-        ocity = str(request.form.get('inputocity'))
+        oname = str(request.form.get('oname'))
+        oinitials = str(request.form.get('oinitials'))
+        opostal_code = str(request.form.get('opostal_code'))
+        ostreet = str(request.form.get('ostreet'))
+        ocity = str(request.form.get('ocity'))
 
         rid = str(request.form.get('rid'))
         rfirst_name = str(request.form.get('rfirst_name'))
@@ -377,6 +377,8 @@ def create_entry():
         rbirhtdate = str(request.form.get('rbirthdate'))
         rname = str(request.form.get('rname'))
         rworks_since = str(request.form.get('rworks_since'))
+
+
 
 
         if (pname != ''):
