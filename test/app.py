@@ -752,7 +752,7 @@ def create_entry():
 
 @app.route("/update_entry",methods={'GET', 'POST'})
 def update_entry():
-    errorprogram = ''
+    #errorprogram = ''
     queryString = ''
     oqueryString = ''
     phqueryString = ''
@@ -973,7 +973,7 @@ def update_entry():
              cur1.execute(queryString)
              db.connection.commit()
         else:
-            errorprogram="Field is required"
+    #        errorprogram="Field is required"
 
         if (oname != '' and oinitials  != '' and opostal_code != '' and ostreet != '' and  ocity != ''):
              oqueryString = """
@@ -982,7 +982,7 @@ def update_entry():
              cur1.execute(oqueryString)
              db.connection.commit()
         else:
-            errorprogram="Field is required"
+    #        errorprogram="Field is required"
 
         if (rid != '' and rfirst_name != '' and rlast_name != '' and rsex != '' and rbirthdate != '' and rname != '' and rworks_since):
              rqueryString = """
@@ -991,7 +991,7 @@ def update_entry():
              cur1.execute(rqueryString)
              db.connection.commit()
         else:
-            errorprogram="Field is required"
+    #        errorprogram="Field is required"
 
         if (ptitle != '' and pamount != '' and psummary != '' and pstart_date != '' and pend_date != '' and pname != '' and pfrom_org != '' and pevaluated_from != '' and pexec != '' and pgrade != '' and pdate_of_eval != ''):
             pqueryString = """
@@ -1000,7 +1000,7 @@ def update_entry():
             cur1.execute(pqueryString)
             db.connection.commit()
         else:
-            errorprogram="Field is required"
+        #    errorprogram="Field is required"
 
         if (phname != '' and phphone != '' ):
              phqueryString = """
@@ -1009,7 +1009,7 @@ def update_entry():
              cur1.execute(phqueryString)
              db.connection.commit()
         else:
-            errorprogram="Field is required"
+    #        errorprogram="Field is required"
 
         if (rcname != '' and rcbudget_from_edu  != '' and rcbudget_from_priv != ''):
              rcqueryString = """
@@ -1018,7 +1018,7 @@ def update_entry():
              cur1.execute(rcqueryString)
              db.connection.commit()
         else:
-            errorprogram="Field is required"
+    #        errorprogram="Field is required"
 
         if (cname != '' and cequity != ''):
             cqueryString = """
@@ -1161,6 +1161,35 @@ def update_entry():
         cur.execute(queryStringInitial)
         pfrom_orgs = cur.fetchall()
         cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select name from program
+        """
+        cur.execute(queryStringInitial)
+        prnames = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select name from organization
+        """
+        cur.execute(queryStringInitial)
+        onames = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select id from researcher
+        """
+        cur.execute(queryStringInitial)
+        rids = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select title from project
+        """
+        cur.execute(queryStringInitial)
+        ptitles = cur.fetchall()
+        cur.close()
+
     return render_template('update_entry.html',queryString=queryString, cnames=cnames, dtitle_projects=dtitle_projects, fnames=fnames, ftitles=ftitles, pfrom_orgs=pfrom_orgs, pevaluated_froms=pevaluated_froms, pnames=pnames, rnames=rnames, wids=wids, wtitles=wtitles, unames=unames, rcnames=rcnames, phnames=phnames, prnames = prnames, onames = onames, rids = rids, ptitles = ptitles)
 
 @app.route("/delete_entry")
