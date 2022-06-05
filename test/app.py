@@ -1,4 +1,3 @@
-from os import uname
 from flask import Flask, render_template, request, flash, redirect, url_for, abort
 from flask_mysqldb import MySQL
 import yaml
@@ -348,7 +347,7 @@ def read_entry():
 
 @app.route("/create_entry",methods={'GET', 'POST'})
 def create_entry():
-    errorname = ''
+    errorprogram = ''
     queryString = ''
     oqueryString = ''
     phqueryString = ''
@@ -418,29 +417,66 @@ def create_entry():
         pdate_of_eval = str(request.form.get('pdate_of_eval'))
         pexec = str(request.form.get('pexec'))
 
-        if (prname != ''):
+        if (prname != ''and praddress != ''):
              queryString = """
              INSERT INTO program (name,address) VALUES ('{}','{}');
              """.format(prname, praddress)
              cur1.execute(queryString)
              db.connection.commit()
         else:
-            errorprogram="Name is required"
+            errorprogram="Field is required"
 
-        if (oname != '' and oinitials and != '' and opostal_code != '' and ostreet != '' and  ocity != ''):
+        if (oname != '' and oinitials  != '' and opostal_code != '' and ostreet != '' and  ocity != ''):
              oqueryString = """
              INSERT INTO organization (name,initials,postal_code,street,city) VALUES ('{}','{}','{}','{}');
              """.format(oname, oinitials, opostal_code, ostreet, ocity)
              cur1.execute(oqueryString)
              db.connection.commit()
+        else:
+            errorprogram="Field is required"
 
         if (rid != '' and rfirst_name != '' and rlast_name != '' and rsex != '' and rbirhtdate != '' and rname != '' and rworks_since):
              rqueryString = """
-             INSERT INTO researcher (id,first_name,last_name,sex,birthdate,name,works_since) VALUES ('{}','{}','{}','{}','{}','{}','{}','{}')
+             INSERT INTO researcher (id,first_name,last_name,sex,birthdate,name,works_since) VALUES ('{}','{}','{}','{}','{}','{}','{}','{}');
              """.format(rid, rfirst_name, rlast_name, rsex, rbirhtdate, rname, rworks_since)
              cur1.execute(rqueryString)
              db.connection.commit()
+        else:
+            errorprogram="Field is required"
+
+        if (ptitle != '' and pamount != '' and psummary != '' and pstart_date != '' and pend_date != '' and pname != '' and pfrom_org != '' and pevaluated_from != '' and pexec != '' and pgrade != '' and pdate_of_eval != ''):
+            pqueryString = """
+            select name from program
+            select name from organization
+            select id from researcher
+            INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_from,from_org,grade,date_of_eval,exec) VALUES ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}');
+            """.format(ptitle, pamount, psummary, pstart_date, pend_date, pname, pevaluated_from, pfrom_org, pgrade, pdate_of_eval, pexec)
+            cur1.execute(pqueryString)
+            db.connection.commit()
+        else:
+            errorprogram="Field is required"
+        
+        if (phname != '' and phphone != '' ):
+             phqueryString = """
+             INSERT INTO phone (name,phone) VALUES ('{}','{}');
+             """.format(phname,phphone)
+             cur1.execute(phqueryString)
+             db.connection.commit()
+        else:
+            errorprogram="Field is required"
+        
+        if (rcname != '' and rcbudget_from_edu  != '' and rcbudget_from_priv != ''):
+             rcqueryString = """
+             INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ('{}','{}','{}');
+             """.format(rcname, rcbudget_from_edu, rcbudget_from_priv)
+             cur1.execute(rcqueryString)
+             db.connection.commit()
+        else:
+            errorprogram="Field is required"
+        
+        
         cur1.close
+
 
     return render_template('create_entry.html', queryString=queryString, errorprogram=errorprogram)
 

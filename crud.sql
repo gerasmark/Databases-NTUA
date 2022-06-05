@@ -30,7 +30,7 @@ INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_fro
 
 INSERT INTO scientific_field (name) VALUES ('{}')
 
-select title from project
+select title_of_project from deliverable
 INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ('{}','{}','{}','{}')
 
 select name from scientific_field
