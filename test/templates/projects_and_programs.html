@@ -50,8 +50,38 @@
       <input type=submit name="field" value=Submit>
     </p>
 
+    <p> Chosen criteria: Start date: {{chosen_start}}, End date: {{chosen_end}}, Duration: {{chosen_duration}}, Executive: {{chosen_exec}} </p>
+
+    <!-- <p> query: {{queryString4}} </p> -->
+
+    <!-- <table border=1>
+        {% for option in projects %}
+        <tr>
+            <td>{{option[0]}} </td>
+        </tr>
+        {% endfor %}
+    </table> -->
+
+
+    {% for i,option in projects2 %}
+    <details>
+      <summary>{{option[0]}}</summary>
+      {%for name in researchers[i]%}
+      <p>{{name[0]}}</p>
+      {%endfor%}
+    </details>
+    {% endfor %}
 
 
 
+    <!-- <table border=1>
+        {% for value in researchers %}
+        <tr>
+            <td>{{value[0]}} </td>
+        </tr>
+        {% endfor %}
+    </table> -->
+
+ <!-- <p> skase: {{projects2}} </p> -->
     <a href="/">Return</a>
 </body>

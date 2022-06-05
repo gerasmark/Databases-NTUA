@@ -28,16 +28,99 @@ def projects_and_programs():
     programs = cur1.fetchall()
     cur1.close()
 
-    # if request.method == 'POST':
-    #     if request.form['viewvalues'] == "first":
-    #         viewvalues = viewvalues1
-    #         chosen = "Έργα ανά ερευνητή"
-    #     elif request.form['viewvalues'] == "second":
-    #         viewvalues = viewvalues2
-    #         chosen = "Έργα ανά οργανισμό"
-    #     else:
-    #         viewvalues = ''
-    return render_template('projects_and_programs.html', programs=programs)
+    cur2 = db.connection.cursor()
+    queryString2 = """
+    select distinct duration from project
+    order by duration
+    """
+    cur2.execute(queryString2)
+    duration = cur2.fetchall()
+    cur2.close()
+
+    cur3 = db.connection.cursor()
+    queryString3 = """
+    select distinct exec from project
+    order by exec
+    """
+    cur3.execute(queryString3)
+    exec = cur3.fetchall()
+    cur3.close()
+
+    chosen_start = ''
+    chosen_end = ''
+    chosen_duration = ''
+    chosen_exec = ''
+    queryString4 = ''
+    projects = ''
+    projects2=''
+    researchers = []
+
+
+    if request.method == 'POST':
+        chosen_start = request.form['start']
+        chosen_end = request.form['end']
+        chosen_duration = request.form['duration']
+        chosen_exec = request.form['exec']
+        if chosen_start == '':
+            chosen_start = ''
+        if chosen_end == '':
+            chosen_end = ''
+        if chosen_duration == "Submit":
+            chosen_duration = ''
+        if chosen_exec == "Submit":
+            chosen_exec = ''
+
+        cur4 = db.connection.cursor()
+        queryString4 = """
+        SELECT p.title as Project_title
+        from project p
+        where p.start_date < current_date()
+        """
+        if chosen_start != '':
+            queryString4 = queryString4 + " and (p.start_date > " + "'" + chosen_start + "'" + ")"
+        if chosen_end != '':
+            queryString4 = queryString4 + " and (p.end_date < " + "'" + chosen_end + "'" + ")"
+        if chosen_duration != '':
+            queryString4 = queryString4 + "  and p.duration = " + chosen_duration
+        if chosen_exec != '':
+            queryString4 = queryString4 + " and p.exec = " + '"' + chosen_exec + '"'
+        queryString4 = queryString4 + ';'
+        cur4.execute(queryString4)
+        projects = cur4.fetchall()
+        cur4.close()
+        tempcounter = len(projects)
+        projects2= [(item,idx) for item,idx in enumerate(projects)]
+
+
+
+
+
+        for i in range(tempcounter):
+            cur5 = db.connection.cursor()
+            queryString5 = """
+            select t.Full_name from
+            (select p.title , concat(r.last_name," ", r.first_name) as Full_name
+            from researcher r
+            inner join worksfor w on r.id = w.id
+            inner join project p on w.title = p.title
+            where p.title =
+            """
+            queryString6 = """
+            order by Full_name) t
+            ORDER BY t.Full_name;
+            """
+            temp=projects[i]
+            temp=temp[0]
+            queryString7 = queryString5 + '"' + temp + '"' + queryString6
+            cur5.execute(queryString7)
+            researchers.append(cur5.fetchall())
+            cur5.close()
+
+        # skase = projects[0]
+        # skase = skase[0]
+
+
+    return render_template('projects_and_programs.html', programs=programs, chosen_start=chosen_start, chosen_end=chosen_end, chosen_duration=chosen_duration, chosen_exec=chosen_exec, queryString4=queryString4, duration=duration, exec=exec, projects=projects, projects2=projects2, researchers=researchers)
 
 #3.2
 @app.route("/views", methods={'GET', 'POST'})
@@ -259,6 +342,14 @@ def create_entry():
          """.format(pname, paddress)
     cur1.execute(queryString)
     cur1.close
+
+
+
+
+
+
+
+
     return render_template('create_entry.html')
 
 @app.route("/update_entry")
