@@ -32,7 +32,7 @@ CREATE TABLE `elide`.`researcher` (
   `works_since` date NOT NULL,
   `age` smallint as (TIMESTAMPDIFF(YEAR, birthdate, '2022-06-06')),
   PRIMARY KEY (`id`),
-  FOREIGN KEY(`name`) REFERENCES `organization`(`name`) ON DELETE RESTRICT ON UPDATE CASCADE
+  FOREIGN KEY(`name`) REFERENCES `organization`(`name`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `elide`.`project`;
@@ -51,9 +51,9 @@ CREATE TABLE `elide`.`project` (
   `date_of_eval` date NOT NULL, 
   `exec` varchar(45) NOT NULL,
   PRIMARY KEY (`title`),
-  FOREIGN KEY(`name`) REFERENCES `program`(`name`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  FOREIGN KEY(`from_org`) REFERENCES `organization`(`name`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  FOREIGN KEY(`evaluated_from`) REFERENCES `researcher`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  FOREIGN KEY(`name`) REFERENCES `program`(`name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY(`from_org`) REFERENCES `organization`(`name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY(`evaluated_from`) REFERENCES `researcher`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CHECK(duration>=1 AND duration<=4)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -70,8 +70,8 @@ CREATE TABLE `elide`.`worksfor` (
   `title` VARCHAR(60) NOT NULL,
   `id` INT NOT NULL,
   PRIMARY KEY (`title`,`id`),
-  FOREIGN KEY (`title`) REFERENCES `project`(`title`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  FOREIGN KEY (`id`) REFERENCES `researcher`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE
+  FOREIGN KEY (`title`) REFERENCES `project`(`title`) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (`id`) REFERENCES `researcher`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
  DROP TABLE IF EXISTS `elide`.`deliverable`;
@@ -81,7 +81,7 @@ CREATE TABLE `elide`.`deliverable` (
   `summary` VARCHAR(110) NOT NULL,
   `title_project` VARCHAR(45) NOT NULL,
   `due_date` DATE NULL,
-  FOREIGN KEY(`title_project`) REFERENCES `project`(`title`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  FOREIGN KEY(`title_project`) REFERENCES `project`(`title`) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (`title`)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -90,8 +90,8 @@ DROP TABLE IF EXISTS `elide`.`fieldthatdescribes`;
 CREATE TABLE `elide`.`fieldthatdescribes` (
   `name` VARCHAR(45) NOT NULL,
   `title` VARCHAR(60) NOT NULL,
-  FOREIGN KEY(`name`) REFERENCES `scientific_field`(`name`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  FOREIGN KEY(`title`) REFERENCES `project`(`title`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  FOREIGN KEY(`name`) REFERENCES `scientific_field`(`name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY(`title`) REFERENCES `project`(`title`) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (`name`,`title`)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
@@ -102,7 +102,7 @@ DROP TABLE IF EXISTS `elide`.`research_center`;
   `budget_from_edu` int(11) NOT NULL,
   `budget_from_priv` int(11) NOT NULL,
   PRIMARY KEY (`name`),
-  FOREIGN KEY(`name`) REFERENCES `organization`(`name`) ON DELETE RESTRICT ON UPDATE CASCADE
+  FOREIGN KEY(`name`) REFERENCES `organization`(`name`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `elide`.`university`;
@@ -111,7 +111,7 @@ CREATE TABLE `elide`.`university` (
   `name` varchar(45) NOT NULL,
   `budget_from_edu` int(11) NOT NULL,
   PRIMARY KEY (`name`),  
-  FOREIGN KEY(`name`) REFERENCES `organization`(`name`) ON DELETE RESTRICT ON UPDATE CASCADE
+  FOREIGN KEY(`name`) REFERENCES `organization`(`name`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `elide`.`company`;
@@ -120,7 +120,7 @@ CREATE TABLE `elide`.`company` (
   `name` varchar(45) NOT NULL,
   `equity` int(11) NOT NULL,
   PRIMARY KEY (`name`),
-  FOREIGN KEY(`name`) REFERENCES `organization`(`name`) ON DELETE RESTRICT ON UPDATE CASCADE
+  FOREIGN KEY(`name`) REFERENCES `organization`(`name`) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `elide`.`phone`;
@@ -129,5 +129,5 @@ CREATE TABLE `elide`.`phone` (
   `name` VARCHAR(45) NOT NULL,
   `phone` VARCHAR (10) NOT NULL,
   PRIMARY KEY (`name`, `phone`),
-  FOREIGN KEY(`name`) REFERENCES `organization`(`name`) ON DELETE RESTRICT ON UPDATE CASCADE
+  FOREIGN KEY(`name`) REFERENCES `organization`(`name`) ON DELETE CASCADE ON UPDATE CASCADE
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

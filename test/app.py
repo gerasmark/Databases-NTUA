@@ -1205,6 +1205,7 @@ def delete_entry():
         pqueryString = ''
         dqueryString = ''
         phqueryString = ''
+        prqueryString = ''
 
         cnames = ''
         pnames = ''
@@ -1327,6 +1328,12 @@ def delete_entry():
 
 
             ptitle = str(request.form.get('ptitle'))
+            if (prname != ''):
+                  prqueryString = """
+                  delete from program WHERE name = '{}';
+                  """.format(prname)
+                  cur1.execute(prqueryString)
+                  db.connection.commit()
 
             if (oname != ''):
                   oqueryString = """
