@@ -1254,7 +1254,7 @@ def delete_entry():
 
         cur = db.connection.cursor()
         queryStringInitial = """
-        select name from organization
+        select name from company
         """
         cur.execute(queryStringInitial)
         cnames = cur.fetchall()
@@ -1279,7 +1279,7 @@ def delete_entry():
 
         cur = db.connection.cursor()
         queryStringInitial = """
-        select name from organization
+        select name from research_center
         """
         cur.execute(queryStringInitial)
         rcnames = cur.fetchall()
@@ -1287,7 +1287,7 @@ def delete_entry():
 
         cur = db.connection.cursor()
         queryStringInitial = """
-        select name from organization
+        select name from university
         """
         cur.execute(queryStringInitial)
         unames = cur.fetchall()
@@ -1396,7 +1396,7 @@ def delete_entry():
             cur.execute(queryStringInitial)
             prnames = cur.fetchall()
             cur.close()
-    
+
             cur = db.connection.cursor()
             queryStringInitial = """
             select name from organization
@@ -1404,7 +1404,7 @@ def delete_entry():
             cur.execute(queryStringInitial)
             onames = cur.fetchall()
             cur.close()
-    
+
             cur = db.connection.cursor()
             queryStringInitial = """
             select id from researcher
@@ -1412,7 +1412,7 @@ def delete_entry():
             cur.execute(queryStringInitial)
             rids = cur.fetchall()
             cur.close()
-    
+
             cur = db.connection.cursor()
             queryStringInitial = """
             select title from project
@@ -1420,16 +1420,16 @@ def delete_entry():
             cur.execute(queryStringInitial)
             ptitles = cur.fetchall()
             cur.close()
-    
-    
+
+
             cur = db.connection.cursor()
             queryStringInitial = """
-            select name from organization
+            select name from company
             """
             cur.execute(queryStringInitial)
             cnames = cur.fetchall()
             cur.close()
-    
+
             cur = db.connection.cursor()
             queryStringInitial = """
             select title from deliverable
@@ -1437,8 +1437,8 @@ def delete_entry():
             cur.execute(queryStringInitial)
             dtitles = cur.fetchall()
             cur.close()
-    
-    
+
+
             cur = db.connection.cursor()
             queryStringInitial = """
             select phone from phone
@@ -1446,18 +1446,18 @@ def delete_entry():
             cur.execute(queryStringInitial)
             phphones = cur.fetchall()
             cur.close()
-    
+
             cur = db.connection.cursor()
             queryStringInitial = """
-            select name from organization
+            select name from research_center
             """
             cur.execute(queryStringInitial)
             rcnames = cur.fetchall()
             cur.close()
-    
+
             cur = db.connection.cursor()
             queryStringInitial = """
-            select name from organization
+            select name from university
             """
             cur.execute(queryStringInitial)
             unames = cur.fetchall()
