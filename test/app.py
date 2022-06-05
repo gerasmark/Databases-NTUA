@@ -1003,12 +1003,12 @@ def update_entry():
         #    else:
             #    errorprogram="Field is required"
 
-            if (phname != '' and phphone != '' ):
-                 phqueryString = """
-                 UPDATE phone SET phone = '{}' WHERE name = '{}';
-                 """.format(phphone, phname)
-                 cur1.execute(phqueryString)
-                 db.connection.commit()
+            #if (phname != '' and phphone != '' ):
+             #    phqueryString = """
+             #   UPDATE phone SET phone = '{}' WHERE name = '{}';
+             #    """.format(phphone, phname)
+             #    cur1.execute(phqueryString)
+             #    db.connection.commit()
         #    else:
         #        errorprogram="Field is required"
 
