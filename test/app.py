@@ -1191,7 +1191,7 @@ def update_entry():
             ptitles = cur.fetchall()
             cur.close()
 
-        return render_template('update_entry.html',queryString=queryString, cnames=cnames, dtitle_projects=dtitle_projects, fnames=fnames, ftitles=ftitles, pfrom_orgs=pfrom_orgs, pevaluated_froms=pevaluated_froms, pnames=pnames, rnames=rnames, wids=wids, wtitles=wtitles, unames=unames, rcnames=rcnames, phnames=phnames, prnames = prnames, onames = onames, rids = rids, ptitles = ptitles)
+        return render_template('update_entry.html',fqueryString=fqueryString, cnames=cnames, dtitle_projects=dtitle_projects, fnames=fnames, ftitles=ftitles, pfrom_orgs=pfrom_orgs, pevaluated_froms=pevaluated_froms, pnames=pnames, rnames=rnames, wids=wids, wtitles=wtitles, unames=unames, rcnames=rcnames, phnames=phnames, prnames = prnames, onames = onames, rids = rids, ptitles = ptitles)
     except:
         errorwhole = "Invalid update command"
         return render_template('update_entry.html',queryString=queryString, cnames=cnames, dtitle_projects=dtitle_projects, fnames=fnames, ftitles=ftitles, pfrom_orgs=pfrom_orgs, pevaluated_froms=pevaluated_froms, pnames=pnames, rnames=rnames, wids=wids, wtitles=wtitles, unames=unames, rcnames=rcnames, phnames=phnames, prnames = prnames, onames = onames, rids = rids, ptitles = ptitles, errorwhole=errorwhole)
