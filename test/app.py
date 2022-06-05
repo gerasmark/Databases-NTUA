@@ -779,6 +779,43 @@ def update_entry():
     unames = ''
     rcnames = ''
     phnames = ''
+
+
+    prnames = ''
+    onames = ''
+    rids = ''
+    ptitles = ''
+
+    cur = db.connection.cursor()
+    queryStringInitial = """
+    select name from organization
+    """
+    cur.execute(queryStringInitial)
+    prnames = cur.fetchall()
+    cur.close()
+    cur = db.connection.cursor()
+    queryStringInitial = """
+    select name from organization
+    """
+    cur.execute(queryStringInitial)
+    onames = cur.fetchall()
+    cur.close()
+    cur = db.connection.cursor()
+    queryStringInitial = """
+    select name from organization
+    """
+    cur.execute(queryStringInitial)
+    rids = cur.fetchall()
+    cur.close()
+    cur = db.connection.cursor()
+    queryStringInitial = """
+    select name from organization
+    """
+    cur.execute(queryStringInitial)
+    ptitles = cur.fetchall()
+    cur.close()
+
+
     cur = db.connection.cursor()
     queryStringInitial = """
     select name from organization
@@ -1124,7 +1161,7 @@ def update_entry():
         cur.execute(queryStringInitial)
         pfrom_orgs = cur.fetchall()
         cur.close()
-    return render_template('update_entry.html',queryString=queryString, cnames=cnames, dtitle_projects=dtitle_projects, fnames=fnames, ftitles=ftitles, pfrom_orgs=pfrom_orgs, pevaluated_froms=pevaluated_froms, pnames=pnames, rnames=rnames, wids=wids, wtitles=wtitles, unames=unames, rcnames=rcnames, phnames=phnames)
+    return render_template('update_entry.html',queryString=queryString, cnames=cnames, dtitle_projects=dtitle_projects, fnames=fnames, ftitles=ftitles, pfrom_orgs=pfrom_orgs, pevaluated_froms=pevaluated_froms, pnames=pnames, rnames=rnames, wids=wids, wtitles=wtitles, unames=unames, rcnames=rcnames, phnames=phnames, prnames = prnames, onames = onames, rids = rids, ptitles = ptitles)
 
 @app.route("/delete_entry")
 def delete_entry():
