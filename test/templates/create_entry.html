@@ -19,12 +19,32 @@
                 <p>{{errorprogram}}</p>
             </div>
 
+
+            <h3>Company</h3>
+            <label for="cname">Organization name</label>
+            <select name="cname" id="cname">
+              <option value="Submit">--Choose an organization name:--</option>
+              {%for option in cnames%}
+              <option value="{{option[0]}}">{{option[0]}}</option>
+              {%endfor%}
+            </select>
+            <p>
+                <div class="form-group col-md-6">
+                    <label for="cequity">Equity</label>
+                    <input type="text" class="form-control" name="cequity"
+                </div>
+                <p>{{errorcompany}}</p>
+            </div>
+
             <h3>Deliverable</h3>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                  <label for="dptitle">Project Title</label>
-                  <input type="text" class="form-control" name="dptitle"
-              </div>
+            <label for="dptitle">Project title</label>
+            <select name="dptitle" id="dptitle">
+              <option value="Submit">--Choose an project title:--</option>
+              {%for option in dptitles%}
+              <option value="{{option[0]}}">{{option[0]}}</option>
+              {%endfor%}
+            </select>
+            <p>
                 <div class="form-group col-md-6">
                     <label for="dtitle">Deliverable Title</label>
                     <input type="text" class="form-control" name="dtitle"
@@ -37,22 +57,72 @@
                     <label for="ddate">Due date</label>
                     <input type="text" class="form-control" name="ddate"
                 </div>
-
                 <p>{{errordeliverable}}</p>
             </div>
 
 
-            <h3>Program</h3>
+            <h3>Field that describes</h3>
+            <label for="fname">Name</label>
+            <select name="fname" id="fname">
+              <option value="Submit">--Choose an name:--</option>
+              {%for option in fnames%}
+              <option value="{{option[0]}}">{{option[0]}}</option>
+              {%endfor%}
+            </select>
+            <p>
+            <label for="ftitle">Title</label>
+            <select name="ftitle" id="ftitle">
+              <option value="Submit">--Choose an title:--</option>
+              {%for option in ftitles%}
+              <option value="{{option[0]}}">{{option[0]}}</option>
+              {%endfor%}
+            </select>
+                <p>{{errorfieldthatdescribes}}</p>
+            </div>
+
+
+            <h3>Organization</h3>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputname">Name</label>
-                    <input type="text" class="form-control" name="inputname"
+                    <label for="oname">Name</label>
+                    <input type="text" class="form-control" name="oname"
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputaddress">Adress</label>
-                    <input type="text" class="form-control" name="inputaddress"
+                    <label for="inputaddress">Initials</label>
+                    <input type="text" class="form-control" name="oinitials"
                 </div>
-                <p>{{errorname}}</p>
+                <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="ocode">Postal Code</label>
+                    <input type="text" class="form-control" name="ocode"
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="ostreet">Street</label>
+                    <input type="text" class="form-control" name="ostreet"
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="ocity">City</label>
+                        <input type="text" class="form-control" name="ocity"
+                </div>
+                <p>{{errororganization}}</p>
+            </div>
+
+
+            <h3>Phone</h3>
+            <label for="phname">Organization name</label>
+            <select name="phname" id="phname">
+              <option value="Submit">--Choose an organization name:--</option>
+              {%for option in phnames%}
+              <option value="{{option[0]}}">{{option[0]}}</option>
+              {%endfor%}
+            </select>
+            <p>
+                <div class="form-group col-md-6">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" name="phone"
+                </div>
+                <p>{{errorphone}}</p>
             </div>
 
 
@@ -70,59 +140,180 @@
             </div>
 
 
-            <h3>Program</h3>
+            <h3>Scientific field</h3>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputname">Name</label>
-                    <input type="text" class="form-control" name="inputname"
+                    <label for="sname">Name</label>
+                    <input type="text" class="form-control" name="sname"
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="inputaddress">Adress</label>
-                    <input type="text" class="form-control" name="inputaddress"
-                </div>
-                <p>{{errorname}}</p>
+                <p>{{errorscientific}}</p>
             </div>
 
 
-            <h3>Program</h3>
-            <div class="form-row">
+            <h3>Research center</h3>
+            <label for="rname">Organization name</label>
+            <select name="rname" id="rname">
+              <option value="Submit">--Choose an organization name:--</option>
+              {%for option in rnames%}
+              <option value="{{option[0]}}">{{option[0]}}</option>
+              {%endfor%}
+            </select>
+            <p>
                 <div class="form-group col-md-6">
-                    <label for="inputname">Name</label>
-                    <input type="text" class="form-control" name="inputname"
+                    <label for="rbudgetedu">Budget from EDU</label>
+                    <input type="text" class="form-control" name="rbudgetedu"
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputaddress">Adress</label>
-                    <input type="text" class="form-control" name="inputaddress"
+                    <label for="rbudgetpriv">Budget from private</label>
+                    <input type="text" class="form-control" name="rbudgetpriv"
                 </div>
-                <p>{{errorname}}</p>
+                <p>{{errorresearchcenter}}</p>
             </div>
 
-
-            <h3>Program</h3>
-            <div class="form-row">
+            <h3>University</h3>
+            <label for="uname">Organization name</label>
+            <select name="uname" id="uname">
+              <option value="Submit">--Choose an organization name:--</option>
+              {%for option in unames%}
+              <option value="{{option[0]}}">{{option[0]}}</option>
+              {%endfor%}
+            </select>
+            <p>
                 <div class="form-group col-md-6">
-                    <label for="inputname">Name</label>
-                    <input type="text" class="form-control" name="inputname"
+                    <label for="ubudgetedu">Budget from EDU</label>
+                    <input type="text" class="form-control" name="ubudgetedu"
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="inputaddress">Adress</label>
-                    <input type="text" class="form-control" name="inputaddress"
-                </div>
-                <p>{{errorname}}</p>
+                <p>{{erroruniversity}}</p>
             </div>
 
+            <h3>Works for</h3>
+            <div class="form-row">
+              <label for="wtitle">Title</label>
+              <select name="wtitle" id="wtitle">
+                <option value="Submit">--Choose an title:--</option>
+                {%for option in wtitles%}
+                <option value="{{option[0]}}">{{option[0]}}</option>
+                {%endfor%}
+              </select>
+              <p>
+              <label for="wid">ID</label>
+              <select name="wid" id="wid">
+                <option value="Submit">--Choose an ID:--</option>
+                {%for option in wids%}
+                <option value="{{option[0]}}">{{option[0]}}</option>
+                {%endfor%}
+              </select>
+              <p>
+                <p>{{errorworksfor}}</p>
+            </div>
 
-            <h3>Program</h3>
+            <h3>Researcher</h3>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputname">Name</label>
-                    <input type="text" class="form-control" name="inputname"
+                    <label for="rid">ID</label>
+                    <input type="text" class="form-control" name="rid"
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputaddress">Adress</label>
-                    <input type="text" class="form-control" name="inputaddress"
+                    <label for="rfname">First name</label>
+                    <input type="text" class="form-control" name="rfname"
                 </div>
-                <p>{{errorname}}</p>
+                <div class="form-group col-md-6">
+                    <label for="rlname">Last name</label>
+                    <input type="text" class="form-control" name="rlname"
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="rsex">Sex</label>
+                    <input type="text" class="form-control" name="rsex"
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="rbirth">Birthdate</label>
+                    <input type="text" class="form-control" name="rbirth"
+                </div>
+                <p>
+                <label for="rname">Program name</label>
+                <select name="rname" id="rname">
+                  <option value="Submit">--Choose a program name:--</option>
+                  {%for option in rnames%}
+                  <option value="{{option[0]}}">{{option[0]}}</option>
+                  {%endfor%}
+                </select>
+                <p>
+                <div class="form-group col-md-6">
+                    <label for="rworks">Works since</label>
+                    <input type="text" class="form-control" name="rworks"
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="rage">Age</label>
+                    <input type="text" class="form-control" name="rage"
+                </div>
+                <p>{{errorresearcher}}</p>
+            </div>
+
+            <h3>Project</h3>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="ptitle">Title</label>
+                    <input type="text" class="form-control" name="ptitle"
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="pamount">Amount</label>
+                    <input type="text" class="form-control" name="pamount"
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="psummary">Summary</label>
+                    <input type="text" class="form-control" name="psummary"
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="pstart">Start date</label>
+                    <input type="text" class="form-control" name="pstart"
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="pend">End date</label>
+                    <input type="text" class="form-control" name="pend"
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="pduration">Duration</label>
+                    <input type="text" class="form-control" name="pduration"
+                </div>
+                <p>
+                <label for="pname">Name</label>
+                <select name="pname" id="pname">
+                  <option value="Submit">--Choose a name:--</option>
+                  {%for option in pnames%}
+                  <option value="{{option[0]}}">{{option[0]}}</option>
+                  {%endfor%}
+                </select>
+                <p>
+                <label for="pevaluated">Organization name</label>
+                <select name="pevaluated" id="pevaluated">
+                  <option value="Submit">--Evaluated from:--</option>
+                  {%for option in pevaluateds%}
+                  <option value="{{option[0]}}">{{option[0]}}</option>
+                  {%endfor%}
+                </select>
+                <p>
+                <label for="pfrom">From</label>
+                <select name="pfrom" id="pfrom">
+                  <option value="Submit">--From:--</option>
+                  {%for option in pfroms%}
+                  <option value="{{option[0]}}">{{option[0]}}</option>
+                  {%endfor%}
+                </select>
+                <p>
+                <div class="form-group col-md-6">
+                    <label for="pgrade">Grade</label>
+                    <input type="text" class="form-control" name="pgrade"
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="pevaldate">Date of evaluation</label>
+                    <input type="text" class="form-control" name="pevaldate"
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="pexec">Executive</label>
+                    <input type="text" class="form-control" name="pexec"
+                </div>
+
+                <p>{{errorproject}}</p>
             </div>
 
             <button type="submit" class="btn btn-default btn-light my-4">Save</button>
