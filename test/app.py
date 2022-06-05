@@ -636,8 +636,8 @@ def create_entry():
 
         if (wtitle != '' and wid != '' ):
             wqueryString = """
-            worksfor (title,id) VALUES ('{}','{}');
-            """.format(fname, ftitle)
+            INSERT INTO worksfor (title,id) VALUES ('{}','{}');
+            """.format(wtitle, wid)
             cur1.execute(wqueryString)
             db.connection.commit()
 
