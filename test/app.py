@@ -1370,66 +1370,58 @@ def delete_entry():
 
             ptitle = str(request.form.get('ptitle'))
            
-            if (oname != '' and oinitials  != '' and opostal_code != '' and ostreet != '' and  ocity != ''):
+            if (oname != ''):
                   oqueryString = """
-                  UPDATE organization SET initials = '{}', postal_code = '{}', street = '{}', city = '{}' WHERE name = '{}';
-                  """.format(oinitials, opostal_code, ostreet, ocity,oname)
+                  ;
+                  """.format(oname)
                   cur1.execute(oqueryString)
                   db.connection.commit()
         #     else:
         #         errorprogram="Field is required"
  
-            if (rid != '' and rfirst_name != '' and rlast_name != '' and rsex != '' and rbirthdate != '' and rname != '' and rworks_since):
+            if (rid != '' ):
                  rqueryString = """
-                 UPDATE researcher SET first_name = '{}', last_name = '{}', sex = '{}', birthdate = '{}' , name = '{}', works_since = '{}' WHERE id = '{}';
-                 """.format(rfirst_name, rlast_name, rsex, rbirthdate, rname, rworks_since,rid)
+                 ;
+                 """.format(rid)
                  cur1.execute(rqueryString)
                  db.connection.commit()
         #    else:
         #        errorprogram="Field is required"
 
-            if (ptitle != '' and pamount != '' and psummary != '' and pstart_date != '' and pend_date != '' and pname != '' and pfrom_org != '' and pevaluated_from != '' and pexec != '' and pgrade != '' and pdate_of_eval != ''):
+            if (ptitle != ''):
                 pqueryString = """
-               update project set amount = '{}', summary = '{}', start_date = '{}', end_date = '{}',name = '{}', evaluated_from = '{}', from_org= '{}', grade = '{}', date_of_eval = '{}', exec = '{}' where title = '{}';
-                """.format(pamount, psummary, pstart_date, pend_date, pname, pevaluated_from, pfrom_org, pgrade, pdate_of_eval, pexec,ptitle)
+               ;
+                """.format(ptitle)
                 cur1.execute(pqueryString)
                 db.connection.commit()
-                
-            if (rcname != '' and rcbudget_from_edu  != '' and rcbudget_from_priv != ''):
-                 rcqueryString = """
-                 UPDATE research_center SET budget_from_edu = '{}', budget_from_priv = '{}' WHERE name = '{}';
-                 """.format(rcbudget_from_edu, rcbudget_from_priv, rcname )
-                 cur1.execute(rcqueryString)
-                 db.connection.commit()
-        #    else:
-        #        errorprogram="Field is required"
 
-            if (cname != '' and cequity != ''):
+
+            if (cname != ''):
                 cqueryString = """
-                update company set equity = '{}' where name = '{}';
-                """.format(cequity, cname )
+                ;
+                """.format(cname )
                 cur1.execute(cqueryString)
                 db.connection.commit()
 
-            if (uname != '' and ubudget_from_edu != ''):
+            if (uname != '' ):
                 uqueryString = """
-                UPDATE university SET budget_from_edu = '{}' where name = '{}';
-                """.format(ubudget_from_edu,uname)
+                ;
+                """.format(uname)
                 cur1.execute(uqueryString)
                 db.connection.commit()
 
-            if (rcname != '' and rcbudget_from_edu != '' and rcbudget_from_priv != ''):
+            if (rcname != '' ):
                 rcqueryString = """
-                UPDATE research_center SET budget_from_edu = '{}', budget_from_priv = '{}' WHERE name = '{}';
-                """.format(rcbudget_from_edu, rcbudget_from_priv, rcname)
+                ;
+                """.format(rcname)
                 cur1.execute(rcqueryString)
                 db.connection.commit()
                 cur1.close
 
-            if (dtitle != '' and dsummary != '' and dtitle_project != '' and ddue_date != ''):
+            if (dtitle != '' ):
                 dqueryString = """
-                update deliverable set summary = '{}', due_date = '{}', title = '{}' where title_project = '{}';
-                """.format(dtitle, dsummary, dtitle_project, ddue_date)
+                ;
+                """.format(dtitle)
                 cur1.execute(dqueryString)
                 db.connection.commit()
 
