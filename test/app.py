@@ -336,6 +336,7 @@ def create_entry():
     cur1 = db.connection.cursor()
     pname = str(request.form.get('inputname'))
     paddress = str(request.form.get('inputaddress'))
+    queryString = ''
     if (pname != 'None' and paddress != 'None'):
          queryString = """
          INSERT INTO program (name,address) VALUES ('{}','{}');
