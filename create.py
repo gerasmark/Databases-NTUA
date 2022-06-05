@@ -86,3 +86,65 @@ def create_entry():
         db.connection.commit()
     else:
         errorprogram="Field(s) is required"
+
+    if (cname != '' and cequity != ''):
+        queryString = """
+        select name from organization
+        INSERT INTO company (name,equity) VALUES ('{}','{}');
+        """.format(cname, cequity)
+        cur1.execute(queryString)
+        db.connection.commit()
+
+    if (uname != '' and ubudget_from_edu != ''):
+        queryString = """
+        select name from organization
+        INSERT INTO university (name,budget_from_edu) VALUES ('{}','{}');
+        """.format(uname, ubudget_from_edu)
+        cur1.execute(queryString)
+        db.connection.commit()
+
+    if (rcname != '' and rcbudget_from_edu != '' and rcbudget_from_priv != ''):
+        queryString = """
+        select name from organization
+        INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ('{}','{}','{}');
+        """.format(rcname, rcbudget_from_edu, rcbudget_from_priv)
+        cur1.execute(queryString)
+        db.connection.commit()
+
+    if (phname != '' and phname != ''):
+        queryString = """
+        select name from organization
+        INSERT INTO phone (name,phone) VALUES ('{}','{}');
+        """.format(phname, phphone)
+        cur1.execute(queryString)
+        db.connection.commit()
+
+    if (dtitle != '' and dsummary != '' and dtitle_project != '' and ddue_date != ''):
+        queryString = """
+        select title from project
+        INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ('{}','{}','{}','{}');
+        """.format(dtitle, dsummary, dtitle_project, ddue_date)
+        cur1.execute(queryString)
+        db.connection.commit()
+
+    if (sname != '' ):
+        queryString = """
+        INSERT INTO scientific_field (name) VALUES ('{}');
+        """.format(sname)
+        cur1.execute(queryString)
+        db.connection.commit()
+
+    if (fname != '' and ftitle != '' ):
+        queryString = """
+        select name from scientific_field
+        select title from project
+        INSERT INTO fieldthatdescribes (name,title) VALUES ('{}','{}')
+        """.format(fname, ftitle)
+        cur1.execute(queryString)
+        db.connection.commit()
+
+    
+
+    
+
+    
