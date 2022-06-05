@@ -1,3 +1,4 @@
+from os import uname
 from flask import Flask, render_template, request, flash, redirect, url_for, abort
 from flask_mysqldb import MySQL
 import yaml
@@ -379,7 +380,16 @@ def create_entry():
         rname = str(request.form.get('rname'))
         rworks_since = str(request.form.get('rworks_since'))
 
-        pphone 
+        phphone = str(request.form.get('phphone'))
+        phname = str(request.form.get('phname'))
+
+        rcname = str(request.form.get('rcname'))
+        rcbudget_from_edu = str(request.form.get('rcbudget_from_edu'))
+        rcbudget_from_priv = str(request.form.get('rcbudget_from_priv'))
+
+        uname = str(request.form.get('uname'))
+        ubudget_from_edu = str(request.form.get('ubudget_from_edu'))
+        
 
 
 
