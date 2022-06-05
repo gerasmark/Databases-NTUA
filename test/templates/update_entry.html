@@ -5,7 +5,7 @@
     </head>
     <h1>  Update Data in Database </h1>
         <h2 id=error>{{errorwhole}}</h2>
-        <p>query: {{fqueryString}}</p>
+        <!-- <p>query: {{fqueryString}}</p> -->
     <body bgcolor="#b3d9ff" >
     <div>
         <form class = "form" method ='POST' action= "{{ url_for('update_entry') }}">
@@ -77,11 +77,11 @@
             </div>
 
 
-            <h3>Field that describes</h3>
+            <!-- <h3>Field that describes</h3>
             <p>Select Field that describes to Update</p>
             <label for="fname">Name</label>
             <select name="fname" id="fname">
-              <option value="">--Choose a name:--</option>
+              <option value="">-Choose a name:-</option>
               {%for option in fnames%}
               <option value="{{option[0]}}">{{option[0]}}</option>
               {%endfor%}
@@ -89,13 +89,13 @@
             <p>
             <label for="ftitle">Title</label>
             <select name="ftitle" id="ftitle">
-              <option value="">--Choose a title:--</option>
+              <option value="">-Choose a title:-</option>
               {%for option in ftitles%}
               <option value="{{option[0]}}">{{option[0]}}</option>
               {%endfor%}
             </select>
                 <p>{{errorfieldthatdescribes}}</p>
-            </div>
+            </div> -->
 
 
             <h3>Organization</h3>
@@ -135,11 +135,11 @@
             </div>
 
 
-            <h3>Phone</h3>
+            <!-- <h3>Phone</h3>
             <p>Select Phone to Update</p>
             <label for="phname">Organization name</label>
             <select name="phname" id="phname">
-              <option value="">--Choose an organization name:--</option>
+              <option value="">-Choose an organization name:-</option>
               {%for option in phnames%}
               <option value="{{option[0]}}">{{option[0]}}</option>
               {%endfor%}
@@ -150,7 +150,7 @@
                     <input type="text" class="form-control" name="phphone">
                 </div>
                 <p>{{errorphone}}</p>
-            </div>
+            </div> -->
 
 
 
@@ -203,12 +203,12 @@
                 <p>{{erroruniversity}}</p>
             </div>
 
-            <h3>Works for</h3>
+            <!-- <h3>Works for</h3>
             <p>Update who Works for What Project</p>
             <div class="form-row">
               <label for="wtitle">Title</label>
               <select name="wtitle" id="wtitle">
-                <option value="">--Choose a title:--</option>
+                <option value="">-Choose a title:-</option>
                 {%for option in wtitles%}
                 <option value="{{option[0]}}">{{option[0]}}</option>
                 {%endfor%}
@@ -216,14 +216,14 @@
               <p>
               <label for="wid">ID</label>
               <select name="wid" id="wid">
-                <option value="">--Choose an ID:--</option>
+                <option value="">-Choose an ID:-</option>
                 {%for option in wids%}
                 <option value="{{option[0]}}">{{option[0]}}</option>
                 {%endfor%}
               </select>
               <p>
                 <p>{{errorworksfor}}</p>
-            </div>
+            </div> -->
 
             <h3>Researcher</h3>
             <p>Select Researcher to Update</p>
