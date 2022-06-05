@@ -761,7 +761,7 @@ def update_entry():
     uqueryString = ''
     cqueryString = ''
     pqueryString = ''
-    squeryString = ''
+    #squeryString = ''
     dqueryString = ''
     fqueryString = ''
     wqueryString = ''
@@ -904,7 +904,7 @@ def update_entry():
         cname = str(request.form.get('cname'))
         cequity = str(request.form.get('cequity'))
 
-        sname = str(request.form.get('sname'))
+    #    sname = str(request.form.get('sname'))
 
         dtitle = str(request.form.get('dtitle'))
         dsummary = str(request.form.get('dsummary'))
@@ -1012,12 +1012,12 @@ def update_entry():
             cur1.execute(dqueryString)
             db.connection.commit()
 
-        if (sname != '' ):
-            squeryString = """
-            update scientific_field set name = '{}' where name = '{}';
-            """.format(sname)
-            cur1.execute(squeryString)
-            db.connection.commit()
+        # if (sname != '' ):
+        #     squeryString = """
+        #     update scientific_field set name = '{}' where name = '{}';
+        #     """.format(sname)
+        #     cur1.execute(squeryString)
+        #     db.connection.commit()
 
         if (fname != '' and ftitle != '' ):
             fqueryString = """
@@ -1123,7 +1123,7 @@ def update_entry():
         """
         cur.execute(queryStringInitial)
         pfrom_orgs = cur.fetchall()
-        cur.close()    
+        cur.close()
     return render_template('update_entry.html',queryString=queryString, cnames=cnames, dtitle_projects=dtitle_projects, fnames=fnames, ftitles=ftitles, pfrom_orgs=pfrom_orgs, pevaluated_froms=pevaluated_froms, pnames=pnames, rnames=rnames, wids=wids, wtitles=wtitles, unames=unames, rcnames=rcnames, phnames=phnames)
 
 @app.route("/delete_entry")
