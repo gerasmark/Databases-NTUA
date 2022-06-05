@@ -3,6 +3,7 @@
         <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
         <Title> Create new entry in database </Title>
     </head>
+    <h1> Create a new entry in the database </h1>
     <body bgcolor="#b3d9ff" >
     <div>
         <form class = "form" method ='POST' action= "{{ url_for('create_entry') }}">
@@ -54,9 +55,11 @@
                     <input type="text" class="form-control" name="dsummary"
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="ddue_date">Due date</label>
-                    <input type="text" class="form-control" name="ddue_date"
+                  <label for="ddue_date">Due date:</label>
+                  <input type="date" id="ddue_date" name="ddue_date"
+                         value="">
                 </div>
+
                 <p>{{errordeliverable}}</p>
             </div>
 
@@ -213,9 +216,12 @@
                     <input type="text" class="form-control" name="rsex"
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="rbirthdate">Birthdate</label>
-                    <input type="text" class="form-control" name="rbirthdate"
+                  <label for="rbirthdate">Birthdate:</label>
+                  <input type="date" id="rbirthdate" name="rbirthdate"
+                         value="">
                 </div>
+
+
                 <p>
                 <label for="rname">Program name</label>
                 <select name="rname" id="rname">
@@ -226,9 +232,11 @@
                 </select>
                 <p>
                 <div class="form-group col-md-6">
-                    <label for="rworks_since">Works since</label>
-                    <input type="text" class="form-control" name="rworks_since"
+                  <label for="rworks_since">Works since:</label>
+                  <input type="date" id="rworks_since" name="rworks_since"
+                         value="">
                 </div>
+
                 <!-- <div class="form-group col-md-6">
                     <label for="rage">Age</label>
                     <input type="text" class="form-control" name="rage"
@@ -251,13 +259,19 @@
                     <input type="text" class="form-control" name="psummary"
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="pstart_date">Start date</label>
-                    <input type="text" class="form-control" name="pstart_date"
+                  <label for="pstart_date">Start date:</label>
+                  <input type="date" id="pstart_date" name="pstart_date"
+                         value="">
                 </div>
+
+
                 <div class="form-group col-md-6">
-                    <label for="pend_date">End date</label>
-                    <input type="text" class="form-control" name="pend_date"
+                  <label for="pend_date">Start date:</label>
+                  <input type="date" id="pend_date" name="pend_date"
+                         value="">
                 </div>
+
+
                 <!-- <div class="form-group col-md-6">
                     <label for="pduration">Duration</label>
                     <input type="text" class="form-control" name="pduration"
@@ -292,9 +306,13 @@
                     <input type="text" class="form-control" name="pgrade"
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="pdate_of_eval">Date of evaluation</label>
-                    <input type="text" class="form-control" name="pdate_of_eval"
+                  <label for="pdate_of_eval">Start date:</label>
+                  <input type="date" id="pdate_of_eval" name="pdate_of_eval"
+                         value="">
                 </div>
+
+
+
                 <div class="form-group col-md-6">
                     <label for="pexec">Executive</label>
                     <input type="text" class="form-control" name="pexec"
