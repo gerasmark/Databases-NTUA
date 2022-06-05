@@ -1,16 +1,214 @@
 <!DOCTYPE html>
     <head>
         <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
-        <Title> Delete entry from database </Title>
+        <Title> Delete Data in Database </Title>
     </head>
+    <h1>  Delete Data in Database </h1>
+        <h2 id=error>{{errorwhole}}</h2>
     <body bgcolor="#b3d9ff" >
-    <!-- <table border=1>
-        {% for name in pairnames %}
-        <tr>
-            <td>{{name[0]}} </td>
-            <td>{{name[1]}} </td>
-        </tr>
-        {% endfor %}
-    </table> -->
+    <div>
+        <form class = "form" method ='POST' action= "{{ url_for('delete_entry') }}">
+            <h3>Program</h3>
+            <p>Select Program to Delete</p>
+            <div class="form-row">
+                <!-- <div class="form-group col-md-6">
+                    <label for="prname">Name</label>
+                    <input type="text" class="form-control" name="prname">
+                </div> -->
+                <label for="prname">Name</label>
+                <select name="prname" id="prname">
+                  <option value="">--Choose a program name:--</option>
+                  {%for option in prnames%}
+                  <option value="{{option[0]}}">{{option[0]}}</option>
+                  {%endfor%}
+                </select>
+
+            </div>
+
+
+            <h3>Company</h3>
+            <p>Select Company to Delete</p>
+            <label for="cname">Organization name</label>
+            <select name="cname" id="cname">
+              <option value="">--Choose an organization name:--</option>
+              {%for option in cnames%}
+              <option value="{{option[0]}}">{{option[0]}}</option>
+              {%endfor%}
+            </select>
+            
+            </div>
+
+            <h3>Deliverable</h3>
+            <p>Select Deliverable to Delete</p>
+            <label for="dtitle_project">Project title</label>
+            <select name="dtitle_project" id="dtitle_project">
+              <option value="">--Choose a project title:--</option>
+              {%for option in dtitle_projects%}
+              <option value="{{option[0]}}">{{option[0]}}</option>
+              {%endfor%}
+            </select>
+            
+            </div>
+
+
+           
+
+
+            <h3>Organization</h3>
+            <p>Select Organization to Delete</p>
+            <div class="form-row">
+                <!-- <div class="form-group col-md-6">
+                    <label for="oname">Name</label>
+                    <input type="text" class="form-control" name="oname">
+                </div> -->
+                <label for="oname">Name</label>
+                <select name="oname" id="oname">
+                  <option value="">--Choose an organization name:--</option>
+                  {%for option in onames%}
+                  <option value="{{option[0]}}">{{option[0]}}</option>
+                  {%endfor%}
+                </select>
+
+                
+
+
+            <h3>Phone</h3>
+            <p>Select Phone to Delete</p>
+            <label for="phname">Organization name</label>
+            <select name="phname" id="phname">
+              <option value="">--Choose an organization name:--</option>
+              {%for option in phnames%}
+              <option value="{{option[0]}}">{{option[0]}}</option>
+              {%endfor%}
+            </select>
+            <p>
+                <div class="form-group col-md-6">
+                    <label for="phphone">Phone</label>
+                    <input type="text" class="form-control" name="phphone">
+                </div>
+                <p>{{errorphone}}</p>
+            </div>
+
+
+
+            <!-- <h3>Scientific field</h3>
+            <p>Select Scientific field to Delete</p>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="sname">Name</label>
+                    <input type="text" class="form-control" name="sname">
+                </div>
+                <p>{{errorscientific}}</p>
+            </div> -->
+
+
+            <h3>Research center</h3>
+            <p>Select Research center to Delete</p>
+            <label for="rcname">Organization name</label>
+            <select name="rcname" id="rcname">
+              <option value="">--Choose an organization name:--</option>
+              {%for option in rcnames%}
+              <option value="{{option[0]}}">{{option[0]}}</option>
+              {%endfor%}
+            </select>
+            <p>
+                <div class="form-group col-md-6">
+                    <label for="rcbudget_from_edu">Budget from EDU</label>
+                    <input type="text" class="form-control" name="rcbudget_from_edu">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="rcbudget_from_priv">Budget from private</label>
+                    <input type="text" class="form-control" name="rcbudget_from_priv">
+                </div>
+                <p>{{errorresearchcenter}}</p>
+            </div>
+
+            <h3>University</h3>
+            <p>Select University to Delete</p>
+            <label for="uname">Organization name</label>
+            <select name="uname" id="uname">
+              <option value="">--Choose an organization name:--</option>
+              {%for option in unames%}
+              <option value="{{option[0]}}">{{option[0]}}</option>
+              {%endfor%}
+            </select>
+            <p>
+                <div class="form-group col-md-6">
+                    <label for="ubudget_from_edu">Budget from EDU</label>
+                    <input type="text" class="form-control" name="ubudget_from_edu">
+                </div>
+                <p>{{erroruniversity}}</p>
+            </div>
+
+            <h3>Works for</h3>
+            <p>Delete who Works for What Project</p>
+            <div class="form-row">
+              <label for="wtitle">Title</label>
+              <select name="wtitle" id="wtitle">
+                <option value="">--Choose a title:--</option>
+                {%for option in wtitles%}
+                <option value="{{option[0]}}">{{option[0]}}</option>
+                {%endfor%}
+              </select>
+              <p>
+              <label for="wid">ID</label>
+              <select name="wid" id="wid">
+                <option value="">--Choose an ID:--</option>
+                {%for option in wids%}
+                <option value="{{option[0]}}">{{option[0]}}</option>
+                {%endfor%}
+              </select>
+              <p>
+                <p>{{errorworksfor}}</p>
+            </div>
+
+            <h3>Researcher</h3>
+            <p>Select Researcher to Delete</p>
+            <div class="form-row">
+                <!-- <div class="form-group col-md-6">
+                    <label for="rid">ID</label>
+                    <input type="text" class="form-control" name="rid">
+                </div> -->
+                <label for="rid">ID</label>
+                <select name="rid" id="rid">
+                  <option value="">--Choose an ID:--</option>
+                  {%for option in rids%}
+                  <option value="{{option[0]}}">{{option[0]}}</option>
+                  {%endfor%}
+                </select>
+
+                </div>
+
+
+
+                              <!-- <div class="form-group col-md-6">
+                    <label for="rage">Age</label>
+                    <input type="text" class="form-control" name="rage"
+                </div> -->
+             
+            
+
+            <h3>Project</h3>
+            <p>Select Project to Delete</p>
+            <div class="form-row">
+                <!-- <div class="form-group col-md-6">
+                    <label for="ptitle">Title</label>
+                    <input type="text" class="form-control" name="ptitle">
+                </div> -->
+                <label for="ptitle">Title</label>
+                <select name="ptitle" id="ptitle">
+                  <option value="">--Choose a title:--</option>
+                  {%for option in ptitles%}
+                  <option value="{{option[0]}}">{{option[0]}}</option>
+                  {%endfor%}
+                </select>
+
+                
+            </div>
+
+            <button type="submit" class="btn btn-default btn-light my-4">Save</button>
+        </form>
+    </div>
+
     <a href="/">Return</a>
 </body>
