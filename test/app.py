@@ -355,7 +355,8 @@ def create_entry():
     cqueryString = ''
     pqueryString = ''
     squeryString = ''
-    queryString = ''
+    dqueryString = ''
+    
     if request.method == 'POST':
         cur1 = db.connection.cursor()
         pname = str(request.form.get('inputname'))
