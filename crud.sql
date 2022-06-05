@@ -23,9 +23,9 @@ INSERT INTO university (name,budget_from_edu) VALUES ('{}','{}')
 select name from organization
 INSERT INTO company (name,equity) VALUES ('{}','{}')
 
-select name from program
-select name from organization
-select id from researcher
+select name from project
+select from_org from project
+select evaluated_from from project
 INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_from,from_org,grade,date_of_eval,exec) VALUES ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')
 
 INSERT INTO scientific_field (name) VALUES ('{}')

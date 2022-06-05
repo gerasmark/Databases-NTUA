@@ -434,6 +434,12 @@ def create_entry():
              cur1.execute(oqueryString)
              db.connection.commit()
 
+        if (rid != '' and rfirst_name != '' and rlast_name != '' and rsex != '' and rbirhtdate != '' and rname != '' and rworks_since):
+             rqueryString = """
+             INSERT INTO researcher (id,first_name,last_name,sex,birthdate,name,works_since) VALUES ('{}','{}','{}','{}','{}','{}','{}','{}')
+             """.format(rid, rfirst_name, rlast_name, rsex, rbirhtdate, rname, rworks_since)
+             cur1.execute(rqueryString)
+             db.connection.commit()
         cur1.close
 
     return render_template('create_entry.html', queryString=queryString, errorprogram=errorprogram)
