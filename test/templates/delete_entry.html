@@ -40,10 +40,10 @@
 
             <h3>Deliverable</h3>
             <p>Select Deliverable to Delete</p>
-            <label for="dtitle_project">Project title</label>
-            <select name="dtitle_project" id="dtitle_project">
-              <option value="">--Choose a project title:--</option>
-              {%for option in dtitle_projects%}
+            <label for="dtitle">Project title</label>
+            <select name="dtitle" id="dtitle">
+              <option value="">--Choose a Deliverable title:--</option>
+              {%for option in dtitles%}
               <option value="{{option[0]}}">{{option[0]}}</option>
               {%endfor%}
             </select>
@@ -132,28 +132,6 @@
                     <input type="text" class="form-control" name="ubudget_from_edu">
                 </div>
                 <p>{{erroruniversity}}</p>
-            </div>
-
-            <h3>Works for</h3>
-            <p>Delete who Works for What Project</p>
-            <div class="form-row">
-              <label for="wtitle">Title</label>
-              <select name="wtitle" id="wtitle">
-                <option value="">--Choose a title:--</option>
-                {%for option in wtitles%}
-                <option value="{{option[0]}}">{{option[0]}}</option>
-                {%endfor%}
-              </select>
-              <p>
-              <label for="wid">ID</label>
-              <select name="wid" id="wid">
-                <option value="">--Choose an ID:--</option>
-                {%for option in wids%}
-                <option value="{{option[0]}}">{{option[0]}}</option>
-                {%endfor%}
-              </select>
-              <p>
-                <p>{{errorworksfor}}</p>
             </div>
 
             <h3>Researcher</h3>
