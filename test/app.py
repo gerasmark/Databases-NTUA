@@ -406,7 +406,17 @@ def create_entry():
         wtitle = str(request.form.get('wtitle'))
         wid = str(request.form.get('wid'))
 
-
+        ptitle = str(request.form.get('ptitle'))
+        pamount = str(request.form.get('pamount'))
+        psummary = str(request.form.get('psummary'))
+        pstart_date = str(request.form.get('pstart_date'))
+        pend_date = str(request.form.get('pend_date'))
+        pname = str(request.form.get('pname'))        
+        pevaluated_from = str(request.form.get('pevaluated_from'))
+        pfrom_org = str(request.form.get('pfrom_org'))
+        pgrade = str(request.form.get('pgrade'))
+        pdate_of_eval = str(request.form.get('pdate_of_eval'))
+        pexec = str(request.form.get('pexec'))
 
         if (prname != ''):
              queryString = """
