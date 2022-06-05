@@ -107,7 +107,7 @@
         if (phname != '' and phphone != '' ):
              phqueryString = """
              UPDATE phone SET phone = '{}' WHERE name = '{}';
-             """.format(phphone,phname)
+             """.format(phname,phphone)
              cur1.execute(phqueryString)
              db.connection.commit()
         else:
