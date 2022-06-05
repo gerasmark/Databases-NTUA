@@ -481,41 +481,41 @@ def create_entry():
             cur1.execute(cqueryString)
             db.connection.commit()
 
-    if (uname != '' and ubudget_from_edu != ''):
-        uqueryString = """
-        INSERT INTO university (name,budget_from_edu) VALUES ('{}','{}');
-        """.format(uname, ubudget_from_edu)
-        cur1.execute(uqueryString)
-        db.connection.commit()
-
-    if (rcname != '' and rcbudget_from_edu != '' and rcbudget_from_priv != ''):
-        rcqueryString = """
-        INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ('{}','{}','{}');
-        """.format(rcname, rcbudget_from_edu, rcbudget_from_priv)
-        cur1.execute(rcqueryString)
-        db.connection.commit()
-        cur1.close
-
-    if (dtitle != '' and dsummary != '' and dtitle_project != '' and ddue_date != ''):
-        dqueryString = """
-        INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ('{}','{}','{}','{}');
-        """.format(dtitle, dsummary, dtitle_project, ddue_date)
-        cur1.execute(dqueryString)
-        db.connection.commit()
-
-    if (sname != '' ):
-        squeryString = """
-        INSERT INTO scientific_field (name) VALUES ('{}');
-        """.format(sname)
-        cur1.execute(squeryString)
-        db.connection.commit()
-
-    if (fname != '' and ftitle != '' ):
-        fqueryString = """
-        INSERT INTO fieldthatdescribes (name,title) VALUES ('{}','{}');
-        """.format(fname, ftitle)
-        cur1.execute(fqueryString)
-        db.connection.commit()
+        if (uname != '' and ubudget_from_edu != ''):
+            uqueryString = """
+            INSERT INTO university (name,budget_from_edu) VALUES ('{}','{}');
+            """.format(uname, ubudget_from_edu)
+            cur1.execute(uqueryString)
+            db.connection.commit()
+    
+        if (rcname != '' and rcbudget_from_edu != '' and rcbudget_from_priv != ''):
+            rcqueryString = """
+            INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ('{}','{}','{}');
+            """.format(rcname, rcbudget_from_edu, rcbudget_from_priv)
+            cur1.execute(rcqueryString)
+            db.connection.commit()
+            cur1.close
+    
+        if (dtitle != '' and dsummary != '' and dtitle_project != '' and ddue_date != ''):
+            dqueryString = """
+            INSERT INTO deliverable (title,summary,title_project,due_date) VALUES ('{}','{}','{}','{}');
+            """.format(dtitle, dsummary, dtitle_project, ddue_date)
+            cur1.execute(dqueryString)
+            db.connection.commit()
+    
+        if (sname != '' ):
+            squeryString = """
+            INSERT INTO scientific_field (name) VALUES ('{}');
+            """.format(sname)
+            cur1.execute(squeryString)
+            db.connection.commit()
+    
+        if (fname != '' and ftitle != '' ):
+            fqueryString = """
+            INSERT INTO fieldthatdescribes (name,title) VALUES ('{}','{}');
+            """.format(fname, ftitle)
+            cur1.execute(fqueryString)
+            db.connection.commit()
 
 
     return render_template('create_entry.html', queryString=queryString, errorprogram=errorprogram)
