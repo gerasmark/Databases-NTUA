@@ -39,7 +39,7 @@
             <h3>Deliverable</h3>
             <label for="dtitle_project">Project title</label>
             <select name="dtitle_project" id="dtitle_project">
-              <option value="Submit">--Choose an project title:--</option>
+              <option value="Submit">--Choose a project title:--</option>
               {%for option in dtitle_projects%}
               <option value="{{option[0]}}">{{option[0]}}</option>
               {%endfor%}
@@ -64,7 +64,7 @@
             <h3>Field that describes</h3>
             <label for="fname">Name</label>
             <select name="fname" id="fname">
-              <option value="Submit">--Choose an name:--</option>
+              <option value="Submit">--Choose a name:--</option>
               {%for option in fnames%}
               <option value="{{option[0]}}">{{option[0]}}</option>
               {%endfor%}
@@ -72,7 +72,7 @@
             <p>
             <label for="ftitle">Title</label>
             <select name="ftitle" id="ftitle">
-              <option value="Submit">--Choose an title:--</option>
+              <option value="Submit">--Choose a title:--</option>
               {%for option in ftitles%}
               <option value="{{option[0]}}">{{option[0]}}</option>
               {%endfor%}
@@ -190,7 +190,7 @@
             <div class="form-row">
               <label for="wtitle">Title</label>
               <select name="wtitle" id="wtitle">
-                <option value="Submit">--Choose an title:--</option>
+                <option value="Submit">--Choose a title:--</option>
                 {%for option in wtitles%}
                 <option value="{{option[0]}}">{{option[0]}}</option>
                 {%endfor%}
@@ -284,7 +284,7 @@
                   {%endfor%}
                 </select>
                 <p>
-                <label for="pevaluated_from">Organization name</label>
+                <label for="pevaluated_from">Evaluated from</label>
                 <select name="pevaluated_from" id="pevaluated_from">
                   <option value="Submit">--Evaluated from:--</option>
                   {%for option in pevaluated_froms%}
@@ -292,9 +292,9 @@
                   {%endfor%}
                 </select>
                 <p>
-                <label for="pfrom_org">From</label>
+                <label for="pfrom_org">From organization</label>
                 <select name="pfrom_org" id="pfrom_org">
-                  <option value="Submit">--From:--</option>
+                  <option value="Submit">--From organization:--</option>
                   {%for option in pfrom_orgs%}
                   <option value="{{option[0]}}">{{option[0]}}</option>
                   {%endfor%}
