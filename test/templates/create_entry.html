@@ -37,10 +37,10 @@
             </div>
 
             <h3>Deliverable</h3>
-            <label for="dptitle">Project title</label>
-            <select name="dptitle" id="dptitle">
+            <label for="dtitle_project">Project title</label>
+            <select name="dtitle_project" id="dtitle_project">
               <option value="Submit">--Choose an project title:--</option>
-              {%for option in dptitles%}
+              {%for option in dtitle_projects%}
               <option value="{{option[0]}}">{{option[0]}}</option>
               {%endfor%}
             </select>
@@ -54,8 +54,8 @@
                     <input type="text" class="form-control" name="dsummary"
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="ddate">Due date</label>
-                    <input type="text" class="form-control" name="ddate"
+                    <label for="ddue_date">Due date</label>
+                    <input type="text" class="form-control" name="ddue_date"
                 </div>
                 <p>{{errordeliverable}}</p>
             </div>
@@ -88,13 +88,13 @@
                     <input type="text" class="form-control" name="oname"
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputaddress">Initials</label>
+                    <label for="oinitials">Initials</label>
                     <input type="text" class="form-control" name="oinitials"
                 </div>
                 <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="ocode">Postal Code</label>
-                    <input type="text" class="form-control" name="ocode"
+                    <label for="opostal_code">Postal Code</label>
+                    <input type="text" class="form-control" name="opostal_code"
                 </div>
                 <div class="form-group col-md-6">
                     <label for="ostreet">Street</label>
@@ -119,8 +119,8 @@
             </select>
             <p>
                 <div class="form-group col-md-6">
-                    <label for="phone">Phone</label>
-                    <input type="text" class="form-control" name="phone"
+                    <label for="phphone">Phone</label>
+                    <input type="text" class="form-control" name="phphone"
                 </div>
                 <p>{{errorphone}}</p>
             </div>
@@ -151,21 +151,21 @@
 
 
             <h3>Research center</h3>
-            <label for="rname">Organization name</label>
-            <select name="rname" id="rname">
+            <label for="rcname">Organization name</label>
+            <select name="rcname" id="rcname">
               <option value="Submit">--Choose an organization name:--</option>
-              {%for option in rnames%}
+              {%for option in rcnames%}
               <option value="{{option[0]}}">{{option[0]}}</option>
               {%endfor%}
             </select>
             <p>
                 <div class="form-group col-md-6">
-                    <label for="rbudgetedu">Budget from EDU</label>
-                    <input type="text" class="form-control" name="rbudgetedu"
+                    <label for="rcbudget_from_edu">Budget from EDU</label>
+                    <input type="text" class="form-control" name="rcbudget_from_edu"
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="rbudgetpriv">Budget from private</label>
-                    <input type="text" class="form-control" name="rbudgetpriv"
+                    <label for="rcbudget_from_priv">Budget from private</label>
+                    <input type="text" class="form-control" name="rcbudget_from_priv"
                 </div>
                 <p>{{errorresearchcenter}}</p>
             </div>
@@ -180,8 +180,8 @@
             </select>
             <p>
                 <div class="form-group col-md-6">
-                    <label for="ubudgetedu">Budget from EDU</label>
-                    <input type="text" class="form-control" name="ubudgetedu"
+                    <label for="ubudget_from_edu">Budget from EDU</label>
+                    <input type="text" class="form-control" name="ubudget_from_edu"
                 </div>
                 <p>{{erroruniversity}}</p>
             </div>
@@ -214,20 +214,20 @@
                     <input type="text" class="form-control" name="rid"
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="rfname">First name</label>
-                    <input type="text" class="form-control" name="rfname"
+                    <label for="rfirst_name">First name</label>
+                    <input type="text" class="form-control" name="rfirst_name"
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="rlname">Last name</label>
-                    <input type="text" class="form-control" name="rlname"
+                    <label for="rlast_name">Last name</label>
+                    <input type="text" class="form-control" name="rlast_name"
                 </div>
                 <div class="form-group col-md-6">
                     <label for="rsex">Sex</label>
                     <input type="text" class="form-control" name="rsex"
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="rbirth">Birthdate</label>
-                    <input type="text" class="form-control" name="rbirth"
+                    <label for="rbirthdate">Birthdate</label>
+                    <input type="text" class="form-control" name="rbirthdate"
                 </div>
                 <p>
                 <label for="rname">Program name</label>
@@ -239,13 +239,13 @@
                 </select>
                 <p>
                 <div class="form-group col-md-6">
-                    <label for="rworks">Works since</label>
-                    <input type="text" class="form-control" name="rworks"
+                    <label for="rworks_since">Works since</label>
+                    <input type="text" class="form-control" name="rworks_since"
                 </div>
-                <div class="form-group col-md-6">
+                <!-- <div class="form-group col-md-6">
                     <label for="rage">Age</label>
                     <input type="text" class="form-control" name="rage"
-                </div>
+                </div> -->
                 <p>{{errorresearcher}}</p>
             </div>
 
@@ -264,17 +264,17 @@
                     <input type="text" class="form-control" name="psummary"
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="pstart">Start date</label>
-                    <input type="text" class="form-control" name="pstart"
+                    <label for="pstart_date">Start date</label>
+                    <input type="text" class="form-control" name="pstart_date"
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="pend">End date</label>
-                    <input type="text" class="form-control" name="pend"
+                    <label for="pend_date">End date</label>
+                    <input type="text" class="form-control" name="pend_date"
                 </div>
-                <div class="form-group col-md-6">
+                <!-- <div class="form-group col-md-6">
                     <label for="pduration">Duration</label>
                     <input type="text" class="form-control" name="pduration"
-                </div>
+                </div> -->
                 <p>
                 <label for="pname">Name</label>
                 <select name="pname" id="pname">
@@ -284,18 +284,18 @@
                   {%endfor%}
                 </select>
                 <p>
-                <label for="pevaluated">Organization name</label>
-                <select name="pevaluated" id="pevaluated">
+                <label for="pevaluated_from">Organization name</label>
+                <select name="pevaluated_from" id="pevaluated_from">
                   <option value="Submit">--Evaluated from:--</option>
-                  {%for option in pevaluateds%}
+                  {%for option in pevaluated_froms%}
                   <option value="{{option[0]}}">{{option[0]}}</option>
                   {%endfor%}
                 </select>
                 <p>
-                <label for="pfrom">From</label>
-                <select name="pfrom" id="pfrom">
+                <label for="pfrom_org">From</label>
+                <select name="pfrom_org" id="pfrom_org">
                   <option value="Submit">--From:--</option>
-                  {%for option in pfroms%}
+                  {%for option in pfrom_orgs%}
                   <option value="{{option[0]}}">{{option[0]}}</option>
                   {%endfor%}
                 </select>
@@ -305,8 +305,8 @@
                     <input type="text" class="form-control" name="pgrade"
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="pevaldate">Date of evaluation</label>
-                    <input type="text" class="form-control" name="pevaldate"
+                    <label for="pdate_of_eval">Date of evaluation</label>
+                    <input type="text" class="form-control" name="pdate_of_eval"
                 </div>
                 <div class="form-group col-md-6">
                     <label for="pexec">Executive</label>

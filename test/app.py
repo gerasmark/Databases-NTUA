@@ -375,7 +375,7 @@ def create_entry():
         rfirst_name = str(request.form.get('rfirst_name'))
         rlast_name = str(request.form.get('rlast_name'))
         rsex = str(request.form.get('rsex'))
-        rbirhtdate = str(request.form.get('rbirthdate'))
+        rbirthdate = str(request.form.get('rbirthdate'))
         rname = str(request.form.get('rname'))
         rworks_since = str(request.form.get('rworks_since'))
 
@@ -410,7 +410,7 @@ def create_entry():
         psummary = str(request.form.get('psummary'))
         pstart_date = str(request.form.get('pstart_date'))
         pend_date = str(request.form.get('pend_date'))
-        pname = str(request.form.get('pname'))        
+        pname = str(request.form.get('pname'))
         pevaluated_from = str(request.form.get('pevaluated_from'))
         pfrom_org = str(request.form.get('pfrom_org'))
         pgrade = str(request.form.get('pgrade'))
@@ -435,10 +435,10 @@ def create_entry():
         else:
             errorprogram="Field is required"
 
-        if (rid != '' and rfirst_name != '' and rlast_name != '' and rsex != '' and rbirhtdate != '' and rname != '' and rworks_since):
+        if (rid != '' and rfirst_name != '' and rlast_name != '' and rsex != '' and rbirthdate != '' and rname != '' and rworks_since):
              rqueryString = """
              INSERT INTO researcher (id,first_name,last_name,sex,birthdate,name,works_since) VALUES ('{}','{}','{}','{}','{}','{}','{}','{}');
-             """.format(rid, rfirst_name, rlast_name, rsex, rbirhtdate, rname, rworks_since)
+             """.format(rid, rfirst_name, rlast_name, rsex, rbirthdate, rname, rworks_since)
              cur1.execute(rqueryString)
              db.connection.commit()
         else:
@@ -455,7 +455,7 @@ def create_entry():
             db.connection.commit()
         else:
             errorprogram="Field is required"
-        
+
         if (phname != '' and phphone != '' ):
              phqueryString = """
              INSERT INTO phone (name,phone) VALUES ('{}','{}');
@@ -464,7 +464,7 @@ def create_entry():
              db.connection.commit()
         else:
             errorprogram="Field is required"
-        
+
         if (rcname != '' and rcbudget_from_edu  != '' and rcbudget_from_priv != ''):
              rcqueryString = """
              INSERT INTO research_center (name,budget_from_edu,budget_from_priv) VALUES ('{}','{}','{}');
@@ -473,7 +473,7 @@ def create_entry():
              db.connection.commit()
         else:
             errorprogram="Field is required"
-        
+
         if (cname != '' and cequity != ''):
             cqueryString = """
             INSERT INTO company (name,equity) VALUES ('{}','{}');
