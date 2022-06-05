@@ -316,6 +316,7 @@ def read_entry():
     cur1.close()
     chosen = ''
     values = ''
+    columns = ''
     if request.method == 'POST':
         chosen = request.form['field']
         if chosen == "Submit":
@@ -329,7 +330,20 @@ def read_entry():
         cur2.execute(wholeQuery)
         values = cur2.fetchall()
         cur2.close()
-    return render_template('read_entry.html',field=field, chosen=chosen, values=values)
+
+        cur3 = db.connection.cursor()
+        queryString3 = """
+        SELECT COLUMN_NAME
+        FROM INFORMATION_SCHEMA.COLUMNS
+        WHERE TABLE_NAME = '{}'
+        ORDER BY ORDINAL_POSITION
+        """.format(chosen)
+        wholeQuery = queryString3 + str(chosen)
+        cur3.execute(wholeQuery)
+        columns = cur3.fetchall()
+        cur3.close()
+
+    return render_template('read_entry.html',field=field, chosen=chosen, values=values, colums=colums)
 
 @app.route("/create_entry",methods={'GET', 'POST'})
 def create_entry():
@@ -343,6 +357,7 @@ def create_entry():
              INSERT INTO program (name,address) VALUES ('{}','{}');
              """.format(pname, paddress)
         cur1.execute(queryString)
+        db.connection.commit()
         cur1.close
 
 
