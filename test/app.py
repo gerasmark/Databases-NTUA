@@ -428,13 +428,11 @@ def create_entry():
             errorprogram="Name is required"
 
         if (oname != '' and oinitials and != '' and opostal_code != '' and ostreet != '' and  ocity != ''):
-             queryString = """
+             oqueryString = """
              INSERT INTO organization (name,initials,postal_code,street,city) VALUES ('{}','{}','{}','{}');
-             """.format()
-             cur1.execute(queryString)
+             """.format(oname, oinitials, opostal_code, ostreet, ocity)
+             cur1.execute(oqueryString)
              db.connection.commit()
-        else:
-            errorprogram="Name is required"
 
         cur1.close
 
