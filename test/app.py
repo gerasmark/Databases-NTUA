@@ -352,7 +352,7 @@ def create_entry():
 
 
 
-    return render_template('create_entry.html')
+    return render_template('create_entry.html', queryString=queryString)
 
 @app.route("/update_entry")
 def update_entry():
