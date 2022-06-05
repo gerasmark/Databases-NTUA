@@ -436,13 +436,22 @@ def create_entry():
 
         if (rid != '' and rfirst_name != '' and rlast_name != '' and rsex != '' and rbirhtdate != '' and rname != '' and rworks_since):
              rqueryString = """
-             INSERT INTO researcher (id,first_name,last_name,sex,birthdate,name,works_since) VALUES ('{}','{}','{}','{}','{}','{}','{}','{}')
+             INSERT INTO researcher (id,first_name,last_name,sex,birthdate,name,works_since) VALUES ('{}','{}','{}','{}','{}','{}','{}','{}');
              """.format(rid, rfirst_name, rlast_name, rsex, rbirhtdate, rname, rworks_since)
              cur1.execute(rqueryString)
              db.connection.commit()
 
-
+        if (ptitle != '' and pamount != '' and psummary != '' and pstart_date != '' and pend_date != '' and pname != '' and pfrom_org != '' and pevaluated_from != '' and pexec != '' and pgrade != '' and pdate_of_eval != ''):
+            pqueryString = """
+            select name from program
+            select name from organization
+            select id from researcher
+            INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_from,from_org,grade,date_of_eval,exec) VALUES ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}');
+            """.format(ptitle, pamount, psummary, pstart_date, pend_date, pname, pevaluated_from, pfrom_org, pgrade, pdate_of_eval, pexec)
+            cur1.execute(pqueryString)
+            db.connection.commit()
         cur1.close
+
 
     return render_template('create_entry.html', queryString=queryString, errorprogram=errorprogram)
 
