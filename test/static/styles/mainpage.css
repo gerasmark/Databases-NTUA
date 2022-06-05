@@ -27,3 +27,12 @@
 #bg{
   background-image: url(tonisi.jpg);
 }
+
+#backdrop-img {
+    position: center;
+    /* top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; */
+    /* transform: scale(0.9); */
+}
