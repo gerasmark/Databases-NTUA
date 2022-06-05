@@ -19,7 +19,7 @@ def index():
 
 #credits
 @app.route("/credits")
-def index():
+def credits():
     return render_template('credits.html')
 
 #3.1
