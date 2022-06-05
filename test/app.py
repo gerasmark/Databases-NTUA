@@ -417,10 +417,10 @@ def create_entry():
         else:
             errorprogram="Name is required"
 
-        if (pname != ''):
+        if (oname != '' and oinitials and != '' and opostal_code != '' and ostreet != '' and  ocity != ''):
              queryString = """
-             INSERT INTO program (name,address) VALUES ('{}','{}');
-             """.format(pname, paddress)
+             INSERT INTO organization (name,initials,postal_code,street,city) VALUES ('{}','{}','{}','{}');
+             """.format()
              cur1.execute(queryString)
              db.connection.commit()
         else:
