@@ -347,7 +347,7 @@ def read_entry():
 
 @app.route("/create_entry",methods={'GET', 'POST'})
 def create_entry():
-    errorname = ''
+    errorprogram = ''
     queryString = ''
     oqueryString = ''
     phqueryString = ''
