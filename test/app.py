@@ -1195,7 +1195,7 @@ def update_entry():
 
 @app.route("/delete_entry", methods={'GET', 'POST'})
 def delete_entry():
-    try:
+    #try:
         #errorprogram = ''
         oqueryString = ''
         rqueryString = ''
@@ -1391,7 +1391,7 @@ def delete_entry():
                 db.connection.commit()            
 
         return render_template('delete_entry.html',cnames=cnames, dtitles=dtitles, pnames=pnames, rnames=rnames, unames=unames, rcnames=rcnames, phphones=phphones, prnames = prnames, onames = onames, rids = rids, ptitles = ptitles)
-    except:
+    #except:
         errorwhole = "Invalid update command"
         return render_template('delete_entry.html', cnames=cnames, dtitles=dtitles, pnames=pnames, rnames=rnames, unames=unames, rcnames=rcnames, phphones=phphones, prnames = prnames, onames = onames, rids = rids, ptitles = ptitles, errorwhole=errorwhole)
 
