@@ -4,6 +4,7 @@
         <Title> Update Data in Database </Title>
     </head>
     <h1>  Update Data in Database </h1>
+        <h2 id=error>{{errorwhole}}</h2>
     <body bgcolor="#b3d9ff" >
     <div>
         <form class = "form" method ='POST' action= "{{ url_for('update_entry') }}">
@@ -368,6 +369,6 @@
             <button type="submit" class="btn btn-default btn-light my-4">Save</button>
         </form>
     </div>
-    <p>{{errorwhole}}</p>
+
     <a href="/">Return</a>
 </body>
