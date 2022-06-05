@@ -6,6 +6,7 @@
     <body bgcolor="#b3d9ff" >
     <div>
         <form class = "form" method ='POST' action= "{{ url_for('create_entry') }}">
+            <h3>Organization</h3>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputname">Name</label>
@@ -19,8 +20,7 @@
             <button type="submit" class="btn btn-default btn-light my-4">Save</button>
         </form>
 
-        <button type="button" class="btn btn-secondary btn-light my-4" onclick="window.location.href='/customers'">Back</button>
+        <button type="button" class="btn btn-secondary btn-light my-4" onclick="window.location.href="/">Back</button>
     </div>
-    <p> query: {{queryString}} </p>
     <a href="/">Return</a>
 </body>
