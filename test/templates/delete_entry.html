@@ -35,7 +35,7 @@
               <option value="{{option[0]}}">{{option[0]}}</option>
               {%endfor%}
             </select>
-            
+
             </div>
 
             <h3>Deliverable</h3>
@@ -47,11 +47,11 @@
               <option value="{{option[0]}}">{{option[0]}}</option>
               {%endfor%}
             </select>
-            
+
             </div>
 
 
-           
+
 
 
             <h3>Organization</h3>
@@ -69,25 +69,19 @@
                   {%endfor%}
                 </select>
 
-                
+
 
 
             <h3>Phone</h3>
             <p>Select Phone to Delete</p>
-            <label for="phname">Organization name</label>
-            <select name="phname" id="phname">
-              <option value="">--Choose an organization name:--</option>
-              {%for option in phnames%}
+            <label for="phphone">Phone</label>
+            <select name="phphone" id="phphone">
+              <option value="">--Choose a phone number:--</option>
+              {%for option in phphones%}
               <option value="{{option[0]}}">{{option[0]}}</option>
               {%endfor%}
             </select>
             <p>
-                <div class="form-group col-md-6">
-                    <label for="phphone">Phone</label>
-                    <input type="text" class="form-control" name="phphone">
-                </div>
-                <p>{{errorphone}}</p>
-            </div>
 
 
 
@@ -185,8 +179,8 @@
                     <label for="rage">Age</label>
                     <input type="text" class="form-control" name="rage"
                 </div> -->
-             
-            
+
+
 
             <h3>Project</h3>
             <p>Select Project to Delete</p>
@@ -203,7 +197,7 @@
                   {%endfor%}
                 </select>
 
-                
+
             </div>
 
             <button type="submit" class="btn btn-default btn-light my-4">Save</button>
