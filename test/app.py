@@ -333,16 +333,17 @@ def read_entry():
 
 @app.route("/create_entry",methods={'GET', 'POST'})
 def create_entry():
-    cur1 = db.connection.cursor()
-    pname = str(request.form.get('inputname'))
-    paddress = str(request.form.get('inputaddress'))
-    queryString = ''
-    if (pname != 'None' and paddress != 'None'):
-         queryString = """
-         INSERT INTO program (name,address) VALUES ('{}','{}');
-         """.format(pname, paddress)
-    cur1.execute(queryString)
-    cur1.close
+    if request.method == 'POST':
+        cur1 = db.connection.cursor()
+        pname = str(request.form.get('inputname'))
+        paddress = str(request.form.get('inputaddress'))
+        queryString = ''
+        if (pname != 'None' and paddress != 'None'):
+             queryString = """
+             INSERT INTO program (name,address) VALUES ('{}','{}');
+             """.format(pname, paddress)
+        cur1.execute(queryString)
+        cur1.close
 
 
 
