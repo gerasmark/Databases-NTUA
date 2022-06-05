@@ -788,7 +788,7 @@ def update_entry():
 
     cur = db.connection.cursor()
     queryStringInitial = """
-    select name from organization
+    select name from program
     """
     cur.execute(queryStringInitial)
     prnames = cur.fetchall()
@@ -802,14 +802,14 @@ def update_entry():
     cur.close()
     cur = db.connection.cursor()
     queryStringInitial = """
-    select name from organization
+    select id from researcher
     """
     cur.execute(queryStringInitial)
     rids = cur.fetchall()
     cur.close()
     cur = db.connection.cursor()
     queryStringInitial = """
-    select name from organization
+    select title from project
     """
     cur.execute(queryStringInitial)
     ptitles = cur.fetchall()
