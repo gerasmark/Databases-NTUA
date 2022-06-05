@@ -1219,11 +1219,12 @@ def delete_entry():
 
         cur = db.connection.cursor()
         queryStringInitial = """
-        select name from program
+        delete from program WHERE name = '{}';
         """
         cur.execute(queryStringInitial)
         prnames = cur.fetchall()
         cur.close()
+        
         cur = db.connection.cursor()
         queryStringInitial = """
         select name from organization
