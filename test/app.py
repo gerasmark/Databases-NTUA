@@ -17,6 +17,11 @@ db = MySQL(app)
 def index():
     return render_template('ui.html')
 
+#credits
+@app.route("/credits")
+def index():
+    return render_template('credits.html')
+
 #3.1
 @app.route("/projects_and_programs", methods={'GET', 'POST'})
 def projects_and_programs():
