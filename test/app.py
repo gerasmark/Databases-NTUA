@@ -350,6 +350,7 @@ def create_entry():
     errorname = ''
     queryString = ''
     oqueryString = ''
+    phqueryString = ''
     rqueryString = ''
     rcqueryString = ''
     uqueryString = ''
@@ -378,6 +379,7 @@ def create_entry():
         rname = str(request.form.get('rname'))
         rworks_since = str(request.form.get('rworks_since'))
 
+        pphone 
 
 
 
@@ -388,11 +390,11 @@ def create_entry():
              cur1.execute(queryString)
              db.connection.commit()
         else:
-            errorname="Name is required"
+            errorprogram="Name is required"
 
         cur1.close
 
-    return render_template('create_entry.html', queryString=queryString, errorname=errorname)
+    return render_template('create_entry.html', queryString=queryString, errorprogram=errorprogram)
 
 @app.route("/update_entry")
 def update_entry():
