@@ -41,7 +41,17 @@ def create_entry():
         db.connection.commit()
         cur1.close
 
-    
+    ptitle = str(request.form.get('ptitle'))
+    pamount = str(request.form.get('pamount'))
+    psummary = str(request.form.get('psummary'))
+    pstart_date = str(request.form.get('pstart_date'))
+    pend_date = str(request.form.get('pend_date'))
+    pname = str(request.form.get('pname'))        
+    pevaluated_from = str(request.form.get('pevaluated_from'))
+    pfrom_org = str(request.form.get('pfrom_org'))
+    pgrade = str(request.form.get('pgrade'))
+    pdate_of_eval = str(request.form.get('pdate_of_eval'))
+    pexec = str(request.form.get('pexec'))
     
     uname = str(request.form.get('uname'))
     ubudget_from_edu = str(request.form.get('ubudget_from_edu'))
