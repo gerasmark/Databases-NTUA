@@ -1057,19 +1057,19 @@ def update_entry():
             #     cur1.execute(squeryString)
             #     db.connection.commit()
 
-            #if (fname != '' and ftitle != '' ):
-            #   fqueryString = """
-            #    update fieldthatdescribes set name = '{}' where title = '{}';
-            #    """.format(fname, ftitle)
-            #    cur1.execute(fqueryString)
-            #    db.connection.commit()
-            #
-            #if (wtitle != '' and wid != '' ):
-            #    wqueryString = """
-            #    update worksfor set title = = '{}' where id = = '{}';
-            #    """.format(fname, ftitle)
-            #    cur1.execute(wqueryString)
-            #    db.connection.commit()
+            if (fname != '' and ftitle != '' ):
+                fqueryString = """
+                update fieldthatdescribes set name = '{}' where title = '{}';
+                """.format(fname, ftitle)
+                cur1.execute(fqueryString)
+                db.connection.commit()
+
+            if (wtitle != '' and wid != '' ):
+                wqueryString = """
+                update worksfor set title = = '{}' where id = = '{}';
+                """.format(fname, ftitle)
+                cur1.execute(wqueryString)
+                db.connection.commit()
 
             cur = db.connection.cursor()
             queryStringInitial = """
@@ -1197,9 +1197,307 @@ def update_entry():
         return render_template('update_entry.html',queryString=queryString, cnames=cnames, dtitle_projects=dtitle_projects, fnames=fnames, ftitles=ftitles, pfrom_orgs=pfrom_orgs, pevaluated_froms=pevaluated_froms, pnames=pnames, rnames=rnames, wids=wids, wtitles=wtitles, unames=unames, rcnames=rcnames, phnames=phnames, prnames = prnames, onames = onames, rids = rids, ptitles = ptitles, errorwhole=errorwhole)
 
 
-@app.route("/delete_entry")
+@app.route("/delete_entry", methods={'GET', 'POST'})
 def delete_entry():
-    return render_template('delete_entry.html')
+    try:
+        #errorprogram = ''
+        queryString = ''
+        fqueryString =''
+
+        cnames = ''
+        pnames = ''
+        rnames = ''
+        unames = ''
+        rcnames = ''
+        phphones = ''
+
+
+        prnames = ''
+        onames = ''
+        rids = ''
+        ptitles = ''
+
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select name from program
+        """
+        cur.execute(queryStringInitial)
+        prnames = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select name from organization
+        """
+        cur.execute(queryStringInitial)
+        onames = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select id from researcher
+        """
+        cur.execute(queryStringInitial)
+        rids = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select title from project
+        """
+        cur.execute(queryStringInitial)
+        ptitles = cur.fetchall()
+        cur.close()
+
+
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select name from organization
+        """
+        cur.execute(queryStringInitial)
+        cnames = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select title from project
+        """
+        cur.execute(queryStringInitial)
+        dtitle_projects = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select name from scientific_field
+        """
+        cur.execute(queryStringInitial)
+        fnames = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select title from project
+        """
+        cur.execute(queryStringInitial)
+        ftitles = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select name from organization
+        """
+        cur.execute(queryStringInitial)
+        phnames = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select name from organization
+        """
+        cur.execute(queryStringInitial)
+        rcnames = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select name from organization
+        """
+        cur.execute(queryStringInitial)
+        unames = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select title from project
+        """
+        cur.execute(queryStringInitial)
+        wtitles = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select id from researcher
+        """
+        cur.execute(queryStringInitial)
+        wids = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select name from organization
+        """
+        cur.execute(queryStringInitial)
+        rnames = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select name from program
+        """
+        cur.execute(queryStringInitial)
+        pnames = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select id from researcher
+        """
+        cur.execute(queryStringInitial)
+        pevaluated_froms = cur.fetchall()
+        cur.close()
+        cur = db.connection.cursor()
+        queryStringInitial = """
+        select name from organization
+        """
+        cur.execute(queryStringInitial)
+        pfrom_orgs = cur.fetchall()
+        cur.close()
+
+
+        if request.method == 'POST':
+            cur1 = db.connection.cursor()
+            prname = str(request.form.get('prname'))
+            
+
+            oname = str(request.form.get('oname'))
+            
+
+            rid = str(request.form.get('rid'))
+            
+
+            phphone = str(request.form.get('phphone'))
+           
+
+            rcname = str(request.form.get('rcname'))
+            
+
+            uname = str(request.form.get('uname'))
+            
+            cname = str(request.form.get('cname'))
+            
+
+        #    sname = str(request.form.get('sname'))
+
+            dtitle = str(request.form.get('dtitle'))
+           
+
+            ptitle = str(request.form.get('ptitle'))
+           
+
+
+
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select name from organization
+            """
+            cur.execute(queryStringInitial)
+            cnames = cur.fetchall()
+            cur.close()
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select title from project
+            """
+            cur.execute(queryStringInitial)
+            dtitle_projects = cur.fetchall()
+            cur.close()
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select name from scientific_field
+            """
+            cur.execute(queryStringInitial)
+            fnames = cur.fetchall()
+            cur.close()
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select title from project
+            """
+            cur.execute(queryStringInitial)
+            ftitles = cur.fetchall()
+            cur.close()
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select name from organization
+            """
+            cur.execute(queryStringInitial)
+            phnames = cur.fetchall()
+            cur.close()
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select name from organization
+            """
+            cur.execute(queryStringInitial)
+            rcnames = cur.fetchall()
+            cur.close()
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select name from organization
+            """
+            cur.execute(queryStringInitial)
+            unames = cur.fetchall()
+            cur.close()
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select title from project
+            """
+            cur.execute(queryStringInitial)
+            wtitles = cur.fetchall()
+            cur.close()
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select id from researcher
+            """
+            cur.execute(queryStringInitial)
+            wids = cur.fetchall()
+            cur.close()
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select name from organization
+            """
+            cur.execute(queryStringInitial)
+            rnames = cur.fetchall()
+            cur.close()
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select name from program
+            """
+            cur.execute(queryStringInitial)
+            pnames = cur.fetchall()
+            cur.close()
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select id from researcher
+            """
+            cur.execute(queryStringInitial)
+            pevaluated_froms = cur.fetchall()
+            cur.close()
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select name from organization
+            """
+            cur.execute(queryStringInitial)
+            pfrom_orgs = cur.fetchall()
+            cur.close()
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select name from program
+            """
+            cur.execute(queryStringInitial)
+            prnames = cur.fetchall()
+            cur.close()
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select name from organization
+            """
+            cur.execute(queryStringInitial)
+            onames = cur.fetchall()
+            cur.close()
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select id from researcher
+            """
+            cur.execute(queryStringInitial)
+            rids = cur.fetchall()
+            cur.close()
+            cur = db.connection.cursor()
+            queryStringInitial = """
+            select title from project
+            """
+            cur.execute(queryStringInitial)
+            ptitles = cur.fetchall()
+            cur.close()
+
+        return render_template('delete_entry.html',fqueryString=fqueryString,cnames=cnames, dtitles=dtitles, pnames=pnames, rnames=rnames, unames=unames, rcnames=rcnames, phphones=phphones, prnames = prnames, onames = onames, rids = rids, ptitles = ptitles)
+    except:
+        errorwhole = "Invalid update command"
+        return render_template('delete_entry.html',queryString=queryString, cnames=cnames, dtitles=dtitles, pnames=pnames, rnames=rnames, unames=unames, rcnames=rcnames, phphones=phphones, prnames = prnames, onames = onames, rids = rids, ptitles = ptitles, errorwhole=errorwhole)
+
+    
 
 #END OF CRUD
 
