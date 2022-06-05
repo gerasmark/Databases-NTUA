@@ -317,6 +317,7 @@ def read_entry():
     chosen = ''
     values = ''
     columns = ''
+
     if request.method == 'POST':
         chosen = request.form['field']
         if chosen == "Submit":
@@ -338,12 +339,11 @@ def read_entry():
         WHERE TABLE_NAME = '{}'
         ORDER BY ORDINAL_POSITION
         """.format(chosen)
-        wholeQuery = queryString3 + str(chosen)
-        cur3.execute(wholeQuery)
+        cur3.execute(queryString3)
         columns = cur3.fetchall()
         cur3.close()
 
-    return render_template('read_entry.html',field=field, chosen=chosen, values=values, colums=colums)
+    return render_template('read_entry.html',field=field, chosen=chosen, values=values, columns=columns)
 
 @app.route("/create_entry",methods={'GET', 'POST'})
 def create_entry():
