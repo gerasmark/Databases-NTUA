@@ -1,7 +1,7 @@
 --read
 show tables
 SHOW COLUMNS FROM program
-select * from program 
+select * from program
 
 --create
 INSERT INTO program (name,address) VALUES ('{}','{}')
@@ -23,9 +23,9 @@ INSERT INTO university (name,budget_from_edu) VALUES ('{}','{}')
 select name from organization
 INSERT INTO company (name,equity) VALUES ('{}','{}')
 
-select name from project
-select from_org from project
-select evaluated_from from project
+select name from program
+select name from organization
+select id from researcher
 INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_from,from_org,grade,date_of_eval,exec) VALUES ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')
 
 INSERT INTO scientific_field (name) VALUES ('{}')
@@ -55,7 +55,7 @@ UPDATE research_center SET budget_from_edu = '{}', budget_from_priv = '{}' WHERE
 
 UPDATE university SET budget_from_edu = '{}' where name = '{}'
 
-update company set equity = '{}' where name = '{}' 
+update company set equity = '{}' where name = '{}'
 
 update project set amount = '{}', summary = '{}', start_date = '{}', end_date = '{}', grade = '{}', date_of_eval = '{}', exec = '{}' where title = '{}'
 
@@ -66,10 +66,10 @@ update deliverable set summary = '{}', due_date = '{}', title = '{}' where title
 update deliverable set summary = '{}', due_date = '{}' where title = '{}'
 
 --delete
-delete from program WHERE address = '{}'  
+delete from program WHERE address = '{}'
 delete from program WHERE name = '{}'
 
-delete from organization WHERE initials = '{}' ,   
+delete from organization WHERE initials = '{}' ,
 delete from organization WHERE postal_code = '{}'
 delete from organization WHERE street = '{}'
 delete from organization WHERE name = '{}'

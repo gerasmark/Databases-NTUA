@@ -360,6 +360,126 @@ def create_entry():
     dqueryString = ''
     fqueryString = ''
     wqueryString = ''
+
+    cnames = ''
+    dtitle_projects = ''
+    fnames = ''
+    ftitles = ''
+    pfrom_orgs = ''
+    pevaluated_froms = ''
+    pnames = ''
+    rnames = ''
+    wids = ''
+    wtitles = ''
+    unames = ''
+    rcnames = ''
+    phnames = ''
+
+    cur = db.connection.cursor()
+    queryStringInitial = """
+    select name from organization
+    """
+    cur.execute(queryStringInitial)
+    cnames = cur.fetchall()
+    cur.close()
+
+    cur = db.connection.cursor()
+    queryStringInitial = """
+    select title from project
+    """
+    cur.execute(queryStringInitial)
+    dtitle_projects = cur.fetchall()
+    cur.close()
+
+    cur = db.connection.cursor()
+    queryStringInitial = """
+    select name from scientific_field
+    """
+    cur.execute(queryStringInitial)
+    fnames = cur.fetchall()
+    cur.close()
+
+    cur = db.connection.cursor()
+    queryStringInitial = """
+    select title from project
+    """
+    cur.execute(queryStringInitial)
+    ftitles = cur.fetchall()
+    cur.close()
+
+    cur = db.connection.cursor()
+    queryStringInitial = """
+    select name from organization
+    """
+    cur.execute(queryStringInitial)
+    phnames = cur.fetchall()
+    cur.close()
+
+    cur = db.connection.cursor()
+    queryStringInitial = """
+    select name from organization
+    """
+    cur.execute(queryStringInitial)
+    rcnames = cur.fetchall()
+    cur.close()
+
+    cur = db.connection.cursor()
+    queryStringInitial = """
+    select name from organization
+    """
+    cur.execute(queryStringInitial)
+    unames = cur.fetchall()
+    cur.close()
+
+    cur = db.connection.cursor()
+    queryStringInitial = """
+    select title from project
+    """
+    cur.execute(queryStringInitial)
+    wtitles = cur.fetchall()
+    cur.close()
+
+    cur = db.connection.cursor()
+    queryStringInitial = """
+    select id from researcher
+    """
+    cur.execute(queryStringInitial)
+    wids = cur.fetchall()
+    cur.close()
+
+    cur = db.connection.cursor()
+    queryStringInitial = """
+    select name from organization
+    """
+    cur.execute(queryStringInitial)
+    rnames = cur.fetchall()
+    cur.close()
+
+    cur = db.connection.cursor()
+    queryStringInitial = """
+    select name from program
+    """
+    cur.execute(queryStringInitial)
+    pnames = cur.fetchall()
+    cur.close()
+
+    cur = db.connection.cursor()
+    queryStringInitial = """
+    select id from researcher
+    """
+    cur.execute(queryStringInitial)
+    pevaluated_froms = cur.fetchall()
+    cur.close()
+
+    cur = db.connection.cursor()
+    queryStringInitial = """
+    select name from organization
+    """
+    cur.execute(queryStringInitial)
+    pfrom_orgs = cur.fetchall()
+    cur.close()
+
+
     if request.method == 'POST':
         cur1 = db.connection.cursor()
         prname = str(request.form.get('prname'))
@@ -523,7 +643,7 @@ def create_entry():
             """.format(fname, ftitle)
             cur1.execute(wqueryString)
             db.connection.commit()
-    return render_template('create_entry.html', queryString=queryString, errorprogram=errorprogram)
+    return render_template('create_entry.html', queryString=queryString, errorprogram=errorprogram, cnames=cnames, dtitle_projects=dtitle_projects, fnames=fnames, ftitles=ftitles, pfrom_orgs=pfrom_orgs, pevaluated_froms=pevaluated_froms, pnames=pnames, rnames=rnames, wids=wids, wtitles=wtitles, unames=unames, rcnames=rcnames, phnames=phnames)
 
 @app.route("/update_entry")
 def update_entry():
