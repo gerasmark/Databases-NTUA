@@ -348,7 +348,7 @@ def read_entry():
 @app.route("/create_entry",methods={'GET', 'POST'})
 def create_entry():
     try:
-        errorprogram = ''
+#        errorprogram = ''
         queryString = ''
         oqueryString = ''
         phqueryString = ''
@@ -544,8 +544,8 @@ def create_entry():
                  """.format(prname, praddress)
                  cur1.execute(queryString)
                  db.connection.commit()
-            else:
-                errorprogram="Field is required"
+            # else:
+            #     errorprogram="Field is required"
 
             if (oname != '' and oinitials  != '' and opostal_code != '' and ostreet != '' and  ocity != ''):
                  oqueryString = """
@@ -553,8 +553,8 @@ def create_entry():
                  """.format(oname, oinitials, opostal_code, ostreet, ocity)
                  cur1.execute(oqueryString)
                  db.connection.commit()
-            else:
-                errorprogram="Field is required"
+            # else:
+            #     errorprogram="Field is required"
 
             if (rid != '' and rfirst_name != '' and rlast_name != '' and rsex != '' and rbirthdate != '' and rname != '' and rworks_since):
                  rqueryString = """
@@ -562,8 +562,8 @@ def create_entry():
                  """.format(rid, rfirst_name, rlast_name, rsex, rbirthdate, rname, rworks_since)
                  cur1.execute(rqueryString)
                  db.connection.commit()
-            else:
-                errorprogram="Field is required"
+            # else:
+            #     errorprogram="Field is required"
 
             if (ptitle != '' and pamount != '' and psummary != '' and pstart_date != '' and pend_date != '' and pname != '' and pfrom_org != '' and pevaluated_from != '' and pexec != '' and pgrade != '' and pdate_of_eval != ''):
                 pqueryString = """
@@ -571,8 +571,8 @@ def create_entry():
                 """.format(ptitle, pamount, psummary, pstart_date, pend_date, pname, pevaluated_from, pfrom_org, pgrade, pdate_of_eval, pexec)
                 cur1.execute(pqueryString)
                 db.connection.commit()
-            else:
-                errorprogram="Field is required"
+            # else:
+            #     errorprogram="Field is required"
 
             if (phname != '' and phphone != '' ):
                  phqueryString = """
@@ -580,8 +580,8 @@ def create_entry():
                  """.format(phname,phphone)
                  cur1.execute(phqueryString)
                  db.connection.commit()
-            else:
-                errorprogram="Field is required"
+            # else:
+            #     errorprogram="Field is required"
 
             if (rcname != '' and rcbudget_from_edu  != '' and rcbudget_from_priv != ''):
                  rcqueryString = """
@@ -589,8 +589,8 @@ def create_entry():
                  """.format(rcname, rcbudget_from_edu, rcbudget_from_priv)
                  cur1.execute(rcqueryString)
                  db.connection.commit()
-            else:
-                errorprogram="Field is required"
+            # else:
+            #     errorprogram="Field is required"
 
             if (cname != '' and cequity != ''):
                 cqueryString = """
@@ -745,10 +745,10 @@ def create_entry():
             cur.execute(queryStringInitial)
             pfrom_orgs = cur.fetchall()
             cur.close()
-        return render_template('create_entry.html', queryString=queryString, errorprogram=errorprogram, cnames=cnames, dtitle_projects=dtitle_projects, fnames=fnames, ftitles=ftitles, pfrom_orgs=pfrom_orgs, pevaluated_froms=pevaluated_froms, pnames=pnames, rnames=rnames, wids=wids, wtitles=wtitles, unames=unames, rcnames=rcnames, phnames=phnames)
+        return render_template('create_entry.html', queryString=queryString, cnames=cnames, dtitle_projects=dtitle_projects, fnames=fnames, ftitles=ftitles, pfrom_orgs=pfrom_orgs, pevaluated_froms=pevaluated_froms, pnames=pnames, rnames=rnames, wids=wids, wtitles=wtitles, unames=unames, rcnames=rcnames, phnames=phnames)
     except Exception as e:
         errorwhole = "Entry already exists or is invalid"
-        return render_template('create_entry.html', queryString=queryString, errorprogram=errorprogram, cnames=cnames, dtitle_projects=dtitle_projects, fnames=fnames, ftitles=ftitles, pfrom_orgs=pfrom_orgs, pevaluated_froms=pevaluated_froms, pnames=pnames, rnames=rnames, wids=wids, wtitles=wtitles, unames=unames, rcnames=rcnames, phnames=phnames, errorwhole=errorwhole)
+        return render_template('create_entry.html', queryString=queryString, cnames=cnames, dtitle_projects=dtitle_projects, fnames=fnames, ftitles=ftitles, pfrom_orgs=pfrom_orgs, pevaluated_froms=pevaluated_froms, pnames=pnames, rnames=rnames, wids=wids, wtitles=wtitles, unames=unames, rcnames=rcnames, phnames=phnames, errorwhole=errorwhole)
 
 @app.route("/update_entry")
 def update_entry():
