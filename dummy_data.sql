@@ -679,6 +679,7 @@ INSERT INTO worksfor (title,id) VALUES ("ante333ok3","590" );
 
 INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_from,from_org,grade,date_of_eval,exec) VALUES ("o gerasimos","690","He is nice.","2019-06-15","2021-06-07","Patricia Cline","55","Cummings-Casey","100","2020-04-26","Kelly");
 INSERT INTO worksfor (title,id) VALUES ("o gerasimos","504" );
+INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_from,from_org,grade,date_of_eval,exec) VALUES ("o  glykos gerasimos","690","He is nice.","2019-06-15","2021-06-07","Patricia Cline","55","Cummings-Casey","100","2020-04-26","Kelly");
 INSERT INTO project (title,amount,summary,start_date,end_date,name,evaluated_from,from_org,grade,date_of_eval,exec) VALUES ("o kwstas","700","he is bad.","2019-06-15","2021-06-07","Patricia Cline","55","Cummings-Casey","2","2020-04-26","Kelly");
 INSERT INTO worksfor (title,id) VALUES ("o kwstas","244" );
 INSERT INTO worksfor (title,id) VALUES ("o kwstas","180" );
